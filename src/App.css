@@ -190,6 +190,9 @@ ul.no-bullets {
 }
  
 @media screen and (max-width: 500px) {
+    .wcard {
+      text-align: center;
+    }
   .section-title,.sub-section * {
     flex-direction: column;
     text-align: center;
