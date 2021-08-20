@@ -190,6 +190,10 @@ ul.no-bullets {
 }
  
 @media screen and (max-width: 500px) {
+  .logo{
+    margin-left: 36% !important;
+ 
+  }
     .wcard {
       text-align: center;
     }
@@ -453,6 +457,10 @@ a.section-link:hover {text-decoration:underline;}
 
 }
 @media screen and (max-width:768px) {
+    .logo {
+      margin-left: 26% !important;
+
+    }
   .applybtn {
     margin-top: 0px !important;
     float:none;
