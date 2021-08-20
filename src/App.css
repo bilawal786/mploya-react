@@ -3,10 +3,9 @@
 }
 :root {
   --green: #067d1f; 
-}
-.body {
-  background-color: #caeee5;
-}
+  --secondary: #c8eddc;
+  --light: #ebfcf8; 
+} 
 ul.no-bullets {
   list-style-type: none;
   /* Remove bullets */
@@ -117,7 +116,11 @@ ul.no-bullets {
  width: 100px;
 }
 
+.sub-input-wrapper input{
+  background-color: var(--light);
+  font-family: 'FontAwesome';
 
+}
 @media screen and (max-width:500px)
 { 
   .jobtitle{
