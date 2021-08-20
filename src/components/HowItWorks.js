@@ -20,7 +20,7 @@ const HowItWorks = () => {
                         <div className="card-body">
                             <img src="/h1.png" alt="Logo" width="50" height="80" /><br />
                             <span className="title-underline">Register Account</span>
-                            <p className="card-text my-3">Register Account to find job</p>
+                            <p className="text-muted my-3">Register Account to find job</p>
                             <NavLink className="section-link" to="/register">Register Account</NavLink>
 
                         </div>
@@ -30,7 +30,7 @@ const HowItWorks = () => {
                         <div className="card-body">
                             <img src="/h2.png" alt="Logo" width="50" height="80" /><br />
                             <span className="title-underline">Find Job</span>
-                            <p className="card-text my-3">Search for the job you want.</p>
+                            <p className="text-muted my-3">Search for the job you want.</p>
                             <NavLink className="section-link" to="/jobs">Find Job</NavLink>
                         </div>
 
@@ -39,7 +39,7 @@ const HowItWorks = () => {
                         <div className="card-body">
                             <img src="/h3.png" alt="Logo" width="50" height="80" /><br />
                             <span className="title-underline">Apply Job</span>
-                            <p className="card-text my-3">Apply to the company and wait.</p>
+                            <p className="text-muted my-3">Apply to the company and wait.</p>
                             <NavLink className="section-link" to="/jobs">Apply Job</NavLink>
                         </div>
 
