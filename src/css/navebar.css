@@ -1,0 +1,16 @@
+.navbar__link {
+    cursor: pointer;
+    text-decoration: none;
+    color: #181818;
+    border-bottom: 3px solid transparent;
+  }
+  
+  .navbar__link:hover {
+    transform: translateY(-2px);
+  }
+  
+  .navbar__link--active {
+    border-bottom: 3px solid #067d1f;
+    color: #067d1f !important;
+    /* transition: border-bottom .5s ease-in-out; */
+  }
