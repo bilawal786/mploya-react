@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+body {
+    margin: 0px !important;
+    padding-left: 0px !important;
+}
 :root {
   --green: #067d1f; 
   --secondary: #c8eddc;
@@ -197,6 +201,12 @@ ul.no-bullets {
     margin-left: 36% !important;
  
   }
+   .logo2 {
+     margin-left: -20% !important;
+     width: 30px;
+     height: 30px;
+
+   }
     .wcard {
       text-align: center;
     }

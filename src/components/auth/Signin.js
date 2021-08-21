@@ -1,9 +1,12 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
+import Navebar from '../Navebar';
+
 const Signin = () => {
 
       return (
             <>
+                  <Navebar />
                   <div className="container">
                         <div className="row justify-content-center">
 
@@ -17,25 +20,25 @@ const Signin = () => {
                                                 <input type="password" className="form-control" placeholder="Password" />
                                           </div>
                                           <div className="d-flex flex-row justify-content-between">
-                                          <p>Keep me logged in </p> 
-                                          <a href="">Forgot password?</a>
+                                                <p>Keep me logged in </p>
+                                                <a href="">Forgot password?</a>
                                           </div>
-                                           
- 
-                                          <div className="text-center">
-                                          <NavLink exact to="/employer/profile" type="button" className="btn p-2 my-2" style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Sign In</b></NavLink>
-                                          
-                                          <div className="or"><span className="ors mt-1">or</span></div>
-                                          
-                                          <button type="submit" className="btn p-2 my-3 " style={{ backgroundColor: '#1877f2', color: "white", width: '100%' }}><b>Sign In With Facebook</b></button>
 
-                                         
+
+                                          <div className="text-center">
+                                                <NavLink exact to="/employer/profile" type="button" className="btn p-2 my-2" style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Sign In</b></NavLink>
+
+                                                <div className="or"><span className="ors mt-1">or</span></div>
+
+                                                <button type="submit" className="btn p-2 my-3 " style={{ backgroundColor: '#1877f2', color: "white", width: '100%' }}><b>Sign In With Facebook</b></button>
+
+
                                           </div>
                                           <div className="d-flex flex-row justify-content-center">
-                                          <p className="px-2">Don't have a account?</p>
-                                          <a href="">Sign Up</a>
-                                          </div>  
-                                          
+                                                <p className="px-2">Don't have a account?</p>
+                                                <a href="">Sign Up</a>
+                                          </div>
+
                                     </form>
 
                               </div>

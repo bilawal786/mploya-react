@@ -1,12 +1,12 @@
 import React from "react";
-
-
+import Navebar from "../Navebar";
 const About = () => {
 
       return (
-      <>
-            <h1>About Componenet</h1>            
-      </>
+            <>
+                  <Navebar />
+                  <h1 className="text-center">About Componenet</h1>
+            </>
       );
 }
 
