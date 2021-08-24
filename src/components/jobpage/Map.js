@@ -3,7 +3,7 @@ const Map = () => {
 
       return (
             <>
-                  <div className='row maprow'>
+                  <div className='row maprow mt-5'>
                   </div>
             </>
       );

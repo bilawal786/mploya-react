@@ -1,14 +1,16 @@
 import React from "react";
 import Footer from "../Footer";
+import Navebar from "../Navebar";
 
 
 const Testimonial = () => {
 
       return (
-      <>
-                  <h1>Testimonial Componenet</h1>
-            <Footer/>      
-      </>
+            <>
+                  <Navebar />
+                  <h1 className="text-center mt-5">Testimonial Componenet</h1>
+                  <Footer />
+            </>
       );
 }
 

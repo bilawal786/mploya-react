@@ -8,7 +8,7 @@ const Explore = () => {
       return (
             <>
                   <Navebar />
-                  <h1>Explore Componenet</h1>
+                  <h1 className="text-center mt-5">Explore Componenet</h1>
                   <Footer />
             </>
       );
