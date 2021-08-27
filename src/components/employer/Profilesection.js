@@ -29,16 +29,16 @@ const Profilesection = () => {
                                     <div className="job-decscription my-5">
                                           <h6 className="description-heading-green">My Experience</h6>
                                           <h6 className="description-heading">Amazon Owner</h6>
-                                          <p className="description-text">March 2015 to May 2017</p>
+                                          <p className="text-muted my-0"><small>March 2015 to May 2017</small></p> 
 
                                           <h6 className="description-heading mt-4">Designer</h6>
-                                          <p className="description-text mb-0">LOS Angels</p>
-                                          <p className="description-text">March 2015 to May 2017</p>
+                                          <p className="text-muted my-0"><small>LOS Angels</small></p>
+                                          <p className="text-muted my-0"><small>March 2015 to May 2017</small></p> 
 
                                           <br/><hr/><br/>
 
                                           <h6 className="description-heading-green">About Me</h6>
-                                          <p className="description-text mb-5">It is the paragraph explaining the decription of job
+                                          <p className="text-muted mb-5">It is the paragraph explaining the decription of job
                                           skills required and all neccessary information
                                           It is the paragraph explaining the decription of job
                                           skills required and all neccessary informationIt is
@@ -49,16 +49,16 @@ const Profilesection = () => {
                                           <hr/> 
                                           
                                           <h6 className="description-heading-green mt-5">Education</h6>
-                                          <h6 className="description-heading">BS in engineering</h6>
-                                          <p className="description-text">University of London</p>
+                                          <h6 className="description-heading mb-1">BS in engineering</h6>
+                                          <p className="text-muted"><small>University of London</small></p>
 
                                           
-                                          <h6 className="description-heading mt-5">Fashion Design</h6>
-                                          <p className="description-text mb-5">University of London</p>
+                                          <h6 className="description-heading mt-5 mb-1">Fashion Design</h6>
+                                          <p className="text-muted mt-0 mb-4"><small>LOS Angels</small></p>
                                           <hr/>
 
-                                          <h6 className="description-heading-green mt-5">Sales</h6>
-                                          <p className="description-text">Management</p>
+                                          <h6 className="description-heading-green mt-5 mb-1">Sales</h6>
+                                          <p className="text-muted mt-0"><small>Managemnt</small></p>
                                            
 
                                            

@@ -24,7 +24,7 @@ const JobDetail = () => {
 
                         </div>
                         <div className="job-decscription my-5">
-                            <h6 style={{ color: '#067d1f' }}><b>About the job</b></h6>
+                            <h6 className="text-success"><b>About the job</b></h6>
                             <p>It is the paragraph explaining the decription of job
                             skills required and all neccessary information
                             It is the paragraph explaining the decription of job
@@ -40,7 +40,7 @@ const JobDetail = () => {
                                 <li>Photoshop</li>
                             </ul>
                             <hr></hr>
-                            <h6 style={{ color: '#067d1f' }}><b>Additional</b></h6>
+                            <h6 className="text-success"><b>Additional</b></h6>
                             <ul>
                                 Must have education in following subjects:
                                 <li>Computer Science</li>

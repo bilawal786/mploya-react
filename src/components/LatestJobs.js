@@ -28,7 +28,7 @@ const LatestJobs = () => {
                         <div className="card p-3 shadow-lg card-post">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex flex-row align-items-center">
-                                        <div className="icon-img"> <i></i> </div>
+                                        <img class="icon-img" src="https://i.imgur.com/IRsUTtE.jpg" alt="image"/>
                                         <div className="c-details px-2">
                                             <h6 className="mb-0">Mailchimp</h6> <span>2 min ago</span>
                                         </div>
@@ -38,7 +38,7 @@ const LatestJobs = () => {
                                 </div>
                                 <h5 className="card-title my-3"><b>Data Entry Staff</b></h5>
                                 <div className="c-details"> 
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> Full-Time</span>
+                                <span><i class="fas fa-clock"></i>&nbsp;Full-Time</span>
                                 <span className='mx-3'><i class="fa fa-map" aria-hidden="true"></i> Full-Time</span>
                                 
                                 
@@ -56,17 +56,17 @@ const LatestJobs = () => {
                         <div className="card p-3 shadow-lg card-post">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex flex-row align-items-center">
-                                        <div className="icon-img"> <i></i> </div>
+                                        <img class="icon-img" src="https://i.imgur.com/IRsUTtE.jpg" alt="image"/>
                                         <div className="c-details px-2">
                                             <h6 className="mb-0">Mailchimp</h6> <span>2 min ago</span>
                                         </div>
 
                                     </div> 
-                                    <button class="btn btn-light btn-circle btn-circle-sm m-1"><i class="fa fa-bell"></i></button>
+                                    <button class="btn btn-light btn-circle btn-circle-sm m-1"><i class="fa fa-bell"></i></button>    
                                 </div>
                                 <h5 className="card-title my-3"><b>Data Entry Staff</b></h5>
                                 <div className="c-details"> 
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> Full-Time</span>
+                                <span><i class="fas fa-clock"></i>&nbsp;Full-Time</span>
                                 <span className='mx-3'><i class="fa fa-map" aria-hidden="true"></i> Full-Time</span>
                                 
                                 
@@ -79,24 +79,21 @@ const LatestJobs = () => {
                                 </div>
                                 
                         </div>
-                    </div> 
-                    <div className="col-md-4 my-3">
+                    </div><div className="col-md-4 my-3">
                         <div className="card p-3 shadow-lg card-post">
                                 <div className="d-flex justify-content-between align-items-center">
                                     <div className="d-flex flex-row align-items-center">
-                                        <div className="icon-img"> <i></i> </div>
-                                        
+                                        <img class="icon-img" src="https://i.imgur.com/IRsUTtE.jpg" alt="image"/>
                                         <div className="c-details px-2">
                                             <h6 className="mb-0">Mailchimp</h6> <span>2 min ago</span>
                                         </div>
 
-                                    </div>
-                                    <button class="btn btn-light btn-circle btn-circle-sm m-1"><i class="fa fa-bell"></i></button>
-                                    
+                                    </div> 
+                                    <button class="btn btn-light btn-circle btn-circle-sm m-1"><i class="fa fa-bell"></i></button>    
                                 </div>
                                 <h5 className="card-title my-3"><b>Data Entry Staff</b></h5>
                                 <div className="c-details"> 
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i> Full-Time</span>
+                                <span><i class="fas fa-clock"></i>&nbsp;Full-Time</span>
                                 <span className='mx-3'><i class="fa fa-map" aria-hidden="true"></i> Full-Time</span>
                                 
                                 
@@ -109,7 +106,7 @@ const LatestJobs = () => {
                                 </div>
                                 
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 
                 

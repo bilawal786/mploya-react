@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const Toolbar = props => (
 
-      <haeder className="toolbar">
+      <header className="toolbar">
             <nav className="toolbar__navigation">
                   <div className="toolbar__toggle-button">
                         <DrawerToggleButton click={props.drawerClickHandler} />
@@ -34,16 +34,16 @@ const Toolbar = props => (
                               </li>
                         </ul>
 
-
-
+ 
                   </div>
+                  
                   <NavLink exact to="/signin" type="button" className='btn sbtn mt-4' style={{ backgroundColor: '#067d1f', color: 'white', marginRight: "0px" }} >Sign In</NavLink>
                   <NavLink exact to="/register" type="button" className='btn fbtn mt-4' style={{ marginLeft: '10px', backgroundColor: '#067d1f', color: 'white', marginRight: "150px" }}>Sign Up</NavLink>
 
+                   
 
-
-            </nav>
-      </haeder>
+            </nav> 
+      </header>
 
 );
 

@@ -1,0 +1,54 @@
+.nearby-card {
+    border-radius: 10px !important;   
+    width: 100%; 
+} 
+.nearby-card :hover{ 
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--light) ; 
+} 
+ 
+
+.nearby-icon-img {
+    width: 60px;
+    height: 60px;
+    background-color: #eee; ;
+    border-radius: 10px;
+    display: inline; 
+    align-items: center;
+    justify-content: center;
+    font-size: 39px; 
+    overflow: hidden;  
+}
+.nearby-icon-img-bg {
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    border-radius: 15px;
+    display: inline; 
+    align-items: center;
+    justify-content: center;
+    font-size: 39px; 
+    overflow: hidden;  
+  }  
+
+.nearby-card-bg {
+    border-radius: 10px !important;
+    cursor: pointer;  
+    width: 100%;
+    height: 100%;
+
+}  
+.blue-area {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(51, 117, 226);
+    height: 100px;
+}
+.neg-margin-img {
+    margin-top: -65px;
+}
+.justified-parag {
+    text-align: justify;
+    text-justify: inter-word;
+} 

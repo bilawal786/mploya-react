@@ -12,7 +12,7 @@ import Testimonial from './components/testimonial/Testimonial';
 import Signin from './components/auth/Signin';
 import Register from './components/auth/Register';
 import Profile from './components/employer/Profile';
-import Dashboard from './components/User/Dashboard';
+import Dashboard from './components/User/Dashboard/Dashboard';
 const App = () => {
   return (
     <>

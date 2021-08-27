@@ -24,7 +24,7 @@ const Register = () => {
                                           </div>
                                           <div className="text-center">
                                                 <p className="">By continuing you agree to our Privacy Policy Terms of Use and use of cookies.</p>
-                                                <NavLink exact to="/user/dashboard" type="button" className="btn p-2 my-2 " style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Register</b></NavLink>
+                                                <NavLink exact to="" type="button" className="btn p-2 my-2 " style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Register</b></NavLink>
                                                 <div className="or"><span className="ors mt-1">or</span></div>
                                                 <button type="submit" className="btn p-2 my-3 " style={{ backgroundColor: '#1877f2', color: "white", width: '100%' }}><b>Continue With Facebook</b></button>
 
