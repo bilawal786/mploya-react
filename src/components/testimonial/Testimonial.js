@@ -1,11 +1,10 @@
-import React from "react"; 
-import Main from '../User/Main';
+import React from "react";
 
 const Testimonial = () => {
 
       return (
             <>
-                  <Main />
+                  <h1 className="text-center">Testimonial</h1>
             </>
       );
 }

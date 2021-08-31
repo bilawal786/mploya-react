@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import Navebar from '../Navebar';
 import Axios from "axios";
 
 
 const Signin = () => {
+      let history = useHistory();
       // form data state
       const [data, setdata] = useState({
             email: "",
@@ -76,7 +77,10 @@ const Signin = () => {
                               url: 'https://mploya.com/api/user/login',
                               data: data,
                         });
-                        console.log(res.data.token);
+                        history.push({
+                              pathname: '/dashboard',
+
+                        });
 
                   } catch (error) {
                         console.log(error.response.status);

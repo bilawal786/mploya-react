@@ -1,4 +1,5 @@
-import React from "react";   
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
 import NavAndSide from './NavAndSide'
 
 
@@ -6,9 +7,9 @@ const Main = () => {
 
 	return (
 		<>
-		    <NavAndSide />
-			 
-
+			<BrowserRouter>
+				<NavAndSide />
+			</BrowserRouter>
 
 		</>
 	);

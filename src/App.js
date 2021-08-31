@@ -17,6 +17,7 @@ import OptVerify from './components/auth/OtpVerify';
 import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassoword';
 import PassowordVerifyOpt from './components/auth/PassowordVerifyOpt';
+import Main from './components/User/Main';
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
           <Route exact path="/reset/password" component={ResetPassword} />
           {/* User Dashbosrg */}
           <Route exact path="/user/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Main} />
           <Redirect to="/" />
         </Switch>
       </div>
