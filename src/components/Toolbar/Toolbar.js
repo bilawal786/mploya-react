@@ -27,7 +27,7 @@ const Toolbar = props => (
                                     <NavLink to="/explore" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">Explore</NavLink>
                               </li>
                               <li className="nav-item">
-                                    <NavLink to="/jobseeker/dashboard" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">About</NavLink>
+                                    <NavLink to="/about" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">About</NavLink>
                               </li>
                               <li className="nav-item">
                                     <NavLink to="/testimonials" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">Testimonial</NavLink>

@@ -6,10 +6,10 @@ const About = () => {
 
       return (
             <>
-                  {/* <Navebar />
+                  <Navebar />
                   <h1 className="text-center mt-5">About Componenet</h1>
-                  <Footer /> */} 
-                  <SeekerMain />
+                  <Footer />
+                  {/* <SeekerMain /> */}
             </>
       );
 }

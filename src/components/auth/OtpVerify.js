@@ -61,7 +61,7 @@ const OtpVerify = (props) => {
                               data: data,
                         });
                         history.push({
-                              pathname: '/signin',
+                              pathname: '/jobseeker/dashboard',
 
                         });
 
