@@ -18,12 +18,13 @@ import ForgotPassword from './components/auth/ForgotPassword';
 import ResetPassword from './components/auth/ResetPassoword';
 import PassowordVerifyOpt from './components/auth/PassowordVerifyOpt';
 import Main from './components/User/Main';
+import JobSeekerMain from './components/JobSeekerPanel/Main';
 
 const App = () => {
   return (
     <>
 
-      <div className='container-fluid'>
+     
         <Switch >
           <Route exact path="/" component={Home} />
           <Route exact path="/jobs" component={Job} />
@@ -44,9 +45,10 @@ const App = () => {
           {/* User Dashbosrg */}
           <Route exact path="/user/dashboard" component={Dashboard} />
           <Route exact path="/dashboard" component={Main} />
+          <Route exact path="/jobseeker/dashboard" component={JobSeekerMain} />
           <Redirect to="/" />
         </Switch>
-      </div>
+     
     </>
   );
 }

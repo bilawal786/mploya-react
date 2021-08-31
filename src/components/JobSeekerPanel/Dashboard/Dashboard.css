@@ -1,0 +1,34 @@
+:root {
+    --green: #198754; 
+    --secondary: #c8eddc;
+    --light: #ebfcf8; 
+  } 
+.chart-wrapper .nav{
+    background-color: rgb(231, 228, 228) !important; 
+    color: #000000;   
+}
+@media (max-width: 640px){
+    .chart-wrapper .nav{
+        display:flex  
+    }
+   .w-100-mob {
+       width: 100%;
+   }
+}
+.chart-wrapper .nav-pills{
+    height: 33px;
+}
+.chart-wrapper .nav .nav-item .nav-link{
+    color: #000000;
+    height: 33px;  
+}
+.chart-wrapper .nav .nav-item .nav-link.active{
+    color: #FFFFFF;
+    background-color: var(--green); 
+} 
+.rounded-10 {
+    border-radius: 10px;
+} 
+.bg-dark-mode {
+    background-color: var(--dark-mode);
+}
