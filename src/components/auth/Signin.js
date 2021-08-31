@@ -61,7 +61,7 @@ const Signin = () => {
                         }
 
                   });
-            } else if (data.password.length != 8) {
+            } else if (data.password.length < 8) {
                   setMessage((preValue) => {
                         return {
                               ...preValue,
@@ -118,7 +118,7 @@ const Signin = () => {
 
                                           <div className="d-flex flex-row justify-content-between mt-3">
                                                 <p>Keep me logged in </p>
-                                                <a href="">Forgot password?</a>
+                                                <NavLink exact to="/forgot/password">Forgot password?</NavLink>
                                           </div>
 
 

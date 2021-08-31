@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import Navebar from '../Navebar';
 const Register = () => {
+      let history = useHistory();
 
+      // validayon ustate
+      const [emailerror, setemailerror] = useState('');
       // form data state
       const [data, setdata] = useState({
             name: "",
@@ -94,7 +97,7 @@ const Register = () => {
                         }
 
                   });
-            } else if (data.password.length != 8) {
+            } else if (data.password.length < 8) {
                   setMessage((preValue) => {
                         return {
                               ...preValue,
@@ -109,13 +112,19 @@ const Register = () => {
                               url: 'https://mploya.com/api/user/signup',
                               data: data,
                         });
-                        console.log(res.data);
+
+                        if (res.data.success == true) {
+                              console.log(res.data);
+                              history.push("/verify/otp", {
+                                    email: data.email
+                              });
+                        }
+
+
 
                   } catch (error) {
                         console.log(error.response.status);
-                        console.log(error.response.data.error);
-
-
+                        setemailerror(error.response.data.error);
                   }
 
             }
@@ -146,6 +155,7 @@ const Register = () => {
                                           <div className="mb-3">
                                                 <input type="email" name="email" className="form-control" placeholder="Email" onChange={inputEvent} autoComplete="off" />
                                                 <span className="text-danger" style={{ fontSize: "12px" }}>{message.email}</span>
+                                                <span className="text-danger" style={{ fontSize: "12px" }}>{emailerror}</span>
 
                                           </div>
                                           <div className="mb-3">
@@ -171,7 +181,7 @@ const Register = () => {
 
                                           <div className="text-center mt-3">
                                                 <p className="">By continuing you agree to our Privacy Policy Terms of Use and use of cookies.</p>
-                                                <NavLink exact to="" type="button" className="btn p-2 my-2 " style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Register</b></NavLink>
+                                                <button type="submit" className="btn p-2 my-2 " style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Register</b></button>
                                                 <div className="or"><span className="ors mt-1">or</span></div>
                                                 <button type="submit" className="btn p-2 my-3 " style={{ backgroundColor: '#1877f2', color: "white", width: '100%' }}><b>Continue With Facebook</b></button>
 
