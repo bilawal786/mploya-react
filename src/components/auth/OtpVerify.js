@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Navebar from '../Navebar';
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 
 
 const OtpVerify = (props) => {
+      let history = useHistory();
       const [emailerror, setemailerror] = useState('');
       // form data state
       const [data, setdata] = useState({
@@ -57,6 +59,10 @@ const OtpVerify = (props) => {
                               method: 'post',
                               url: 'https://mploya.com/api/opt/verify/email',
                               data: data,
+                        });
+                        history.push({
+                              pathname: '/signin',
+
                         });
 
                   } catch (error) {

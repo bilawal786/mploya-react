@@ -6,6 +6,8 @@ import Axios from "axios";
 
 const Signin = () => {
       let history = useHistory();
+      // invalid login cre usestate
+      const [invalid, setinvalid] = useState()
       // form data state
       const [data, setdata] = useState({
             email: "",
@@ -84,7 +86,8 @@ const Signin = () => {
 
                   } catch (error) {
                         console.log(error.response.status);
-                        console.log(error.response.data);
+                        console.log(error.response.data.error);
+                        setinvalid(error.response.data.error);
                   }
             }
 
@@ -99,6 +102,7 @@ const Signin = () => {
 
                               <div className="col-md-4 bg-light shadow-lg p-3 mb-5 bg-white rounded smain" style={{ marginTop: "100px" }}>
                                     <h5 className="text-center p-3"><b>Sign In with Jobworld</b></h5>
+                                    <span className="text-danger" style={{ fontSize: '14px' }}>{invalid}</span>
                                     <form className="signin-form" onSubmit={onSubmit}>
                                           <div className="mb-3">
                                                 <input type="email" name="email" value={data.email} className="form-control" placeholder="Email" onChange={inputEvent} />
