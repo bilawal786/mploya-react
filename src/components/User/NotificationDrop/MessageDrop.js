@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import './NotificationDrop.css';
 
-const NotificationDrop = (props) => {
-    const [open, setOpen] = useState(false);
-    const [numberNotification, setNumberNotification] = useState(3);
-
+const MessageDrop = (props) => {
+    const [msgOpen, setMsgOpen] = useState(false);
+    const [numberNotification, setNumberNotification] = useState(2); 
 
     return (
         <>
-            <span className="ND-drop-button d-flex flex-column">
+            <span 
+                onMouseLeave={()=>setMsgOpen(false)}  
+                className="ND-drop-button d-flex flex-column" onClick={() => setMsgOpen(!msgOpen)}>
+
                 <span
-                    className={open == true ? "ND-icon-button activate" : "ND-icon-button"}
-                    onClick={() => setOpen(!open)}
+                    className={msgOpen == true ? "ND-icon-button activate" : "ND-icon-button"}
+
                 >
                     {/* <i class="fa fa-bell" aria-hidden="true"></i>  */}
                     <span className="nav-icon">
@@ -23,14 +25,17 @@ const NotificationDrop = (props) => {
                     <span class="badge p-1">{numberNotification}</span>
 
                 </span>
-                {open && <DropdownMenu />}
+                {msgOpen && <DropdownMenu />}
 
             </span>
+
+
+
 
         </>
     );
 }
-export default NotificationDrop;
+export default MessageDrop;
 
 
 function DropdownMenu() {
@@ -57,13 +62,6 @@ function DropdownMenu() {
     return (
         <div className="ND-dropdown">
             <button className="btn btn-success btn-lg w-100"><b>Notification</b></button>
-            <DropdownItem
-
-                imgSource={"https://i.imgur.com/IRsUTtE.jpg"}
-                title={"Airbnb"}
-                description={"Word press 2 vacancies are available."}
-                experience={"HTML CSS coder 2 to 3 year experience."}
-            ></DropdownItem>
             <DropdownItem
 
                 imgSource={"https://i.imgur.com/IRsUTtE.jpg"}

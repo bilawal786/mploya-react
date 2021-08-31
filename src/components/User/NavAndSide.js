@@ -5,6 +5,7 @@ import AboutmeEdit from "../User/Aboutme/AboutmeEdit";
 import Calendar from "../User/Calendar/Calendar";
 import Dashboard from "../User/Dashboard/Dashboard";
 import Nearby from '../User/nearby/nearby';
+import NotificationGroup from "./NotificationGroup";
 
 
 const NavAndSide = () => {
@@ -16,7 +17,7 @@ const NavAndSide = () => {
 				<div className="app-header-inner">
 					<div className="container-fluid py-2">
 						<div className="app-header-content">
-							<div className="row justify-content-between align-items-center">
+							<div className="d-flex flex-row justify-content-between align-items-center">
 
 								<div className="col-auto">
 									<a id="sidepanel-toggler" className="sidepanel-toggler d-inline-block d-xl-none">
@@ -24,20 +25,39 @@ const NavAndSide = () => {
 									</a>
 								</div>
 
-								<div className="search-mobile-trigger d-sm-none col">
-									<i className="search-mobile-trigger-icon fa fa-search"></i>
-								</div>
 
-								<div className="app-search-box col">
+
+								<div className="app-search-box col-sm-4">
 									<form className="app-search-form">
-										<input type="text" placeholder="Search..." name="search" className="form-control search-input" />
-										<button type="submit" className="btn search-btn btn-primary" value="Search"><i className="fa fa-search"></i></button>
+										<input type="text" placeholder="Search..." name="search" className="form-control search-input rounded-pill" />
+										<button type="submit" className="btn search-btn" value="Search"><i className="fa fa-search"></i></button>
 									</form>
 								</div>
+								<div className='app-utilities col-auto'>
+									<div className="d-flex flex-row align-items-center">
+										<div className="app-utility-item">
+											<strong>
+												<small className="text-success">News</small>
+												<small className="text-success mx-3">About</small>
+												<small className="text-success">Help</small>
 
-								<div className="app-search-box col">
-									<NotificationDrop />
+											</strong>
+
+										</div>
+
+
+									</div>
 								</div>
+								<div className='app-utilities col-auto'>
+									<div className="app-utility-item">
+										<div className="d-flex flex-row">
+											<NotificationGroup />
+										</div>
+									</div>
+
+								</div>
+
+
 
 							</div>
 
