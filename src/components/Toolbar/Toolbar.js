@@ -27,22 +27,22 @@ const Toolbar = props => (
                                     <NavLink to="/explore" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">Explore</NavLink>
                               </li>
                               <li className="nav-item">
-                                    <NavLink to="/about" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">About</NavLink>
+                                    <NavLink to="/jobseeker/dashboard" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">About</NavLink>
                               </li>
                               <li className="nav-item">
                                     <NavLink to="/testimonials" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">Testimonial</NavLink>
                               </li>
                         </ul>
 
- 
+
                   </div>
-                  
+
                   <NavLink exact to="/signin" type="button" className='btn sbtn mt-4' style={{ backgroundColor: '#067d1f', color: 'white', marginRight: "0px" }} >Sign In</NavLink>
                   <NavLink exact to="/register" type="button" className='btn fbtn mt-4' style={{ marginLeft: '10px', backgroundColor: '#067d1f', color: 'white', marginRight: "150px" }}>Sign Up</NavLink>
 
-                   
 
-            </nav> 
+
+            </nav>
       </header>
 
 );
