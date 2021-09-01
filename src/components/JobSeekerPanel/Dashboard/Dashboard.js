@@ -3,9 +3,9 @@ import VacancyChart from "./VacancyChart";
 import './Dashboard.css';
 import ExpenseChart from "./ExpenseChart";
 import DashboardProfile from "./DashboardProfile";
-import DashboardNearby from "./DashboardNearby";
-import RecomendForYou from "./RecomendForYou";
+import FeaturedCompany from "./FeaturedCompany"; 
 import RecentActivities from "./RecentActivities";
+import AvailableForYou from "./AvailableForYou";
 const Dashboard = () => {
 
     return (
@@ -23,7 +23,7 @@ const Dashboard = () => {
                         <ExpenseChart />
                     </div>
                     <div className="card bg-dark-mode border-0 shadow-lg rounded-10 mb-4 p-4">
-                        <DashboardNearby />
+                        <FeaturedCompany />
 
                     </div>
 
@@ -35,9 +35,9 @@ const Dashboard = () => {
                     </div>
                     <div className="card bg-dark-mode border-0 shadow-lg rounded-10 mb-4 p-4">
                         <RecentActivities />
-                    </div>
+                    </div> 
                     <div className="card bg-dark-mode border-0 shadow-lg rounded-10 mb-4 p-4">
-                        <RecomendForYou />
+                        <AvailableForYou />
                     </div>
 
 

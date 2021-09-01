@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Aboutme/Aboutme.css';
+import AboutmeEdit from './AboutmeEdit';
 
 const Aboutme = () => {
 
@@ -89,6 +90,7 @@ const Aboutme = () => {
                 </div>
 
             </div>
+            <AboutmeEdit />
         </>
     );
 }

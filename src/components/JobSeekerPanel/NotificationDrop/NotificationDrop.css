@@ -1,16 +1,15 @@
 .ND-drop-button {
     display: flex;
     align-items: center;
-    justify-content: center; 
-    color: var(--green)
+    justify-content: center;  
 }
 .ND-drop-button .activate {
-  /* opacity: 0.8; */
-  color: var(--green);
+  opacity: 0.8; 
 }
 .ND-icon-button {
     width: 40px;
     height: 40px;
+    color: var(--green);
     /* color: #FFFFFF; */
     /* background-color: rgb(139, 138, 138); */
     border-radius: 50%;
@@ -35,17 +34,14 @@
     filter: brightness(1.2);
     /* color: #FFFFFF; */
 } 
-.ND-dropdown {
+.ND-dropdown-dark {
     position: absolute;  
     top: 45px;
     width: 320px;
     transform: translateX(-45%);
-    background-color: rgb(242, 242, 242);
-    border: 1px solid #a9b3bd;
-    border-radius: 5px;
-    -moz-box-shadow: 0px 3px 15px rgb(196, 228, 198);
-    -webkit-box-shadow: 0px 3px 15px rgb(196, 228, 198);
-    box-shadow: 0px 3px 15px rgb(196, 228, 198);
+    background-color: #000000;
+    border: 1px solid #5c5d5e;
+    border-radius: 5px; 
     padding: 0.6rem;
     overflow: scroll;
     height: auto;
@@ -55,35 +51,13 @@
     z-index: 1;
   } 
   
-  .ND-menu-item:hover {
-    background-color: var(--light);
+  .ND-menu-item-dark:hover { 
+    opacity: 0.8;
     cursor: pointer;
-  }
-  .ND-icon-img {
-    width: 35px !important;
-    height: 35px !important;
-    background-color: #eee;
-    border-radius: 10px; 
-    object-fit: cover;
-    background-size: 100%;
-    align-items: center;
-    justify-content: center;
-    font-size: 39px;
-    overflow: hidden;
-  }
+  } 
   @media screen and (max-width: 500px) {
-    .ND-dropdown {
+    .ND-dropdown-dark {
         width: 250px;
     }
 
-  }
-  .outer-handler {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0;
-    z-index: 99;
-    display: none; 
-}
+  } 

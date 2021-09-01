@@ -1,10 +1,9 @@
-import React from "react";
-import NotificationDrop from "../employer/NotificationDrop/NotificationDrop";
-import Aboutme from "../User/Aboutme/Aboutme";
-import AboutmeEdit from "../User/Aboutme/AboutmeEdit";
-import Calendar from "../User/Calendar/Calendar";
+import React from "react"; 
+import Aboutme from "../JobSeekerPanel/Aboutme/Aboutme";
+import AboutmeEdit from "../JobSeekerPanel/Aboutme/AboutmeEdit";
+import Calendar from "../JobSeekerPanel/Calendar/Calendar";
 import Dashboard from "../JobSeekerPanel/Dashboard/Dashboard";
-import Nearby from '../User/nearby/nearby';
+import Nearby from '../JobSeekerPanel/nearby/nearby';
 import { NavLink, Switch, Route } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
 
@@ -188,7 +187,7 @@ const NavAndSide = () => {
 									{/* //nav-item--> */}
 									<li className="nav-item bg-transparent" style={{ backgroundColor: '#000000' }}>
 										{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
-										<a style={{ backgroundColor: "#212131" }} className="nav-link-dark" href="">
+										<a style={{ backgroundColor: "#212131" }} className="nav-link-dark">
 											<span className="nav-icon">
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
 													<path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z" />
@@ -230,7 +229,8 @@ const NavAndSide = () => {
 						<AboutmeEdit /><br /> */}
 						<Switch>
 							<Route exact path="/jobseeker/dashboard" component={Dashboard} />
-							<Route exact path="/jobseeker/nearby" component={Aboutme} />
+							<Route exact path="/jobseeker/nearby" component={Nearby} />
+							<Route exact path="/jobseeker/statistics" component={Aboutme} />
 							<Route exact path="/jobseeker/calender" component={Calendar} />
 						</Switch>
 

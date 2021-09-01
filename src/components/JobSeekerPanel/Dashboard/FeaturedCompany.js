@@ -1,11 +1,11 @@
 import React from 'react';
 
-const DashboardNearby = () => {
+const FeaturedCompany = () => {
 
     return (
         <>
             <div className="d-flex flex-row justify-content-between align-items-center">
-                <strong className="m-0 text-white">Near by Employee</strong>
+                <strong className="m-0 text-white">Featured Comapny</strong>
                 <button className="border-0 bg-transparent text-white"><i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                 </button>
 
@@ -67,4 +67,4 @@ const DashboardNearby = () => {
         </>
     );
 }
-export default DashboardNearby;
+export default FeaturedCompany;

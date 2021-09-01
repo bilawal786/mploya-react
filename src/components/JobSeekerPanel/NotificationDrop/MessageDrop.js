@@ -43,12 +43,12 @@ function DropdownMenu() {
         return (
             <>
                 <div className="p-2">
-                    <div className="ND-menu-item card border-0 shadow-sm rounded-10 p-3">
+                    <div className="ND-menu-item-dark card bg-dark-mode border-0 shadow-sm rounded-10 p-3">
                         <div className="d-flex flex-row align-items-center">
                             <img class="ND-icon-img" src={props.imgSource} alt="image" />
-                            <small><strong className="mx-2">{props.title}</strong></small>
+                            <small><strong className="mx-2 text-white">{props.title}</strong></small>
                         </div>
-                        <small align="left">{props.description}</small>
+                        <small className="text-white" align="left">{props.description}</small>
                         <small align="left" className="text-muted">{props.experience}</small>
 
                     </div>
@@ -60,8 +60,8 @@ function DropdownMenu() {
 
     }
     return (
-        <div className="ND-dropdown">
-            <button className="btn btn-success btn-lg w-100"><b>Notification</b></button>
+        <div className="ND-dropdown-dark">
+            <button className="btn btn-success w-100"><b>Messages</b></button>
             <DropdownItem
 
                 imgSource={"https://i.imgur.com/IRsUTtE.jpg"}

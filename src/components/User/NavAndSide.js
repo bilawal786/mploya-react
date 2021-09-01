@@ -229,7 +229,8 @@ const NavAndSide = () => {
 
 						<Switch>
 							<Route exact path="/dashboard" component={Dashboard} />
-							<Route exact path="/nearby" component={Aboutme} />
+							<Route exact path="/nearby" component={Nearby} />
+							<Route exact path="/statistics" component={Aboutme} />
 							<Route exact path="/calender" component={Calendar} />
 						</Switch>
 
