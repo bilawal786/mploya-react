@@ -5,7 +5,8 @@ const Nearby = () => {
 
     return (
         <>
-            {/* <div className='container'> */}
+            <div className='container-fluid'>
+             
             <div className="row">
                 <div className="col-sm-12 col-md-12 col-lg-9">
                     <div className="row">
@@ -127,7 +128,7 @@ const Nearby = () => {
             </div>
 
 
-            {/* </div> */}
+            </div>
 
 
 

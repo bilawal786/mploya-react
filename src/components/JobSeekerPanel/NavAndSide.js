@@ -6,6 +6,7 @@ import Dashboard from "../JobSeekerPanel/Dashboard/Dashboard";
 import Nearby from '../JobSeekerPanel/nearby/nearby';
 import { NavLink, Switch, Route } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
+import Application from "./Application/Application";
 
 
 const NavAndSide = () => {
@@ -37,9 +38,9 @@ const NavAndSide = () => {
 									<div className="d-flex flex-row align-items-center">
 										<div className="app-utility-item">
 											<strong>
-												<small className="text-success">News</small>
-												<small className="text-success mx-3">About</small>
-												<small className="text-success">Help</small>
+												<small className="color-green">News</small>
+												<small className="color-green mx-3">About</small>
+												<small className="color-green">Help</small>
 
 											</strong>
 
@@ -215,10 +216,9 @@ const NavAndSide = () => {
 			<div className="app-wrapper" style={{ backgroundColor: "#000000" }}>
 
 				<div className="app-content pt-3 p-md-3 p-lg-1" style={{ backgroundColor: "#000000" }}>
-					<div className="container-xl">
+					<div className="container-fluid">
 
-						<h1>behind top nav</h1>
-						<br />
+						<h1>behind top nav</h1> <br />
 
 						{/* <h1 className="text-center">Dashboard</h1>
 						<Dashboard />
@@ -230,6 +230,7 @@ const NavAndSide = () => {
 						<Switch>
 							<Route exact path="/jobseeker/dashboard" component={Dashboard} />
 							<Route exact path="/jobseeker/nearby" component={Nearby} />
+							<Route exact path="/jobseeker/application" component={Application} />
 							<Route exact path="/jobseeker/statistics" component={Aboutme} />
 							<Route exact path="/jobseeker/calender" component={Calendar} />
 						</Switch>

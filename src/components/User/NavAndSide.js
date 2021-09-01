@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import NotificationDrop from "../employer/NotificationDrop/NotificationDrop";
-import Aboutme from "../User/Aboutme/Aboutme";
-import AboutmeEdit from "../User/Aboutme/AboutmeEdit";
+import React, { useEffect } from "react"; 
+import Aboutme from "../User/Aboutme/Aboutme"; 
 import Calendar from "../User/Calendar/Calendar";
 import Dashboard from "../User/Dashboard/Dashboard";
 import Nearby from '../User/nearby/nearby';
@@ -20,7 +18,7 @@ const NavAndSide = () => {
 
 			<header className="app-header fixed-top">
 				<div className="app-header-inner">
-					<div className="container-fluid py-2">
+					<div className="container-fluid py-1">
 						<div className="app-header-content">
 							<div className="d-flex flex-row justify-content-between align-items-center">
 
@@ -41,10 +39,10 @@ const NavAndSide = () => {
 								<div className='app-utilities col-auto'>
 									<div className="d-flex flex-row align-items-center">
 										<div className="app-utility-item">
-											<strong>
-												<small className="text-success">News</small>
-												<small className="text-success mx-3">About</small>
-												<small className="text-success">Help</small>
+										<strong>
+												<small className="color-green">News</small>
+												<small className="color-green mx-3">About</small>
+												<small className="color-green">Help</small>
 
 											</strong>
 
@@ -222,7 +220,7 @@ const NavAndSide = () => {
 			<div className="app-wrapper">
 
 				<div className="app-content pt-3 p-md-3 p-lg-1">
-					<div className="container-xl">
+					<div className="container-fluid">
 
 						<h1>behind top nav</h1>
 						<br />

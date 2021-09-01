@@ -13,7 +13,7 @@ const Aboutme = () => {
                             <img className="calendar-top-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
                             <div className="px-3 d-flex flex-column">
                                 <h4 className="mb-0 text-white">Airbnb</h4>
-                                <h6 className="my-1 text-white">Homing</h6> 
+                                <h6 className="my-1 text-white">Homing</h6>
                                 <p className="text-white">
                                     <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;Los Angels, CA</small>
                                 </p>
@@ -22,8 +22,9 @@ const Aboutme = () => {
 
                         </div>
                         <div>
-                            <button className="btn btn-secondary btn-sm rounded-pill px-4">Post Job</button>
-                            <button className="btn btn-success btn-sm rounded-pill mx-2">Update Profile</button>
+                            <button className="btn btn-secondary btn-sm rounded-pill">245 Following</button>
+                            <button className="btn btn-secondary btn-sm rounded-pill mx-2">872 Followers</button>
+                            <button className="btn btn-success btn-sm rounded-pill">Update Profile</button>
                         </div>
 
 

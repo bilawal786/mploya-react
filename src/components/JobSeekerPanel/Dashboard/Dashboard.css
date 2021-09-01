@@ -32,3 +32,13 @@
 .bg-dark-mode {
     background-color: var(--dark-mode);
 }
+@media (max-width: 800px){
+    .side-btn-group-res {
+        text-align: center;     
+        margin-bottom: 20px;
+        z-index: 1;
+    }
+    .side-btn-group-res button{
+        margin: 5px; ;
+    }   
+} 

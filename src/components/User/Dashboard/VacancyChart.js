@@ -5,7 +5,7 @@ const VacancyChart = () => {
     return (
         <>
             <div className="top-response d-flex flex-row justify-content-between align-items-center">
-                <h6>Vacancy Stats</h6> 
+                <h6>Vacancy Stats</h6>
                 <div className="chart-wrapper">
                     <ul className="nav nav-pills p-0 mb-3 rounded-pill" id="pills-tab" role="tablist">
                         <li className="nav-item" role="presentation">
@@ -23,7 +23,7 @@ const VacancyChart = () => {
 
 
             <div className="tab-content" id="pills-tabContent">
-                <div className="tab-pane fade show active" id="pills-daily-vacancy" role="tabpanel" aria-labelledby="pills-daily-vacancy-tab">
+                <div className="tab-pane fade show active" id="pills-daily-vacancy" role="tabpanel" aria-labelledby="pills-daily-vacancy-tab"> 
                     daily vacancy chart...
                 </div>
                 <div className="tab-pane fade" id="pills-weekly-vacancy" role="tabpanel" aria-labelledby="pills-weekly-vacancy-tab">

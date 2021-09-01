@@ -517,8 +517,8 @@ a.section-link:hover {text-decoration:underline;}
     flex-direction: column !important; 
   }
   
-}
-
+} 
 .btn-success {
   background-color: var(--green) !important;
 } 
+

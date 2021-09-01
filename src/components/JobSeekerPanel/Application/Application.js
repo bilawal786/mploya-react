@@ -1,7 +1,6 @@
 import React from 'react';
-import '../Calendar/Calendar.css';
 
-const Calendar = () => {
+const Application = () => {
 
     return (
         <>
@@ -21,7 +20,12 @@ const Calendar = () => {
                                 </div>
 
                             </div>
-                            <button className="btn btn-success btn-sm rounded-pill"><i class="fa fa-play"></i>&nbsp;Start Video Interview</button>
+                            <div className="top-response side-btn-group-res">
+                                <button className="btn btn-secondary btn-sm rounded-pill px-3">200 Following</button>
+                                <button className="btn btn-secondary btn-sm rounded-pill px-3 mx-2">250 Followers</button>
+                                <button className="btn btn-success btn-sm rounded-pill px-3">Update Profile</button>
+                            </div>
+
 
 
 
@@ -32,47 +36,42 @@ const Calendar = () => {
                 </div>
                 <div className="spacer">&nbsp;</div>
                 <div className="row">
-                    <div className="col-sm-6 col-md-6 col-lg-4 mx-auto">
-                        <div className="card shadow nearby-card-bg">
+                    <div className="col-sm-6 col-md-4 col-lg-4 mx-auto">
+                        <div className="card bg-dark-mode shadow-lg nearby-card-bg">
                             <div className="blue-area"></div>
                             <div className="card-body">
                                 <div className="text-center">
-                                    <img className="nearby-icon-img-bg neg-margin-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
-                                    <h4 className="mt-2 mb-0">UI Designer</h4>
+                                    <img className="calendar-top-img neg-margin-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
+                                    <h4 className="mt-2 mb-0 text-white">UI Designer</h4>
                                     <small className="primary-span">Bubbles Studio</small>
 
                                 </div>
 
                                 <small>
-                                    <p align="justify" className="text-muted">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
+                                    <p align="justify" className="text-white my-3">Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.</p>
                                 </small>
 
                                 <small>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="text-white my-1"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="text-white my-1"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="text-white my-1"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="text-white my-1"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="mt-2 mb-0"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
+                                </small><br />
+                                <small>
+                                    <p className="my-1 text-white"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
                                         Machester England
                                     </p>
-                                    <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
+                                    <p className="my-1 text-white"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
                                         Machester England
                                     </p>
-                                </small>
+                                </small><br />
                                 <div className="text-center">
-
-                                    <p className="mb-0"><strong className="text-success">Becky Nitrogen</strong></p>
-                                    <p className="text-muted m-0">Senior UX Designer</p>
-                                    <small>
-                                        <p className="text-muted m-0"><i class="fa fa-map-marker star-color-green" aria-hidden="true"></i> San Francisco CA</p>
-                                    </small>
-
-                                    <button className="btn btn-success btn-sm rounded-pill my-3">See Candidate Profile</button>
-
+                                    <button className="btn btn-success btn-sm rounded-pill px-3 mx-2">Apply Job</button>
+                                    <button className="btn btn-secondary btn-sm rounded-pill px-3"><i class="fa fa-envelope"></i></button>
 
 
                                 </div>
@@ -82,35 +81,30 @@ const Calendar = () => {
                         </div>
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-4 mx-auto">
-                        <h6 style={{ margin: 10 }}>About Position</h6>
+                        <h6 className="text-white" style={{ margin: 10 }}>About Position</h6>
                         <div className="border-0 about-position">
 
                             <h5 className="mt-2 mb-0">UI Designer</h5>
                             <small><i class="fa fa-map-marker star-color-green" aria-hidden="true"></i> San Francisco CA</small>
                             <p><small>2 days</small></p>
-
-
-
-
-
                         </div>
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-4 mx-auto">
-                        <h6 style={{ margin: 10 }}>Date and Time</h6>
-                        <div className="round-container-wrapper my-0">
-                            <p className="text-muted m-0">Thursday, October 7th, 2020</p>
-                            <p className="text-muted m-0">4:00 pm To 5:30 pm</p>
+                        <h6 className="text-white" style={{ margin: 10 }}>Time and Date</h6>
+                        <div className="card rounded-10 p-3">
+                            <span className='text-muted'>Thursday, October 7th, 2020</span>
+                            <span className='text-muted mb-3'>4:00 pm To 5:00 pm</span>
                             <hr />
                             <div className="d-flex justify-content-between align-items-center">
-                                <a className="section-link my-0" href="default.asp" target="_blank">Contact Candidate</a>
-                                <a className="section-link my-0" href="default.asp" target="_blank">Cancel Meeting</a>
+                                <a className="section-link small-txt" href="" target="_blank">Contact Candidate</a>
+                                <a className="section-link small-txt" href="" target="_blank">Cancel Meeting</a>
                             </div>
-
                         </div>
                     </div>
+
                 </div>
             </div>
         </>
     );
 }
-export default Calendar;
+export default Application;
