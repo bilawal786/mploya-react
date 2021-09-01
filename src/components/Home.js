@@ -13,16 +13,18 @@ const Home = () => {
 
       return (
             <>
-                  <Navebar />
-                  <Header />
-                  <HowItWorks />
-                  <Categories />
-                  <LatestJobs />
-                  <PopularCompanies />
-                  <ClientSays />
-                  <Subscribe />
-                  <Contact />
-                  <Footer />
+                  <div className="container-fluid">
+                        <Navebar />
+                        <Header />
+                        <HowItWorks />
+                        <Categories />
+                        <LatestJobs />
+                        <PopularCompanies />
+                        <ClientSays />
+                        <Subscribe />
+                        <Contact />
+                        <Footer />
+                  </div>
             </>
       );
 }

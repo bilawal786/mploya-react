@@ -19,36 +19,38 @@ import ResetPassword from './components/auth/ResetPassoword';
 import PassowordVerifyOpt from './components/auth/PassowordVerifyOpt';
 import Main from './components/User/Main';
 import JobSeekerMain from './components/JobSeekerPanel/Main';
+import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
+
   return (
     <>
+      <Switch >
+        <Route exact path="/" component={Home} />
+        <Route exact path="/jobs" component={Job} />
+        <Route exact path="/explore" component={Explore} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/testimonials" component={Testimonial} />
+        <Route exact path="/signin" component={Signin} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/verify/otp" component={OptVerify} />
+        <Route exact path="/employer/profile" component={Profile} />
+        {/* forgot password */}
+        <Route exact path="/forgot/password" component={ForgotPassword} />
+        {/* password verify opt */}
+        <Route exact path="/password/verify/otp" component={PassowordVerifyOpt} />
 
-     
-        <Switch >
-          <Route exact path="/" component={Home} />
-          <Route exact path="/jobs" component={Job} />
-          <Route exact path="/explore" component={Explore} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/testimonials" component={Testimonial} />
-          <Route exact path="/signin" component={Signin} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/verify/otp" component={OptVerify} />
-          <Route exact path="/employer/profile" component={Profile} />
-          {/* forgot password */}
-          <Route exact path="/forgot/password" component={ForgotPassword} />
-          {/* password verify opt */}
-          <Route exact path="/password/verify/otp" component={PassowordVerifyOpt} />
+        {/* reset password */}
+        <Route exact path="/reset/password" component={ResetPassword} />
+        {/* User Dashbosrg */}
+        <Route exact path="/user/dashboard" component={Dashboard} />
+        {/*start  ProtectedRoute */}
+        <ProtectedRoute exact path="/dashboard" component={Main} />
+        {/* end ProtectedRoute */}
+        <Route exact path="/jobseeker/dashboard" component={JobSeekerMain} />
+        <Redirect to="/" />
+      </Switch>
 
-          {/* reset password */}
-          <Route exact path="/reset/password" component={ResetPassword} />
-          {/* User Dashbosrg */}
-          <Route exact path="/user/dashboard" component={Dashboard} />
-          <Route exact path="/dashboard" component={Main} />
-          <Route exact path="/jobseeker/dashboard" component={JobSeekerMain} />
-          <Redirect to="/" />
-        </Switch>
-     
     </>
   );
 }

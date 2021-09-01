@@ -12,13 +12,15 @@ const Job = () => {
 
       return (
             <>
-                  <Navebar />
-                  <Map />
-                  <Search />
-                  <Jobsection />
-                  <Subscribe />
-                  <Contact />
-                  <Footer />
+                  <div className="container-fluid">
+                        <Navebar />
+                        <Map />
+                        <Search />
+                        <Jobsection />
+                        <Subscribe />
+                        <Contact />
+                        <Footer />
+                  </div>
 
             </>
       );
