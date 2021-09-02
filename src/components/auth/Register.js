@@ -5,6 +5,7 @@ import Navebar from '../Navebar';
 import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import GoogleLogin from 'react-google-login';
 const useStyles = makeStyles((theme) => ({
       backdrop: {
             zIndex: theme.zIndex.drawer + 1,
@@ -140,12 +141,46 @@ const Register = () => {
                   }
 
             }
-
-
-
-
-
       };
+
+      const responseGoogle = async (response) => {
+
+            if (data.user_type == '') {
+                  setMessage((preValue) => {
+                        return {
+                              ...preValue,
+                              user_type: "User Type is Required",
+                        }
+
+                  });
+            } else {
+                  const user_info = {
+                        'provider_id': response.profileObj.googleId,
+                        'provider_name': 'google',
+                        'name': response.profileObj.name,
+                        'email': response.profileObj.email,
+                        'user_type': data.user_type,
+                  };
+                  setloading(true);
+                  try {
+                        const res = await Axios({
+                              method: 'post',
+                              url: 'https://mploya.com/api/social/register',
+                              data: user_info,
+                        });
+
+                        console.log(res);
+                        localStorage.setItem("isAuthenticated", "true");
+                        history.push({
+                              pathname: '/dashboard',
+
+                        });
+
+                  } catch (error) {
+                        console.log(error.response.data.error);
+                  }
+            }
+      }
 
       return (
             <>
@@ -199,8 +234,33 @@ const Register = () => {
                                                       <p className="">By continuing you agree to our Privacy Policy Terms of Use and use of cookies.</p>
                                                       <button type="submit" className="btn p-2 my-2 " style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Register</b></button>
                                                       <div className="or"><span className="ors mt-1">or</span></div>
-                                                      <button type="submit" className="btn p-2 my-3 " style={{ backgroundColor: '#1877f2', color: "white", width: '100%' }}><b>Continue With Facebook</b></button>
+                                                      {/* <button type="submit" className="btn p-2 my-3 " style={{ backgroundColor: '#1877f2', color: "white", width: '100%' }}><b>Continue With Facebook</b></button> */}
 
+                                                      <div className="d-flex d-flex-row justify-content-center">
+                                                            <GoogleLogin
+                                                                  clientId="829727832715-bckt5d5tuereqnbblklum67ncijalqn6.apps.googleusercontent.com"
+                                                                  render={renderProps => (
+
+                                                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="btn m-3 " style={{ backgroundColor: '#db4437', color: "white", width: '40%' }}><b><i className="fa fa-google"></i>  &nbsp; Google</b></button>
+                                                                  )}
+                                                                  onSuccess={responseGoogle}
+                                                                  onFailure={responseGoogle}
+                                                                  cookiePolicy={'single_host_origin'}
+                                                            />
+
+                                                            <GoogleLogin
+                                                                  clientId="829727832715-bckt5d5tuereqnbblklum67ncijalqn6.apps.googleusercontent.com"
+                                                                  render={renderfProps => (
+
+                                                                        <button onClick={renderfProps.onClick} disabled={renderfProps.disabled} className="btn m-3 " style={{ backgroundColor: '#0676e7', color: "white", width: '40%' }}><b><i class="fa fa-facebook-f"></i> &nbsp; Facebook</b></button>
+                                                                  )}
+                                                                  buttonText="Login"
+                                                                  onSuccess={responseGoogle}
+                                                                  onFailure={responseGoogle}
+                                                                  cookiePolicy={'single_host_origin'}
+                                                            />
+
+                                                      </div>
                                                 </div>
 
 
