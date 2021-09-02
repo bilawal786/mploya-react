@@ -71,10 +71,12 @@ const OtpVerify = (props) => {
                               url: 'https://mploya.com/api/opt/verify/email',
                               data: data,
                         });
+                        localStorage.setItem("isAuthenticated", "true");
                         history.push({
                               pathname: '/jobseeker/dashboard',
 
                         });
+                        console.log(res);
 
                   } catch (error) {
                         setemailerror(error.response.data.error);

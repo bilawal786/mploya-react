@@ -1,13 +1,19 @@
-import React, { useEffect } from "react"; 
-import Aboutme from "../User/Aboutme/Aboutme"; 
+import React, { useEffect } from "react";
+import Aboutme from "../User/Aboutme/Aboutme";
 import Calendar from "../User/Calendar/Calendar";
 import Dashboard from "../User/Dashboard/Dashboard";
 import Nearby from '../User/nearby/nearby';
 import { NavLink, Switch, Route } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
+import { isValidElement } from "react";
 
 
 const NavAndSide = () => {
+	const name = localStorage.getItem('name');
+	const image = localStorage.getItem('image');
+	let user_type = localStorage.getItem('user_type');
+	user_type = user_type.charAt(0).toUpperCase() + user_type.slice(1);
+	const isAuthenticated = localStorage.getItem('isAuthenticated')
 	const handleLogout = () => {
 		localStorage.clear();
 		window.location.href = '/signin';
@@ -39,7 +45,7 @@ const NavAndSide = () => {
 								<div className='app-utilities col-auto'>
 									<div className="d-flex flex-row align-items-center">
 										<div className="app-utility-item">
-										<strong>
+											<strong>
 												<small className="color-green">News</small>
 												<small className="color-green mx-3">About</small>
 												<small className="color-green">Help</small>
@@ -83,11 +89,11 @@ const NavAndSide = () => {
 						<nav id="app-nav-main" className="app-nav app-nav-main flex-grow-1">
 							<div className="p-4">
 								<div className="d-flex flex-row align-items-center">
-									<img class="icon-img" src="https://i.imgur.com/IRsUTtE.jpg" alt="image" />
+									<img class="icon-img" src={isValidElement ? "https://mploya.com/" + image : "https://i.imgur.com/IRsUTtE.jpg"} alt="image" />
 
 									<div className="px-3 d-flex flex-column">
-										<span className="nav-link-text text-dark">Airbnb</span>
-										<small className="text-muted">Super admin</small>
+										<span className="nav-link-text text-dark">{isAuthenticated ? name : 'Airbnb'}</span>
+										<small className="text-muted">{isAuthenticated ? user_type : 'Super admin'}</small>
 									</div>
 
 								</div>

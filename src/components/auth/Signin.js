@@ -6,6 +6,7 @@ import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import GoogleLogin from 'react-google-login';
+import "../auth/signin.css";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -97,16 +98,18 @@ const Signin = () => {
                         });
 
                         localStorage.setItem("isAuthenticated", "true");
+                        localStorage.setItem('id', res.data.id);
+                        localStorage.setItem('image', res.data.image);
+                        localStorage.setItem('email', data.email);
+                        localStorage.setItem('name', res.data.name);
+                        localStorage.setItem('user_type', data.user_type);
                         history.push({
                               pathname: '/dashboard',
 
                         });
 
-
-
-
-
                   } catch (error) {
+                        setloading(false);
                         setinvalid(error.response.data.error);
                   }
             }
@@ -142,12 +145,16 @@ const Signin = () => {
 
                         console.log(res);
                         localStorage.setItem("isAuthenticated", "true");
+                        localStorage.setItem('name', response.profileObj.name);
+                        localStorage.setItem('email', response.profileObj.email);
+                        localStorage.setItem('user_type', data.user_type);
                         history.push({
                               pathname: '/dashboard',
 
                         });
 
                   } catch (error) {
+                        setloading(false);
                         setinvalid(error.response.data.error);
                   }
             }
@@ -189,12 +196,13 @@ const Signin = () => {
                                                             <input className="form-check-input" name="user_type" value="jobseeker" type="radio" id="flexSwitchCheckDefault" onChange={inputEvent} />
                                                             <label className="form-check-label" for="flexSwitchCheckDefault">Jobseeker</label>
                                                       </div>
+
                                                 </div>
                                                 <span className="text-danger" style={{ fontSize: "12px" }}>{message.user_type}</span>
 
                                                 <div className="d-flex flex-row justify-content-between mt-3">
                                                       <p>Keep me logged in </p>
-                                                      <NavLink exact to="/forgot/password">Forgot password?</NavLink>
+                                                      <NavLink exact to="/forgot/password" style={{ color: "#067d1f", textDecoration: 'none' }}>Forgot password?</NavLink>
                                                 </div>
 
 
@@ -209,7 +217,7 @@ const Signin = () => {
                                                                   clientId="829727832715-bckt5d5tuereqnbblklum67ncijalqn6.apps.googleusercontent.com"
                                                                   render={renderProps => (
 
-                                                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="btn m-3 " style={{ backgroundColor: '#db4437', color: "white", width: '40%' }}><b><i className="fa fa-google"></i>  &nbsp; Google</b></button>
+                                                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="btn m-3 " style={{ backgroundColor: '#db4437', color: "white", width: '40%' }}><b><i className="fa fa-google" style={{ fontSize: '18px' }}></i>  &nbsp; Google</b></button>
                                                                   )}
                                                                   onSuccess={responseGoogle}
                                                                   onFailure={responseGoogle}
@@ -220,7 +228,7 @@ const Signin = () => {
                                                                   clientId="829727832715-bckt5d5tuereqnbblklum67ncijalqn6.apps.googleusercontent.com"
                                                                   render={renderfProps => (
 
-                                                                        <button onClick={renderfProps.onClick} disabled={renderfProps.disabled} className="btn m-3 " style={{ backgroundColor: '#0676e7', color: "white", width: '40%' }}><b><i class="fa fa-facebook-f"></i> &nbsp; Facebook</b></button>
+                                                                        <button onClick={renderfProps.onClick} disabled={renderfProps.disabled} className="btn m-3 " style={{ backgroundColor: '#0676e7', color: "white", width: '40%' }}><b><i class="fa fa-facebook-f" style={{ fontSize: '18px' }}></i> &nbsp; Facebook</b></button>
                                                                   )}
                                                                   buttonText="Login"
                                                                   onSuccess={responseGoogle}
@@ -235,7 +243,7 @@ const Signin = () => {
                                           </form>
                                           <div className="d-flex flex-row justify-content-center">
                                                 <p className="px-2">Don't have a account?</p>
-                                                <NavLink exact to="/register">Sign Up</NavLink>
+                                                <NavLink exact to="/register" style={{ color: "#067d1f", textDecoration: 'none' }}>Sign Up</NavLink>
                                           </div>
 
 

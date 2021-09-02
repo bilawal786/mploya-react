@@ -6,6 +6,7 @@ import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import GoogleLogin from 'react-google-login';
+import "../auth/signin.css";
 const useStyles = makeStyles((theme) => ({
       backdrop: {
             zIndex: theme.zIndex.drawer + 1,
@@ -126,6 +127,11 @@ const Register = () => {
                               data: data,
                         });
 
+                        localStorage.setItem('id', res.data.id);
+                        localStorage.setItem('image', res.data.image);
+                        localStorage.setItem('email', data.email);
+                        localStorage.setItem('name', data.name);
+                        localStorage.setItem('user_type', data.user_type);
                         if (res.data.success == true) {
                               console.log(res.data);
                               history.push("/verify/otp", {
@@ -136,7 +142,7 @@ const Register = () => {
 
 
                   } catch (error) {
-                        console.log(error.response.status);
+                        setloading(false);
                         setemailerror(error.response.data.error);
                   }
 
@@ -189,14 +195,14 @@ const Register = () => {
                         <div className="container">
                               <div className="row justify-content-center">
 
-                                    <div className="col-md-4 bg-light shadow-lg p-3 mb-5 bg-white rounded smain" style={{ marginTop: "50px" }}>
+                                    <div className="col-md-4 bg-light shadow-lg p-3 mb-5 bg-white rounded smain" style={{ marginTop: "34px" }}>
                                           {loading ? (<Backdrop className={classes.backdrop} open>
                                                 <CircularProgress color="inherit" />
                                           </Backdrop>) : ''}
                                           <h5 className="text-center mt-3"><b>Sign Up with Jobworld</b></h5>
                                           <div className="d-flex flex-row justify-content-center align-items-between">
                                                 <p className="px-2">Already have a Monster account? </p>
-                                                <NavLink exact to="/signin">Sign In</NavLink>
+                                                <NavLink exact to="/signin" style={{ color: "#067d1f", textDecoration: 'none' }}>Sign In</NavLink>
                                           </div>
                                           <form onSubmit={onSubmit}>
                                                 <div className="mb-3">
@@ -241,7 +247,7 @@ const Register = () => {
                                                                   clientId="829727832715-bckt5d5tuereqnbblklum67ncijalqn6.apps.googleusercontent.com"
                                                                   render={renderProps => (
 
-                                                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="btn m-3 " style={{ backgroundColor: '#db4437', color: "white", width: '40%' }}><b><i className="fa fa-google"></i>  &nbsp; Google</b></button>
+                                                                        <button onClick={renderProps.onClick} disabled={renderProps.disabled} className="btn m-3 " style={{ backgroundColor: '#db4437', color: "white", width: '40%' }}><b><i className="fa fa-google" style={{ fontSize: '18px' }}></i>  &nbsp; Google</b></button>
                                                                   )}
                                                                   onSuccess={responseGoogle}
                                                                   onFailure={responseGoogle}
@@ -252,7 +258,7 @@ const Register = () => {
                                                                   clientId="829727832715-bckt5d5tuereqnbblklum67ncijalqn6.apps.googleusercontent.com"
                                                                   render={renderfProps => (
 
-                                                                        <button onClick={renderfProps.onClick} disabled={renderfProps.disabled} className="btn m-3 " style={{ backgroundColor: '#0676e7', color: "white", width: '40%' }}><b><i class="fa fa-facebook-f"></i> &nbsp; Facebook</b></button>
+                                                                        <button onClick={renderfProps.onClick} disabled={renderfProps.disabled} className="btn m-3 " style={{ backgroundColor: '#0676e7', color: "white", width: '40%' }}><b><i class="fa fa-facebook-f" style={{ fontSize: '18px' }}></i> &nbsp; Facebook</b></button>
                                                                   )}
                                                                   buttonText="Login"
                                                                   onSuccess={responseGoogle}
