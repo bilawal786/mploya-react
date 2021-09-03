@@ -1,8 +1,13 @@
 import React from 'react';
 import '../Aboutme/Aboutme.css';
-import AboutmeEdit from './AboutmeEdit';
+import { useHistory } from "react-router-dom";
+
 
 const Aboutme = () => {
+    let history = useHistory();
+    const profileEdit = () => {
+        history.push('/profile/edit');
+    }
 
     return (
         <>
@@ -24,7 +29,7 @@ const Aboutme = () => {
                             </div>
                             <div>
                                 <button className="btn btn-secondary btn-sm rounded-pill px-4">Post Job</button>
-                                <button className="btn btn-success btn-sm rounded-pill mx-2">Update Profile</button>
+                                <button onClick={profileEdit} className="btn btn-success btn-sm rounded-pill mx-2">Update Profile</button>
                             </div>
 
 
@@ -82,7 +87,7 @@ const Aboutme = () => {
                     <div className="col-sm-2 col-md-2 col-lg-3"></div>
                     <div className="col-sm-4 col-md-4 col-lg-3">
                         <strong>Socials</strong>
-                        <div className="my-3"> 
+                        <div className="my-3">
                             <button className="rounded-pill border-0 px-3 py-2 mb-2 bg-blueish w-100">
                                 <i className="fa fa-facebook-f text-primary"></i>
                                 <small className="mx-3"><b>/Airbnb</b></small>
@@ -107,7 +112,6 @@ const Aboutme = () => {
                     </div>
 
                 </div>
-                <AboutmeEdit />
             </div>
         </>
     );

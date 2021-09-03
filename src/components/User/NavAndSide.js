@@ -3,6 +3,7 @@ import Aboutme from "../User/Aboutme/Aboutme";
 import Calendar from "../User/Calendar/Calendar";
 import Dashboard from "../User/Dashboard/Dashboard";
 import Nearby from '../User/nearby/nearby';
+import AboutmeEdit from "../User/Aboutme/AboutmeEdit";
 import Axios from "axios";
 import { NavLink, Switch, Route, useHistory } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
@@ -20,6 +21,11 @@ const NavAndSide = () => {
 		localStorage.clear();
 		window.location.href = '/signin';
 	}
+
+	const aboutMe = () => {
+		history.push('/profile');
+	}
+
 	// useEffect(async () => {
 	// 	console.log(user_type);
 	// 	if (user_type == 'Employer') {
@@ -96,10 +102,10 @@ const NavAndSide = () => {
 							<a className="app-logo" href="index.html"><img className="logo-icon" src="/mployalogo.png" alt="logo" /></a>
 
 						</div>
-						{/* //app-branding-->   */}
-						{/* //side bar top user section-->   */}
+
 						<nav id="app-nav-main" className="app-nav app-nav-main flex-grow-1">
-							<div className="p-4">
+
+							<div className="p-4 hoverable" onClick={aboutMe} >
 								<div className="d-flex flex-row align-items-center">
 									<img class="icon-img" src={isValidElement ? "https://mploya.com/" + image : "https://i.imgur.com/IRsUTtE.jpg"} alt="image" />
 
@@ -246,7 +252,9 @@ const NavAndSide = () => {
 						<Switch>
 							<Route exact path="/dashboard" component={Dashboard} />
 							<Route exact path="/nearby" component={Nearby} />
-							<Route exact path="/statistics" component={Aboutme} />
+							<Route exact path="/profile" component={Aboutme} />
+							<Route exact path="/profile/edit" component={AboutmeEdit} />
+							<Route exact path="/statistics" />
 							<Route exact path="/calender" component={Calendar} />
 						</Switch>
 

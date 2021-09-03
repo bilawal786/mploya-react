@@ -1,7 +1,11 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 
 const DashboardProfile = () => {
-
+    let history = useHistory();
+    const profileEdit = () => {
+        history.push('/profile/edit');
+    }
     return (
         <>
             <div className="top-response d-flex justify-content-between align-items-center">
@@ -17,7 +21,7 @@ const DashboardProfile = () => {
                     </div>
 
                 </div>
-                <button className="btn btn-success btn-sm px-3 my-2 rounded-pill">Update Profile</button>
+                <button onClick={profileEdit} className="btn btn-success btn-sm px-3 my-2 rounded-pill">Update Profile</button>
 
 
             </div>
