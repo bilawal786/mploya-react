@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Nearby = () => {
     const [employee, setemployee] = useState([])
-    const [singleemployee, setsingleemployee] = useState(null);
+    const [singleemployee, setsingleemployee] = useState('');
     let token = localStorage.getItem('token');
     const classes = useStyles();
     const [loading, setloading] = useState(false);
@@ -34,6 +34,7 @@ const Nearby = () => {
             });
             setloading(false);
             setemployee(res.data);
+            setsingleemployee(res.data[0]);
 
         } catch (error) {
             setloading(false);
