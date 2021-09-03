@@ -135,7 +135,8 @@ const Register = () => {
                         if (res.data.success == true) {
                               console.log(res.data);
                               history.push("/verify/otp", {
-                                    email: data.email
+                                    email: data.email,
+                                    user_type: data.user_type,
                               });
                         }
 

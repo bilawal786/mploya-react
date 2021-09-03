@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Aboutme from "../User/Aboutme/Aboutme";
 import Calendar from "../User/Calendar/Calendar";
 import Dashboard from "../User/Dashboard/Dashboard";
 import Nearby from '../User/nearby/nearby';
-import { NavLink, Switch, Route } from "react-router-dom";
+import Axios from "axios";
+import { NavLink, Switch, Route, useHistory } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
 import { isValidElement } from "react";
 
 
 const NavAndSide = () => {
+	let history = useHistory();
 	const name = localStorage.getItem('name');
 	const image = localStorage.getItem('image');
 	let user_type = localStorage.getItem('user_type');
@@ -18,11 +20,21 @@ const NavAndSide = () => {
 		localStorage.clear();
 		window.location.href = '/signin';
 	}
+	// useEffect(async () => {
+	// 	console.log(user_type);
+	// 	if (user_type == 'Employer') {
+	// 		history.push('/dashboard')
+	// 	} else {
+	// 		history.goBack();
+	// 	}
+
+	// }, [])
 
 	return (
 		<>
 
 			<header className="app-header fixed-top">
+
 				<div className="app-header-inner">
 					<div className="container-fluid py-1">
 						<div className="app-header-content">
