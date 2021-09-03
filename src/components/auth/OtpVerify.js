@@ -72,10 +72,18 @@ const OtpVerify = (props) => {
                               data: data,
                         });
                         localStorage.setItem("isAuthenticated", "true");
-                        history.push({
-                              pathname: '/jobseeker/dashboard',
+                        if (props.location.state.email == 'employer') {
+                              history.push({
+                                    pathname: '/dashboard',
 
-                        });
+                              });
+                        } else {
+                              history.push({
+                                    pathname: '/jobseeker/dashboard',
+
+                              });
+                        }
+
                         console.log(res);
 
                   } catch (error) {

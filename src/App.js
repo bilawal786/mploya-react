@@ -46,8 +46,9 @@ const App = () => {
         <Route exact path="/user/dashboard" component={Dashboard} />
         {/*start  ProtectedRoute */}
         <ProtectedRoute exact path="/dashboard" component={Main} />
+        <ProtectedRoute exact path="/jobseeker/dashboard" component={JobSeekerMain} />
         {/* end ProtectedRoute */}
-        <Route exact path="/jobseeker/dashboard" component={JobSeekerMain} />
+
         <Redirect to="/" />
       </Switch>
 

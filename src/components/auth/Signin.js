@@ -99,14 +99,22 @@ const Signin = () => {
 
                         localStorage.setItem("isAuthenticated", "true");
                         localStorage.setItem('id', res.data.id);
+                        localStorage.setItem('token', res.data.token);
                         localStorage.setItem('image', res.data.image);
                         localStorage.setItem('email', data.email);
                         localStorage.setItem('name', res.data.name);
                         localStorage.setItem('user_type', data.user_type);
-                        history.push({
-                              pathname: '/dashboard',
+                        if (data.user_type == 'employer') {
+                              history.push({
+                                    pathname: '/dashboard',
 
-                        });
+                              });
+                        } else {
+                              history.push({
+                                    pathname: '/jobseeker/dashboard',
+
+                              });
+                        }
 
                   } catch (error) {
                         setloading(false);
@@ -148,10 +156,19 @@ const Signin = () => {
                         localStorage.setItem('name', response.profileObj.name);
                         localStorage.setItem('email', response.profileObj.email);
                         localStorage.setItem('user_type', data.user_type);
-                        history.push({
-                              pathname: '/dashboard',
 
-                        });
+                        if (data.user_type == 'employer') {
+                              history.push({
+                                    pathname: '/dashboard',
+
+                              });
+                        } else {
+                              history.push({
+                                    pathname: '/jobseeker/dashboard',
+
+                              });
+                        }
+
 
                   } catch (error) {
                         setloading(false);
