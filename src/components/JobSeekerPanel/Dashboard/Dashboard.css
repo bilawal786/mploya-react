@@ -42,3 +42,7 @@
         margin: 5px; ;
     }   
 } 
+.wrap-150{
+    max-width:150px;
+    word-wrap:break-word;
+}

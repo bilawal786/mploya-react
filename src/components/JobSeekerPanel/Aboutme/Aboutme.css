@@ -9,27 +9,51 @@
       flex-direction: column;
       justify-content: center; 
 }
-.bg-blueish {
+.bg-blueish { 
   background-color: rgb(215, 229, 252); 
   text-align: left;
 }
-.bg-berry {
+.bg-berry { 
   background-color: rgb(218, 235, 243);
   text-align: left;
 }
-.bg-light-red {
+.bg-light-red { 
   background-color: rgb(253, 229, 237);
   text-align: left;
 }
-.bg-redish {
+.bg-redish { 
   background-color: rgb(255, 218, 219);
   text-align: left;
 }
-.bg-greenish {
+.bg-greenish { 
   background-color: rgb(229, 255, 218);
   text-align: left;
 }
-.bg-yellowish {
+.bg-yellowish { 
+  background-color: rgb(247, 247, 181);
+  text-align: left;
+}
+.bg-dark-blueish { 
+  background-color: rgb(32, 39, 60); 
+  text-align: left;
+}
+.bg-dark-berry { 
+  background-color: rgb(28, 44, 64);
+  text-align: left;
+}
+.bg-dark-light-red { 
+  background-color: rgb(61, 38, 58);
+  text-align: left;
+}
+.bg-dark-redish { 
+  background-color: rgb(67, 30, 42);
+  text-align: left;
+}
+.bg-dark-greenish { 
+  background-color: rgb(229, 255, 218);
+  text-align: left;
+}
+.bg-dark-yellowish { 
   background-color: rgb(247, 247, 181);
   text-align: left;
 }

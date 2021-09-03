@@ -9,7 +9,7 @@ const DashboardProfile = () => {
                     <img className="calendar-top-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
                     <div className="px-2 d-flex flex-column">
                         <strong className="text-white">Airbnb</strong>
-                        <small className="text-success">UI UX Designer</small>
+                        <small className="color-green">UI UX Designer</small>
                         <p className="text-muted">
                             <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;Los Angels, CA</small>
                         </p>

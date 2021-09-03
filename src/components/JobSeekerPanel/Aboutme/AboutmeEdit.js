@@ -5,32 +5,34 @@ const AboutmeEdit = () => {
 
     return (
         <>
-            <div className="cal-top-section px-4 pb-0">
-                <div className="card bg-transparent border-0">
-                    <div className="top-response d-flex justify-content-between align-items-center">
-                        <div className="d-flex flex-row">
-                            <img className="calendar-top-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
-                            <div className="c-details px-3 d-flex flex-column">
-                                <h4 className="mb-0 text-white">Airbnb</h4>
-                                <h6 className="my-1 text-white">Homing</h6>
-                                <span className="text-white">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    &nbsp;Los Angels,CA</span>
+            <div className="collect">
+                <div className="cal-top-section px-4 pb-0">
+                    <div className="card bg-transparent border-0">
+                        <div className="top-response d-flex justify-content-between align-items-center">
+                            <div className="d-flex flex-row">
+                                <img className="calendar-top-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
+                                <div className="c-details px-3 d-flex flex-column">
+                                    <h4 className="mb-0 text-white">Airbnb</h4>
+                                    <h6 className="my-1 text-white">Homing</h6>
+                                    <span className="text-white">
+                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                        &nbsp;Los Angels,CA</span>
+
+                                </div>
 
                             </div>
+                            <button className="btn btn-success btn-sm rounded-pill px-5">Save</button>
+
+
+
 
                         </div>
-                        <button className="btn btn-success btn-sm rounded-pill px-5">Save</button>
-
-
 
 
                     </div>
-
-
                 </div>
+                <div className="spacer">&nbsp;</div>
             </div>
-            <div className="spacer">&nbsp;</div>
             <div className="row">
                 <div className="col-sm-6 col-md-6 col-lg-6">
                     <strong>About Me</strong>

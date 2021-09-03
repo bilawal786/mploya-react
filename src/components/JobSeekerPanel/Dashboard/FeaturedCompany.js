@@ -16,7 +16,7 @@ const FeaturedCompany = () => {
                         <img class="icon-img" src="https://i.imgur.com/IRsUTtE.jpg" alt="image" />
 
                         <div className="px-3 d-flex flex-column">
-                            <small className="text-white"><strong>Graphic</strong></small>
+                            <small className="text-white wrap-150"><strong>Graphic</strong></small>
                             <small className="text-muted">Mobile</small>
                         </div>
 

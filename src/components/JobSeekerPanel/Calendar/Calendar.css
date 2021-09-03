@@ -22,12 +22,25 @@
   @media screen and (max-width: 770px) {
        
        .top-response{
-           flex-direction: column !important;
-       }
-       /* .top-response button { 
-           margin-top: 8px;  
-       } */
+           flex-direction: column !important; 
+       } 
+       .collect { 
+        height: 300px;
+      }
+      .mt-on-response * {
+          margin: 5px;
+      }
   }
+  @media screen and (max-width: 500px) {
+       
+    .top-response-mob-left{
+        flex-direction: column !important;  
+        align-items: flex-start !important;
+    }
+    /* .top-response button { 
+        margin-top: 8px;  
+    } */
+}
   .spacer{
       margin-bottom: 50px;
   }

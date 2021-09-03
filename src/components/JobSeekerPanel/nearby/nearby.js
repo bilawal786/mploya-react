@@ -1,14 +1,15 @@
 import React from 'react';
-import '../nearby/nearby.css';
+import '../nearby/nearby.css'; 
 
-const Nearby = () => {
+
+const Nearby = () => { 
 
     return (
         <>
             <div className='container-fluid'>
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-9">
-                        <div className="row">
+                        <div className="row"> 
 
                             <div className="col-sm-6 col-md-6 col-lg-3 my-3">
                                 <div className="card border-0 shadow-lg nearby-card-dark">
@@ -24,7 +25,7 @@ const Nearby = () => {
                                         </strong>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                             <div className="col-sm-6 col-md-6 col-lg-3 my-3">
                                 <div className="card border-0 shadow-lg nearby-card-dark">
                                     <div className="card-body">
