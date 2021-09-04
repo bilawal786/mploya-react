@@ -117,7 +117,7 @@ const Aboutme = () => {
                 </div>
                 <br />
                 {/* <AboutmeEdit /> */}
-            </div>
+            </div> 
         </>
     );
 }
