@@ -11,7 +11,7 @@ const Aboutme = () => {
 
     return (
         <>
-            <div className="container-fluid">
+            <div className="container-fluid ">
                 <div className="cal-top-section px-4 pb-0">
                     <div className="card bg-transparent border-0">
                         <div className="top-response d-flex justify-content-between align-items-center">
