@@ -5,6 +5,9 @@ body {
     margin: 0px !important;
     padding-left: 0px !important;
 }
+html, body {
+  height: 100%;
+}
 :root {
   --green: #067d1f !important; 
   --secondary: #c8eddc;
