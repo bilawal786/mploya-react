@@ -4,7 +4,7 @@ import '../nearby/nearby.css';
 import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
-import { NavLink } from 'react-router-dom';
+import ReactPaginate from 'react-paginate';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -16,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Nearby = () => {
     const [employee, setemployee] = useState([])
+    const [pageNumber, setPageNumber] = useState(0);
+    const usersPerPage = 12;
+    const pagesVisited = pageNumber * usersPerPage;
     const [singleemployee, setsingleemployee] = useState('');
     let token = localStorage.getItem('token');
     const classes = useStyles();
@@ -54,7 +57,26 @@ const Nearby = () => {
 
 
     }
+    const displayJobseekers = employee
+        .slice(pagesVisited, pagesVisited + usersPerPage)
+        .map((row) => {
+            return (
+                <div className="col-sm-6 col-md-6 col-lg-3 my-3" onClick={() => { singleEmployee(row.id) }}>
+                    <div className="card border-0 shadow-lg nearby-card">
+                        <div className="card-body text-center">
+                            <img className="nearby-icon-img text-center mb-2" src={row.image ? "https://mploya.com/" + row.image : "https://i.imgur.com/IRsUTtE.jpg"} /><br />
+                            <strong>{row.name}</strong><br />
+                            <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;{row.address}</small>
+                        </div>
+                    </div>
+                </div>
+            );
+        });
 
+    const pageCount = Math.ceil(employee.length / usersPerPage);
+    const changePage = ({ selected }) => {
+        setPageNumber(selected);
+    };
     return (
         <>
             <div className='container-fluid'>
@@ -63,22 +85,20 @@ const Nearby = () => {
                 </Backdrop>) : ''}
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-9">
-                        <div className="row">
-                            {employee.map((row) => (
-
-                                <div className="col-sm-6 col-md-6 col-lg-3 my-3" onClick={() => { singleEmployee(row.id) }}>
-                                    <div className="card border-0 shadow-lg nearby-card">
-                                        <div className="card-body text-center">
-                                            <img className="nearby-icon-img text-center mb-2" src={row.image ? "https://mploya.com/" + row.image : "https://i.imgur.com/IRsUTtE.jpg"} /><br />
-                                            <strong>{row.name}</strong><br />
-                                            <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;{row.address}</small>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            ))}
+                        <div className="row mb-5">
+                            {displayJobseekers}
                         </div>
+                        <ReactPaginate
+                            previousLabel={"Previous"}
+                            nextLabel={"Next"}
+                            pageCount={pageCount}
+                            onPageChange={changePage}
+                            containerClassName={"paginationBttns"}
+                            previousLinkClassName={"previousBttn"}
+                            nextLinkClassName={"nextBttn"}
+                            disabledClassName={"paginationDisabled"}
+                            activeClassName={"paginationActive"}
+                        />
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3  my-3">
 
@@ -127,30 +147,9 @@ const Nearby = () => {
 }
 export default Nearby;
 
-// let semployee = null;
-// function NBECard(props) {
-//     const singleEmployee = (id) => {
-//         const index = props.employee.findIndex(seeker => {
-//             return seeker.id === id;
-//         });
 
-//         //update the value of that index element
-//         const seeker = Object.assign({}, props.employee[index]);
-//         semployee = seeker;
-//         console.log(semployee);
 
-//     }
-//     return (
-//         <>
-//             <div className="col-sm-6 col-md-6 col-lg-3 my-3" onClick={() => { singleEmployee(props.id) }}>
-//                 <div className="card border-0 shadow-lg nearby-card">
-//                     <div className="card-body text-center">
-//                         <img className="nearby-icon-img text-center mb-2" src={props.image ? "https://mploya.com/" + props.image : "https://i.imgur.com/IRsUTtE.jpg"} /><br />
-//                         <strong>{props.name}</strong><br />
-//                         <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;{props.address}</small>
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// };
+
+
+
+
