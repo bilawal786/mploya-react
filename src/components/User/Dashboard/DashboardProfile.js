@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 import Axios from "axios";
-import Modal from 'react-modal';
 import ReactPlayer from "react-player";
-
-Modal.setAppElement('#root');
+import { makeStyles } from '@material-ui/core/styles';
+import Modal from '@material-ui/core/Modal';
+import Backdrop from '@material-ui/core/Backdrop';
+import Fade from '@material-ui/core/Fade';
+const useStyles = makeStyles((theme) => ({
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: theme.spacing(0, 1, 0, 1),
+    },
+    paper: {
+        backgroundColor: theme.palette.background.paper,
+        border: '2px solid #000',
+        boxShadow: theme.shadows[5],
+        padding: theme.spacing(1, 1, 1, 1),
+        width: "600px",
+        height: '400px'
+    },
+}));
 
 const DashboardProfile = () => {
+    const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
     let history = useHistory();
     const [employer, setEmployer] = useState('');
-    const [modelIsOpen, setmodelIsOpen] = useState(false);
     const authId = localStorage.getItem('id');
     let token = localStorage.getItem('token');
 
@@ -35,7 +53,13 @@ const DashboardProfile = () => {
         }
 
     }, [])
+    const handleOpen = () => {
+        setOpen(true);
+    };
 
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     const profileEdit = () => {
         history.push('/profile/edit', {
@@ -79,26 +103,31 @@ const DashboardProfile = () => {
 
 
             <div className="d-flex flex-row justify-content-center align-items-center">
-                <button className="btn btn-success rounded-circle" onClick={() => setmodelIsOpen(true)}><i className="fa fa-play"></i></button>
-                <Modal isOpen={modelIsOpen} onRequestClose={() => setmodelIsOpen(false)}
+                <button className="btn btn-success rounded-circle" onClick={handleOpen}><i className="fa fa-play"></i></button>
 
-                    style={{
-                        overlay: {
-                            backgroundColor: 'transparent',
-                            left: '400px',
-                            right: '400px',
-                            top: '130px',
-                            bottom: '130px'
-                        },
-
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    className={classes.modal}
+                    open={open}
+                    onClose={handleClose}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 500,
                     }}
                 >
-                    <button className="btn mb-2" style={{ float: "right", marginTop: "-15px", backgroundColor: "transparent" }} onClick={() => setmodelIsOpen(false)}><i className="fa fa-close"></i></button>
-
-                    <ReactPlayer url={employer.video ? "https://mploya.com/" + employer.video : "https://www.youtube.com/watch?v=zWh3CShX_do"} controls width="100%" height="90%" />
-
+                    <Fade in={open}>
+                        <div className={classes.paper}>
+                            <ReactPlayer url={employer.video ? "https://mploya.com/" + employer.video : "https://www.youtube.com/watch?v=zWh3CShX_do"} controls width="100%" height="90%" />
+                        </div>
+                    </Fade>
 
                 </Modal>
+
+
+
+
                 <strong className="mx-2">Watch <span className="text-success">{employer.name}</span> <br /> Introduction Video</strong>
             </div>
 
