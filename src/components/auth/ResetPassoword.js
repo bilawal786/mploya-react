@@ -22,7 +22,7 @@ const ResetPassword = (props) => {
       const [loading, setloading] = useState(false);
       // form data state
       const [data, setdata] = useState({
-            'user_id': location.state.id,
+            'email': props.location.state.email,
             new_password: "",
 
       });

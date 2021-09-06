@@ -4,7 +4,6 @@ import Calendar from "../User/Calendar/Calendar";
 import Dashboard from "../User/Dashboard/Dashboard";
 import Nearby from '../User/nearby/nearby';
 import AboutmeEdit from "../User/Aboutme/AboutmeEdit";
-import Axios from "axios";
 import { NavLink, Switch, Route, useHistory } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
 import { isValidElement } from "react";

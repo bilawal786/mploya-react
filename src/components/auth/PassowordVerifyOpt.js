@@ -76,7 +76,7 @@ const PassowordVerifyOpt = (props) => {
 
                               history.push({
                                     pathname: '/reset/password',
-                                    state: { id: res.data.id }
+                                    state: { id: res.data.id, 'email': props.location.state.email }
                               });
                         }
 

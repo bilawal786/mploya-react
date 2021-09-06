@@ -23,7 +23,6 @@ const Nearby = () => {
     let token = localStorage.getItem('token');
     const classes = useStyles();
     const [loading, setloading] = useState(false);
-    console.log(singleemployee);
     useEffect(async () => {
         setloading(true);
         try {

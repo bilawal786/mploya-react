@@ -23,6 +23,7 @@ const Dashboard = () => {
     let token = localStorage.getItem('token');
     const classes = useStyles();
     const [loading, setloading] = useState(false);
+    console.log(employee);
 
     useEffect(async () => {
         setloading(true);
@@ -83,7 +84,7 @@ const Dashboard = () => {
                             <RecentActivities />
                         </div>
                         <div className="card border-0 shadow-lg rounded-10 mb-4 p-4">
-                            <RecomendForYou />
+                            <RecomendForYou data={employee} />
                         </div>
 
 

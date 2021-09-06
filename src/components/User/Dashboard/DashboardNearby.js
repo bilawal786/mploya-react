@@ -6,6 +6,7 @@ const DashboardNearby = (props) => {
 
 
 
+
     return (
         <>
             <div className="d-flex flex-row justify-content-between align-items-center">
@@ -40,7 +41,7 @@ function NBECard(props) {
         <>
             <div className="col-6 my-3 w-100-mob" >
                 <div className="d-flex flex-row align-items-center">
-                    <img class="icon-img" src={props.image ? "https://mploya.com/" + props.image : "https://i.imgur.com/IRsUTtE.jpg"} alt="image" />
+                    <img class="icon-img" src={props.image ? "https://mploya.com/" + props.image : "https://i.imgur.com/IRsUTtE.jpg"} alt="pic" />
                     <div className="px-3 d-flex flex-column">
                         <small><strong>{props.name}</strong></small>
                         <small className="text-muted">{props.phone}</small>

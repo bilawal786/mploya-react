@@ -31,10 +31,10 @@ const SideDrawer = props => {
                               <NavLink to="/testimonials" exact className="navbar__link" activeClassName="navbar__link--active">Testimonial</NavLink>
                         </li>
                         <li className="nav-item">
-                              <NavLink exact to="#" type="button" className='btn btn-sm' style={{ backgroundColor: '#067d1f', color: 'white', marginRight: "0px" }} >Sign In</NavLink>
+                              <NavLink exact to="/signin" type="button" className='btn btn-sm' style={{ backgroundColor: '#067d1f', color: 'white', marginRight: "0px" }} >Sign In</NavLink>
                         </li>
                         <li className="nav-item">
-                              <NavLink exact to="#" type="button" className='btn btn-sm' style={{ marginLeft: '0px', backgroundColor: '#067d1f', color: 'white' }}>Sign Up</NavLink>
+                              <NavLink exact to="/register" type="button" className='btn btn-sm' style={{ marginLeft: '0px', backgroundColor: '#067d1f', color: 'white' }}>Sign Up</NavLink>
 
                         </li>
                   </ul>
