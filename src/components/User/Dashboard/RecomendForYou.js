@@ -23,7 +23,7 @@ const RecomendForYou = (props) => {
                             <small><strong>{row.name}</strong></small>
                             <small className="text-muted">{row.occupation}</small>
                             <small>
-                                <p className="text-muted m-0"><i class="fa fa-map-marker fa-sm star-color-green" aria-hidden="true"></i>{row.address}</p>
+                                <p className="text-muted m-0"><i class="fa fa-map-marker fa-sm star-color-green" aria-hidden="true"></i>&nbsp;{row.address}</p>
                             </small>
                         </div>
 

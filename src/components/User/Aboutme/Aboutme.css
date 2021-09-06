@@ -32,5 +32,16 @@
 .bg-yellowish {
   background-color: rgb(247, 247, 181);
   text-align: left;
-}
-
+} 
+.social-link-input {
+  position: relative;
+}  
+.social-link-input .social-link-icon{ 
+  background: none;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-left: 0; 
+  padding: .5rem 1rem; 
+} 
