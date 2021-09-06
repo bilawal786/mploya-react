@@ -52,8 +52,24 @@ const AboutmeEdit = () => {
                         <br />
                         <div className="col-sm-6 col-md-6 col-lg-6">
                             <div className="aboutme-round-sm p-3 my-3">
+                                <strong>Profile Status</strong>
+                                <div className="d-flex flex-row mt-2">
+                                    <div className="form-check form-switch">
+                                        <input className="form-check-input" name="user_type" value="visible" type="radio" id="flexSwitchCheckDefault" />
+                                        <label className="form-check-label" for="flexSwitchCheckDefault">Visible</label>
+                                    </div>
+                                    <div className="form-check form-switch" style={{ marginLeft: '30px' }}>
+                                        <input className="form-check-input" name="user_type" value="Not Visisble" type="radio" id="flexSwitchCheckDefault" />
+                                        <label className="form-check-label" for="flexSwitchCheckDefault">Not Visible</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div className="aboutme-round-sm p-3 my-3">
                                 <strong>Name</strong>
                                 <input type="text" className="form-control border-0 my-2" defaultValue='Airbnb' />
+
 
                             </div>
                             <div className="aboutme-round-sm p-3 my-3">
@@ -65,11 +81,12 @@ const AboutmeEdit = () => {
                                 <strong>Location</strong>
                                 <input type="text" className="form-control border-0 my-2 " defaultValue='Los Angels, CA' />
 
-                            </div><div className="aboutme-round-sm p-3 my-3">
+                            </div>
+                            <div className="aboutme-round-sm p-3 my-3">
                                 <strong>About Me</strong>
-                                <textarea 
-                                    className="form-control border-0 my-2" 
-                                    id="AboutMeText" 
+                                <textarea
+                                    className="form-control border-0 my-2"
+                                    id="AboutMeText"
                                     rows="3"
                                     defaultValue='Los Angels, CA'
                                 >
