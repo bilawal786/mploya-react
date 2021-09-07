@@ -26,7 +26,30 @@ const AboutmeEdit = () => {
             reader.readAsDataURL(e.target.files[0]);
         }
     };
+    const [languages, setLanguages] = useState(['English', 'Chinese']);
+    const [addNew, setAddNew] = useState(null);
+    function addLanguageHandler() {
+        setLanguages(previous => [...previous, ""]) 
+    }
+    function changeLanguageHandler(e, index) {
+        languages[index] = e.target.value; 
+        console.log(languages);
+    }
+    function removeLanguageHandler(index,language) { 
+        //console.log(index,language);
+        setLanguages( 
+            prev => {
+                return prev.filter(item => item !== language);
+            })
+        // languages.splice(index, 1); 
+        // const l=languages;
+        // l.splice(index,1);
+        // setLanguages(
+        //     prev=> {return l;}
+        // )
 
+        //console.log(l);
+    }
 
     return (
         <>
@@ -71,6 +94,39 @@ const AboutmeEdit = () => {
                                 <input type="text" className="form-control border-0 my-2" defaultValue='Airbnb' />
 
 
+                            </div>
+
+                            <div className="aboutme-round-sm p-3 my-3">
+                                <div className="d-flex flex-row justify-content-between align-items-center">
+                    
+                                    <strong>Your Languages</strong> 
+                                    <a
+                                        type="button"
+                                        className="btn btn-success btn-sm rounded-circle" onClick={() => addLanguageHandler()}>
+                                        <i class="fa fa-plus" aria-hidden="true"></i>
+
+                                    </a>
+                                </div>
+                                {
+                                    languages.map((language, index) => {
+                                        return (
+                                            <div key={index}>
+                                                <input onChange={(e) => changeLanguageHandler(e, index)}
+                                                    defaultValue={language}
+                                                    required
+                                                />
+                                                <a
+                                                    type="button"
+                                                    className="btn btn-success btn-sm rounded-circle" onClick={() => removeLanguageHandler(index,language)}>
+                                                    <i class="fa fa-remove"  aria-hidden="true"></i>
+
+                                                </a>
+
+                                            </div>
+                                        )
+
+                                    }
+                                    )}
                             </div>
                             <div className="aboutme-round-sm p-3 my-3">
                                 <strong>Company name</strong>

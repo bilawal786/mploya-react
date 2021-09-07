@@ -501,7 +501,9 @@ a.section-link:hover {text-decoration:underline;}
     }
   .applybtn {
     margin-top: 0px !important;
-    float:none;
+    margin-bottom: 8px;
+    float:none; 
+    text-align: center !important;
     width: 66px;
   }
   .header-content-div {
@@ -558,3 +560,4 @@ a.section-link:hover {text-decoration:underline;}
   color: black;
   background-color: #dddddd;
 }
+

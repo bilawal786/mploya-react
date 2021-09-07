@@ -8,7 +8,7 @@ const Subscribe = () => {
  
                         <div className="row justify-content-center row">
 
-                              <div className="col-sm-12 mt-5 text-center mb-5 rounded" style={{ backgroundColor: '#067d1f' }}>
+                              <div className="col-sm-10 mt-5 text-center mb-5 rounded" style={{ backgroundColor: '#067d1f' }}>
                                     <h1 style={{ color: 'white', marginTop: '80px' }}>Subscribe to our newsletter</h1>
                                     <p style={{ color: 'white' }}>Get notification about tips, new clothes and exclusive promo news just for you.</p>
 

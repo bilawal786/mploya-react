@@ -22,7 +22,7 @@
   @media screen and (max-width: 770px) {
        
        .top-response{
-           flex-direction: column !important;
+           flex-direction: column !important; ;
        }
        /* .top-response button { 
            margin-top: 8px;  

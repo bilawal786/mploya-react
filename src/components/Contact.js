@@ -5,21 +5,25 @@ const Contact = () => {
 
       return (
             <>
-                  <div className="container">
-                        <div className='row mb-5 justify-content-center' style={{ marginTop: '150px' }}>
-                              <div className="col-sm-8">
-                                    <div className="row">
-                                          <div className="col-sm-8">
+
+                  <div className="container pb-4">
+                        <div className='row my-5 justify-content-center'>
+                              <div className="row mx-5 justify-content-around">
+                                    <div className="top-response d-flex flex-row justify-content-around align-items-center">
+                                          <div>
                                                 <h1>We wouold love to talk <br />with <span style={{ color: '#067d1f' }}>you!</span></h1>
                                                 <p>You want to ask something to us, just by clicking the <br /> button next to it and contact us directly.</p>
+
                                           </div>
-                                          <div className="col-sm-4" >
-                                                <button className="btn contactbtn" style={{ backgroundColor: '#067d1f', color: 'white' }}>Contact Us</button>
-                                          </div>
-                                    </div>
+
+
+                                          <button className="btn btn-success"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Contact Us</button>
+
+                                    </div> 
                               </div>
                         </div>
                   </div>
+
             </>
       );
 }
