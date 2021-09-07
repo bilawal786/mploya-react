@@ -73,7 +73,7 @@ function AFYCard(props) {
                         </div>
                         <strong>
                             <small className="small-txt text-muted"><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;{props.location}</small>
-                            <small className="small-txt text-muted">{props.range}</small>
+                            <small className="small-txt text-muted shrink-0">{props.range}</small>
                         </strong>
                     </div>
                 </div>
