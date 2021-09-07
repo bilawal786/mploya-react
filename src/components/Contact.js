@@ -17,9 +17,9 @@ const Contact = () => {
                                           </div>
 
 
-                                          <button className="btn btn-success"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Contact Us</button>
+                                          <NavLink exact to="/contact" className="btn btn-success"><i class="fa fa-phone" aria-hidden="true"></i>&nbsp;Contact Us</NavLink>
 
-                                    </div> 
+                                    </div>
                               </div>
                         </div>
                   </div>
