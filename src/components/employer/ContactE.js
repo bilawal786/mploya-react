@@ -1,19 +1,24 @@
-import React from 'react'; 
-
+import React from 'react';
+import Contact from '../Contact';
+import Footer from '../Footer';
+import Navebar from '../Navebar';
+import Subscribe from '../Subscribe';
+import img from "../../map.jpg";
 
 const ContactE = () => {
 
       return (
             <>
-                  <div className="row">
+                  <Navebar />
+                  <div className="row mt-4" >
                         <div className="col-lg-12 col-md-12 col-sm-12 col-12 bg-light">
                               <h4 className="text-center p-4"><b>Contact</b></h4>
                         </div>
                   </div>
-                  <div className="container">
+                  <div className="container" style={{ marginTop: "100px" }}>
                         <div className="row justify-content-center">
-                              <div className="col-lg-6 col-md-8 mt-2 d-flex align-items-center justify-content-center" style={{ backgroundColor: '#dbdddc' }}>
-                                    Map
+                              <div className="col-lg-6 col-md-8 mt-2 d-flex align-items-center justify-content-center">
+                                    <img src={img} alt="map" width="790px" height="315px" />
                               </div>
                               <div className="col-lg-3 col-md-6">
 
@@ -52,7 +57,11 @@ const ContactE = () => {
                               </div>
 
                         </div>
-                  </div> 
+                  </div>
+
+                  <Subscribe />
+                  <Contact />
+                  <Footer />
             </>
       );
 }

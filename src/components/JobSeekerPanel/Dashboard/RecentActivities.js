@@ -8,7 +8,7 @@ const RecentActivities = () => {
                 <strong className="my-1 text-white">Recent Activities</strong>
                 <div className="my-1">
                     <button type="button" class="btn btn-outline-success btn-sm rounded-pill px-3 mx-3">Newest</button>
-                    <button className="border-0 bg-transparent text-white"><i class="fa fa-ellipsis-v"></i></button>
+                    {/* <button className="border-0 bg-transparent text-white"><i class="fa fa-ellipsis-v"></i></button> */}
                 </div>
             </div>
             <br />

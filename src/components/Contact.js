@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from "react-router-dom";
 
 const Contact = () => {
 
@@ -14,7 +14,7 @@ const Contact = () => {
                                                 <p>You want to ask something to us, just by clicking the <br /> button next to it and contact us directly.</p>
                                           </div>
                                           <div className="col-sm-4" >
-                                                <button className="btn contactbtn" style={{ backgroundColor: '#067d1f', color: 'white' }}>Contact Us</button>
+                                                <NavLink exact to="/contact" className="btn contactbtn" style={{ backgroundColor: '#067d1f', color: 'white' }}>Contact Us</NavLink>
                                           </div>
                                     </div>
                               </div>

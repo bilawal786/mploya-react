@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import '../Aboutme/Aboutme.css';
 import { useHistory } from "react-router-dom";
-
+import ReactPlayer from 'react-player'
 
 const Aboutme = () => {
     let history = useHistory();
+
     const [employer, setEmployer] = useState('');
+    console.log(employer);
     const authId = localStorage.getItem('id');
     let token = localStorage.getItem('token');
 
@@ -78,8 +80,30 @@ const Aboutme = () => {
                 <div className="spacer">&nbsp;</div>
                 <div className="row">
                     <div className="col-sm-6 col-md-6 col-lg-6">
-                        <strong>About Me</strong>
-                        <p align="justify" className="my-3 text-muted">{employer.about}</p>
+                        <div className="aboutme-round-sm p-3 my-3">
+                            <strong>Profile Status</strong>
+                            <div className="d-flex flex-row mt-2">
+                                <div className="form-check form-switch">
+                                    <input className="form-check-input" name="user_type" value="visible" type="radio" id="flexSwitchCheckDefault" checked />
+                                    <label className="form-check-label" for="flexSwitchCheckDefault">Visible</label>
+                                </div>
+                                <div className="form-check form-switch" style={{ marginLeft: '30px' }}>
+                                    <input className="form-check-input" name="user_type" value="Not Visisble" type="radio" id="flexSwitchCheckDefault" />
+                                    <label className="form-check-label" for="flexSwitchCheckDefault">Not Visible</label>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div className="aboutme-round-sm p-3 my-3">
+                            <div className="d-flex flex-row align-items-center justify-content-between">
+                                <strong>About Me</strong>
+                                <small><strong>Email: </strong>{employer.email}</small>
+                            </div>
+
+                            <p align="justify" className="my-3 text-muted">{employer.about}</p>
+                        </div>
+
 
                         <strong>What we do</strong>
                         <div className="aboutme-round-sm p-3 my-3">
@@ -143,6 +167,20 @@ const Aboutme = () => {
                                     </button>
                                 </div>
                             </div>
+                        </div>
+                        <div className="aboutme-round-sm my-3 p-0">
+                            <div className="d-flex flex-row justify-content-between p-3">
+                                <strong>Introduction Video</strong>
+                                <div>
+                                    <label for="videoUpload" className="btn btn-success btn-sm rounded-pill px-3">
+                                        <i className="fa fa-cloud-upload"></i>&ensp; Upload
+                                    </label>
+                                    <input id="videoUpload" type="file" className='d-none' />
+
+                                </div>
+                            </div>
+                            <ReactPlayer url={employer.video ? "https://mploya.com/" + employer.video : "https://www.youtube.com/watch?v=7sDY4m8KNLc&ab_channel=Codevolution"} controls width='100%' />
+                            <br />
                         </div>
 
                     </div>
