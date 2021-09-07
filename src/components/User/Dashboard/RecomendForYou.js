@@ -36,11 +36,7 @@ const RecomendForYou = (props) => {
                                 <small className="rounded text-muted px-1 bg-yellowish mx-2">{row1}</small>
                             ))}
                         </div>
-
-
-
-
-                        <a className="section-link mt-2" href="default.asp" target="_blank">View Profile</a>
+                        <a className="section-link mt-2" href="#" >View Profile</a>
 
                     </div>
                 </div>

@@ -20,6 +20,7 @@ import PassowordVerifyOpt from './components/auth/PassowordVerifyOpt';
 import Main from './components/User/Main';
 import JobSeekerMain from './components/JobSeekerPanel/Main';
 import ProtectedRoute from './components/ProtectedRoute';
+import ContactE from './components/employer/ContactE';
 
 const App = () => {
 
@@ -30,6 +31,7 @@ const App = () => {
         <Route exact path="/jobs" component={Job} />
         <Route exact path="/explore" component={Explore} />
         <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={ContactE} />
         <Route exact path="/testimonials" component={Testimonial} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/register" component={Register} />
