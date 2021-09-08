@@ -1,10 +1,12 @@
 import React from 'react';
+import ApplicationTable from './AppicationTable';
 
 const Application = () => {
 
     return (
         <>
             <div className="container-fluid">
+                <ApplicationTable />
                 <div className="cal-top-section px-4 pb-0">
                     <div className="card bg-transparent border-0">
                         <div className="top-response d-flex justify-content-between align-items-center">

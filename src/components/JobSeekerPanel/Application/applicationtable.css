@@ -1,0 +1,21 @@
+INPUT[type=checkbox]:focus {
+      outline: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+INPUT[type=checkbox] {
+      background-color: #212130;
+      border-radius: 2px;
+      border: 1px solid white;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      width: 14px;
+      height: 14px;
+      cursor: pointer;
+      position: relative;
+      top: 5px;
+}
+
+INPUT[type=checkbox]:checked {
+      background-color: #067d1f;
+}

@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Compay = () => {
-      const [jobs, seteJobs] = useState([])
+      const [companies, seteCompanies] = useState([])
       const [pageNumber, setPageNumber] = useState(0);
-      const usersPerPage = 12;
-      const pagesVisited = pageNumber * usersPerPage;
-      const [job, setSingleJob] = useState('');
+      const companiesPerPage = 12;
+      const pagesVisited = pageNumber * companiesPerPage;
+      const [company, setSingleCompany] = useState('');
       let token = localStorage.getItem('token');
       const classes = useStyles();
       const [loading, setloading] = useState(false);
@@ -35,8 +35,8 @@ const Compay = () => {
                         },
                   });
                   setloading(false);
-                  seteJobs(res.data);
-                  setSingleJob(res.data[0]);
+                  seteCompanies(res.data);
+                  setSingleCompany(res.data[0]);
 
             } catch (error) {
                   setloading(false);
@@ -46,18 +46,18 @@ const Compay = () => {
       }, [])
 
       const singleJob = (id) => {
-            const index = jobs.findIndex(seeker => {
+            const index = companies.findIndex(seeker => {
                   return seeker.id === id;
             });
 
             //update the value of that index element
-            const seeker = Object.assign({}, jobs[index]);
-            setSingleJob(seeker);
+            const seeker = Object.assign({}, companies[index]);
+            setSingleCompany(seeker);
 
 
       }
-      const displayJobseekers = jobs
-            .slice(pagesVisited, pagesVisited + usersPerPage)
+      const displayCompanies = companies
+            .slice(pagesVisited, pagesVisited + companiesPerPage)
             .map((row) => {
                   return (
                         <div className="col-sm-6 col-md-6 col-lg-3 mb-3" onClick={() => { singleJob(row.id) }}>
@@ -76,7 +76,7 @@ const Compay = () => {
                   );
             });
 
-      const pageCount = Math.ceil(jobs.length / usersPerPage);
+      const pageCount = Math.ceil(companies.length / companiesPerPage);
       const changePage = ({ selected }) => {
             setPageNumber(selected);
       };
@@ -89,7 +89,7 @@ const Compay = () => {
                         <div className="row">
                               <div className="col-sm-12 col-md-12 col-lg-9">
                                     <div className="row mb-5">
-                                          {displayJobseekers}
+                                          {displayCompanies}
                                     </div>
                                     <ReactPaginate
                                           previousLabel={"Previous"}
@@ -109,14 +109,14 @@ const Compay = () => {
                                           <div className="blue-area"></div>
                                           <div className="card-body">
                                                 <div className="text-center">
-                                                      <img className="nearby-icon-img-bg neg-margin-img text-center" src={job ? "https://mploya.com/" + job.image : "https://i.imgur.com/IRsUTtE.jpg"} />
-                                                      <h4 className="mt-2 mb-0">{job ? job.occupation : 'UI Designer'}</h4>
-                                                      <small className="primary-span">{job ? job.name : 'Bubbles Studio'}</small>
+                                                      <img className="nearby-icon-img-bg neg-margin-img text-center" src={company ? "https://mploya.com/" + company.image : "https://i.imgur.com/IRsUTtE.jpg"} />
+                                                      <h4 className="mt-2 mb-0">{company ? company.occupation : 'UI Designer'}</h4>
+                                                      <small className="primary-span">{company ? company.name : 'Bubbles Studio'}</small>
 
                                                 </div>
 
                                                 <small>
-                                                      <p align="justify" className="text-muted">{job ? job.about : 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying '}</p>
+                                                      <p align="justify" className="text-muted">{company ? company.about : 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying '}</p>
                                                 </small>
 
                                                 <small>
@@ -129,7 +129,7 @@ const Compay = () => {
                                                       <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
                                                             Lorem ipsum.</p>
                                                       <p className="text-muted mt-2 mb-2"><i class="fa fa-map-marker star-color-green" aria-hidden="true"></i>&nbsp;&nbsp;
-                                                            {job ? job.address : 'Machester England'}
+                                                            {company ? company.address : 'Machester England'}
                                                       </p>
 
                                                 </small>
