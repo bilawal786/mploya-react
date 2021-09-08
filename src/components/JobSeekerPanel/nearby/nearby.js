@@ -119,21 +119,18 @@ const Nearby = () => {
                                     <p align="justify" className="text-muted">{job ? job.requirements : 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'}</p>
                                 </small>
 
-                                <small>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                <small className="text-white">
+                                    <p className="my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="text-muted my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
+                                    <p className="my-0"><i className="fa fa-star star-color-green"></i>&nbsp;
                                         Lorem ipsum.</p>
-                                    <p className="mt-2 mb-2"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
+                                    <p className="mt-2 mb-2 text-center"><i class="fa fa-map-marker star-color-green" aria-hidden="true"></i>&nbsp;&nbsp;
                                         {job ? job.address : 'Machester England'}
-                                    </p>
-                                    {/* <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
-                                        Machester England
-                                    </p> */}
+                                    </p> 
                                 </small>
                                 <div className="text-center">
                                     <button className="btn btn-success btn-sm rounded-pill">Apply Job</button>
