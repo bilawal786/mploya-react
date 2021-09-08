@@ -92,7 +92,7 @@ const Compay = () => {
                                           {displayCompanies}
                                     </div>
                                     <ReactPaginate
-                                          previousLabel={"Previous"}
+                                          previousLabel={"Prev"}
                                           nextLabel={"Next"}
                                           pageCount={pageCount}
                                           onPageChange={changePage}

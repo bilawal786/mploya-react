@@ -53,46 +53,217 @@ const ApplicationTable = () => {
       };
       return (
             <>
-                  <table class="table rounded table-borderless " style={{ background: "#212130", color: "white" }}>
+                  <div className="top-response d-flex flex-row justify-content-between align-items-center">
+                        <div className="chart-wrapper">
+                              <ul className="nav nav-pills p-0 mb-3 rounded-pill" id="pills-tab" role="tablist">
+                                    <li className="nav-item" role="presentation">
+                                          <button className="nav-link active rounded-pill py-1" id="pills-all-status-tab" data-bs-toggle="pill" data-bs-target="#pills-all-status" type="button" role="tab" aria-controls="pills-all-status" aria-selected="true">All Status</button>
+                                    </li>
+                                    <li className="nav-item" role="presentation">
+                                          <button className="nav-link rounded-pill py-1" id="pills-pending-tab" data-bs-toggle="pill" data-bs-target="#pills-pending" type="button" role="tab" aria-controls="pills-weekly-expense" aria-selected="false">Pending</button>
+                                    </li>
+                                    <li className="nav-item" role="presentation">
+                                          <button className="nav-link rounded-pill py-1" id="pills-on-hold-tab" data-bs-toggle="pill" data-bs-target="#pills-on-hold" type="button" role="tab" aria-controls="pills-on-hold" aria-selected="false">On-Hold</button>
+                                    </li>
+                                    <li className="nav-item" role="presentation">
+                                          <button className="nav-link rounded-pill py-1" id="pills-candidate-tab" data-bs-toggle="pill" data-bs-target="#pills-candidate" type="button" role="tab" aria-controls="pills-on-hold" aria-selected="false">On-Hold</button>
+                                    </li>
+                              </ul>
+                        </div>
 
-                        <thead>
-                              <tr>
-                                    <th>
-                                          <input type="checkbox" className="myclass" />
-                                          <hr />
-                                    </th>
-                                    <th>
-                                          Order Id
-                                          <hr />
-                                    </th>
-                                    <th>
-                                          Data Applied
-                                          <hr />
-                                    </th>
-                                    <th className="text-center">Company<hr /></th>
-                                    <th className="text-center">Type<hr /></th>
-                                    <th className="text-center">Position<hr /></th>
-                                    <th>Contact<hr /></th>
-                                    <th>Status<hr /></th>
-                              </tr>
 
-                        </thead>
-                        <tbody>
-                              {displayApplications}
+                  </div>
+                  <div className="tab-content" id="pills-tabContent">
+                        <div className="tab-pane fade show active" id="pills-all-status" role="tabpanel" aria-labelledby="pills-all-status-tab">
+                              <table class="table rounded-10 table-borderless" style={{ background: "#212130", color: "white" }}>
 
-                        </tbody>
-                  </table>
-                  <ReactPaginate
-                        previousLabel={"Previous"}
-                        nextLabel={"Next"}
-                        pageCount={pageCount}
-                        onPageChange={changePage}
-                        containerClassName={"paginationBttns1"}
-                        previousLinkClassName={"previousBttn1"}
-                        nextLinkClassName={"nextBttn1"}
-                        disabledClassName={"paginationDisabled1"}
-                        activeClassName={"paginationActive1"}
-                  />
+
+                                    <thead>
+                                          <tr>
+                                                <th>
+                                                      <input type="checkbox" className="myclass" />
+                                                      <hr />
+                                                </th>
+                                                <th>
+                                                      Order Id
+                                                      <hr />
+                                                </th>
+                                                <th>
+                                                      Data Applied
+                                                      <hr />
+                                                </th>
+                                                <th className="text-center">Company<hr /></th>
+                                                <th className="text-center">Type<hr /></th>
+                                                <th className="text-center">Position<hr /></th>
+                                                <th>Contact<hr /></th>
+                                                <th>Status<hr /></th>
+                                          </tr>
+
+                                    </thead>
+                                    <tbody>
+                                          {displayApplications}
+
+                                    </tbody>
+                              </table>
+                              <ReactPaginate
+                                    previousLabel={"Prev"}
+                                    nextLabel={"Next"}
+                                    pageCount={pageCount}
+                                    onPageChange={changePage}
+                                    containerClassName={"paginationBttns1"}
+                                    previousLinkClassName={"previousBttn1"}
+                                    nextLinkClassName={"nextBttn1"}
+                                    disabledClassName={"paginationDisabled1"}
+                                    activeClassName={"paginationActive1"}
+                              />
+
+                        </div>
+                        <div className="tab-pane fade" id="pills-pending" role="tabpanel" aria-labelledby="pills-pending-tab">
+                              <div className="tab-pane fade show active" id="pills-all-status" role="tabpanel" aria-labelledby="pills-all-status-tab">
+                                    <table class="table rounded-10 table-borderless" style={{ background: "#212130", color: "white" }}>
+
+
+                                          <thead>
+                                                <tr>
+                                                      <th>
+                                                            <input type="checkbox" className="myclass" />
+                                                            <hr />
+                                                      </th>
+                                                      <th>
+                                                            Order Id
+                                                            <hr />
+                                                      </th>
+                                                      <th>
+                                                            Data Applied
+                                                            <hr />
+                                                      </th>
+                                                      <th className="text-center">Company<hr /></th>
+                                                      <th className="text-center">Type<hr /></th>
+                                                      <th className="text-center">Position<hr /></th>
+                                                      <th>Contact<hr /></th>
+                                                      <th>Status<hr /></th>
+                                                </tr>
+
+                                          </thead>
+                                          <tbody>
+                                                {displayApplications}
+
+                                          </tbody>
+                                    </table>
+                                    <ReactPaginate
+                                          previousLabel={"Prev"}
+                                          nextLabel={"Next"}
+                                          pageCount={pageCount}
+                                          onPageChange={changePage}
+                                          containerClassName={"paginationBttns1"}
+                                          previousLinkClassName={"previousBttn1"}
+                                          nextLinkClassName={"nextBttn1"}
+                                          disabledClassName={"paginationDisabled1"}
+                                          activeClassName={"paginationActive1"}
+                                    />
+
+                              </div>
+                        </div>
+                        <div className="tab-pane fade" id="pills-on-hold" role="tabpanel" aria-labelledby="pills-on-hold-tab">
+                              <div className="tab-pane fade show active" id="pills-all-status" role="tabpanel" aria-labelledby="pills-all-status-tab">
+                                    <table class="table rounded-10 table-borderless" style={{ background: "#212130", color: "white" }}>
+
+
+                                          <thead>
+                                                <tr>
+                                                      <th>
+                                                            <input type="checkbox" className="myclass" />
+                                                            <hr />
+                                                      </th>
+                                                      <th>
+                                                            Order Id
+                                                            <hr />
+                                                      </th>
+                                                      <th>
+                                                            Data Applied
+                                                            <hr />
+                                                      </th>
+                                                      <th className="text-center">Company<hr /></th>
+                                                      <th className="text-center">Type<hr /></th>
+                                                      <th className="text-center">Position<hr /></th>
+                                                      <th>Contact<hr /></th>
+                                                      <th>Status<hr /></th>
+                                                </tr>
+
+                                          </thead>
+                                          <tbody>
+                                                {displayApplications}
+
+                                          </tbody>
+                                    </table>
+                                    <ReactPaginate
+                                          previousLabel={"Prev"}
+                                          nextLabel={"Next"}
+                                          pageCount={pageCount}
+                                          onPageChange={changePage}
+                                          containerClassName={"paginationBttns1"}
+                                          previousLinkClassName={"previousBttn1"}
+                                          nextLinkClassName={"nextBttn1"}
+                                          disabledClassName={"paginationDisabled1"}
+                                          activeClassName={"paginationActive1"}
+                                    />
+
+                              </div>
+                        </div>
+                        <div className="tab-pane fade" id="pills-candidate" role="tabpanel" aria-labelledby="pills-candidate-tab">
+                              <div className="tab-pane fade show active" id="pills-all-status" role="tabpanel" aria-labelledby="pills-all-status-tab">
+                                    <table class="table rounded-10 table-borderless" style={{ background: "#212130", color: "white" }}>
+
+
+                                          <thead>
+                                                <tr>
+                                                      <th>
+                                                            <input type="checkbox" className="myclass" />
+                                                            <hr />
+                                                      </th>
+                                                      <th>
+                                                            Order Id
+                                                            <hr />
+                                                      </th>
+                                                      <th>
+                                                            Data Applied
+                                                            <hr />
+                                                      </th>
+                                                      <th className="text-center">Company<hr /></th>
+                                                      <th className="text-center">Type<hr /></th>
+                                                      <th className="text-center">Position<hr /></th>
+                                                      <th>Contact<hr /></th>
+                                                      <th>Status<hr /></th>
+                                                </tr>
+
+                                          </thead>
+                                          <tbody>
+                                                {displayApplications}
+
+                                          </tbody>
+                                    </table>
+                                    <ReactPaginate
+                                          previousLabel={"Prev"}
+                                          nextLabel={"Next"}
+                                          pageCount={pageCount}
+                                          onPageChange={changePage}
+                                          containerClassName={"paginationBttns1"}
+                                          previousLinkClassName={"previousBttn1"}
+                                          nextLinkClassName={"nextBttn1"}
+                                          disabledClassName={"paginationDisabled1"}
+                                          activeClassName={"paginationActive1"}
+                                    />
+
+                              </div>
+                        </div>
+                  </div>
+
+
+
+
+
+
+
             </>
       );
 }

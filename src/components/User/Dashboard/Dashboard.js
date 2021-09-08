@@ -10,6 +10,7 @@ import RecentActivities from "./RecentActivities";
 import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import DashboardGraph from "./DashboardGraph";
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -55,7 +56,7 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-sm-12 col-md-6 col-lg-6">
                         <div className="card border-0 shadow-lg rounded-10 mb-4 p-4">
-                            <h4>Graph</h4>
+                            <DashboardGraph />
 
                         </div>
                         <div className="card border-0 shadow-lg rounded-10 mb-4 p-4">

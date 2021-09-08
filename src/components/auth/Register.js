@@ -196,7 +196,7 @@ const Register = () => {
                         <div className="container">
                               <div className="row justify-content-center">
 
-                                    <div className="col-md-4 bg-light shadow-lg p-3 mb-5 bg-white rounded smain" style={{ marginTop: "34px" }}>
+                                    <div className="col-sm-6 col-md-6 col-lg-4 bg-light shadow-lg p-3 mb-5 bg-white rounded smain" style={{ marginTop: "34px" }}>
                                           {loading ? (<Backdrop className={classes.backdrop} open>
                                                 <CircularProgress color="inherit" />
                                           </Backdrop>) : ''}

@@ -88,20 +88,24 @@ const Nearby = () => {
                 </Backdrop>) : ''}
                 <div className="row">
                     <div className="col-sm-12 col-md-12 col-lg-9">
-                        <div className="row mb-5">
+                        <div className="row mb-3">
                             {displayJobseekers}
                         </div>
-                        <ReactPaginate
-                            previousLabel={"Previous"}
-                            nextLabel={"Next"}
-                            pageCount={pageCount}
-                            onPageChange={changePage}
-                            containerClassName={"paginationBttns1"}
-                            previousLinkClassName={"previousBttn1"}
-                            nextLinkClassName={"nextBttn1"}
-                            disabledClassName={"paginationDisabled1"}
-                            activeClassName={"paginationActive1"}
-                        />
+                        <div>
+                            <ReactPaginate
+                                previousLabel={"Prev"}
+                                nextLabel={"Next"}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"paginationBttns1"}
+                                previousLinkClassName={"previousBttn1"}
+                                nextLinkClassName={"nextBttn1"}
+                                disabledClassName={"paginationDisabled1"}
+                                activeClassName={"paginationActive1"}
+                            />
+
+                        </div>
+
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3 mb-3">
 
@@ -130,7 +134,7 @@ const Nearby = () => {
                                         Lorem ipsum.</p>
                                     <p className="mt-2 mb-2 text-center"><i class="fa fa-map-marker star-color-green" aria-hidden="true"></i>&nbsp;&nbsp;
                                         {job ? job.address : 'Machester England'}
-                                    </p> 
+                                    </p>
                                 </small>
                                 <div className="text-center">
                                     <button className="btn btn-success btn-sm rounded-pill">Apply Job</button>
