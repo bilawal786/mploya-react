@@ -84,18 +84,21 @@ const Jobsection = () => {
                                           {displayJobs}
                                     </div>
 
-
+                                    <div className="overflow-auto">
                                     <ReactPaginate
                                           previousLabel={"Previous"}
                                           nextLabel={"Next"}
                                           pageCount={pageCount}
                                           onPageChange={changePage}
-                                          containerClassName={"paginationBttns"}
-                                          previousLinkClassName={"previousBttn"}
-                                          nextLinkClassName={"nextBttn"}
-                                          disabledClassName={"paginationDisabled"}
-                                          activeClassName={"paginationActive"}
+                                          containerClassName={"paginationBttnsLight"}
+                                          previousLinkClassName={"previousBttnLight"}
+                                          nextLinkClassName={"nextBttnLight"}
+                                          disabledClassName={"paginationDisabledLight"}
+                                          activeClassName={"paginationActiveLight"}
                                     />
+
+                                    </div>
+                                    
                               </div>
                         </div>
 

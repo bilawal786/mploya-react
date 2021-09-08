@@ -195,7 +195,7 @@ input[type=number] {
 
   .smain {
     margin-top: 40px !important; 
-  }
+  } 
 }
 .my-container {
   padding-top: 100px;
@@ -533,6 +533,7 @@ a.section-link:hover {text-decoration:underline;}
   list-style: none;
   display: flex; 
   margin-left: auto; 
+  margin-top: 8px;
 }
 .paginationBttnsLight a {  
   border-radius: 5vh;
@@ -581,7 +582,8 @@ a.section-link:hover {text-decoration:underline;}
   height: 40px;
   list-style: none;
   display: flex; 
-  margin-left: auto; 
+  margin-left: auto;  
+  margin-top: 8px;
 }
 .paginationBttns1 a {
   border-radius: 5vh;

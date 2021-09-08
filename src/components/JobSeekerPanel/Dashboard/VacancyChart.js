@@ -16,7 +16,7 @@ const VacancyChart = () => {
                         </li>
                         <li className="nav-item" role="presentation">
                             <button className="nav-link rounded-pill py-1" id="pills-monthly-vacancy-tab" data-bs-toggle="pill" data-bs-target="#pills-monthly-vacancy" type="button" role="tab" aria-controls="pills-monthly-vacancy" aria-selected="false">Monthly</button>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
