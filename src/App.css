@@ -532,8 +532,8 @@ a.section-link:hover {text-decoration:underline;}
   height: 40px;
   list-style: none;
   display: flex; 
-  margin-left: auto; 
-  margin-top: 8px;
+  margin-left: auto;   
+  margin-top: 2vh;
 }
 .paginationBttnsLight a {  
   border-radius: 5vh;
@@ -545,7 +545,7 @@ a.section-link:hover {text-decoration:underline;}
   color: #000000 !important;
   cursor: pointer;
   background-color: var(--secondary);  
-  text-decoration: none;
+  text-decoration: none; ;
 }
 .previousBttnLight,.nextBttnLight {
   border-radius: 5vh;
@@ -554,7 +554,7 @@ a.section-link:hover {text-decoration:underline;}
   padding-top: 1vh;
   padding-bottom: 1vh;
   margin: 8px; 
-  border: 3px solid var(--green);  
+  border: 2px solid var(--green);  
   color: #000000 !important;
   cursor: pointer;
   background-color: var(--secondary);  
@@ -583,7 +583,7 @@ a.section-link:hover {text-decoration:underline;}
   list-style: none;
   display: flex; 
   margin-left: auto;  
-  margin-top: 8px;
+  margin-top: 2vh;
 }
 .paginationBttns1 a {
   border-radius: 5vh;

@@ -87,6 +87,7 @@ const Nearby = () => {
                         <div className="row mb-5">
                             {displayJobseekers}
                         </div>
+                        <div className="overflow-auto">
                         <ReactPaginate
                             previousLabel={"Prev"}
                             nextLabel={"Next"}
@@ -98,6 +99,9 @@ const Nearby = () => {
                             disabledClassName={"paginationDisabledLight"}
                             activeClassName={"paginationActiveLight"}
                         />
+
+                        </div>
+                        
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3  my-3">
 

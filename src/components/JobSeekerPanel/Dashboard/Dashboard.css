@@ -7,22 +7,44 @@
     background-color: rgb(231, 228, 228) !important; 
     color: #000000;   
 }
+.chart-wrapper-dark .nav{
+    background-color: var(--dark-mode);
+    color: #FFFFFF;   
+}
 @media (max-width: 640px){
     .chart-wrapper .nav{
+        display:flex  
+    }
+    .chart-wrapper-dark .nav{
         display:flex  
     }
    .w-100-mob {
        width: 100%;
    }
+   .chart-wrapper-dark .nav .nav-item .nav-link{
+       padding-left: 1vh;
+       padding-right: 1vh;
+    }
 }
 .chart-wrapper .nav-pills{
+    height: 33px;
+}
+.chart-wrapper-dark .nav-pills{
     height: 33px;
 }
 .chart-wrapper .nav .nav-item .nav-link{
     color: #000000;
     height: 33px;  
 }
+.chart-wrapper-dark .nav .nav-item .nav-link{
+    color: #FFFFFF;
+    height: 33px;  
+}
 .chart-wrapper .nav .nav-item .nav-link.active{
+    color: #FFFFFF;
+    background-color: var(--green); 
+} 
+.chart-wrapper-dark .nav .nav-item .nav-link.active{
     color: #FFFFFF;
     background-color: var(--green); 
 } 

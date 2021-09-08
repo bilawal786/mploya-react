@@ -86,7 +86,7 @@ const Jobsection = () => {
 
                                     <div className="overflow-auto">
                                     <ReactPaginate
-                                          previousLabel={"Previous"}
+                                          previousLabel={"Prev"}
                                           nextLabel={"Next"}
                                           pageCount={pageCount}
                                           onPageChange={changePage}
