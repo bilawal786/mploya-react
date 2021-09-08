@@ -88,11 +88,16 @@ const AboutmeEdit = () => {
 
                                 </div>
 
+                                <button type="submit" className="btn btn-success btn-sm rounded-pill px-5 my-3">Save</button>
                             </div>
                             <div className="aboutme-round-sm p-3 my-3">
                                 <strong>Name</strong>
                                 <input type="text" className="form-control border-0 my-2" defaultValue='Airbnb' />
 
+                            </div>
+                            <div className="aboutme-round-sm p-3 my-3">
+                                <strong>Company name</strong>
+                                <input type="text" className="form-control border-0 my-2 " defaultValue='Homing' />
 
                             </div>
 
@@ -244,7 +249,6 @@ const AboutmeEdit = () => {
                             </div>
 
                         </div>
-
 
 
 

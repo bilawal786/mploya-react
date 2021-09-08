@@ -10,7 +10,7 @@ import Application from "./Application/Application";
 import { isValidElement } from "react";
 import Compay from "./companies/Compay";
 import Statistic from "./statistics/Statistic";
-import Message from "./Message/Message";
+import Message from "./message/Message";
 
 const NavAndSide = () => {
 	let history = useHistory();

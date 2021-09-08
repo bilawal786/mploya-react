@@ -22,7 +22,7 @@
        width: 100%;
    }
    .chart-wrapper-dark .nav .nav-item .nav-link{
-       padding-left: 1vh;
+       padding-left: 0.8vh;
        padding-right: 1vh;
     }
 }
@@ -67,4 +67,4 @@
 .wrap-150{
     max-width:150px;
     word-wrap:break-word;
-}  
+}   
