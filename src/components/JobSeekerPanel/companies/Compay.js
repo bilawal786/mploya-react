@@ -63,7 +63,7 @@ const Compay = () => {
                         <div className="col-sm-6 col-md-6 col-lg-3 my-3" onClick={() => { singleJob(row.id) }}>
                               <div className="card border-0 shadow-lg nearby-card-dark">
                                     <div className="card-body text-center">
-                                          <img className="nearby-icon-img text-center mb-2" src={row.employer_image ? "https://mploya.com/" + row.employer_image : "https://i.imgur.com/IRsUTtE.jpg"} /><br />
+                                          <img className="nearby-icon-img text-center mb-2" src={row.image ? "https://mploya.com/" + row.image : "https://i.imgur.com/IRsUTtE.jpg"} /><br />
                                           <strong className="text-white">{row.name}</strong><br />
                                           <small className="primary-span">{row.company_name}</small>
                                           <strong>
@@ -131,10 +131,10 @@ const Compay = () => {
                                                       <p className="text-muted mt-2 mb-2"><i class="fa fa-map-marker star-color-green" aria-hidden="true"></i>&nbsp;&nbsp;
                                                             {job ? job.address : 'Machester England'}
                                                       </p>
-                                                      
+
                                                 </small>
                                                 <div className="text-center">
-                                                      <button className="btn btn-success btn-sm rounded-pill mx-2">Send Response</button> 
+                                                      <button className="btn btn-success btn-sm rounded-pill mx-2">Send Response</button>
                                                       <button className="btn btn-secondary btn-sm rounded-pill px-3"><i class="fa fa-envelope"></i></button>
 
                                                 </div>
