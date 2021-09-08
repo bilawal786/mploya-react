@@ -526,40 +526,55 @@ a.section-link:hover {text-decoration:underline;}
 .btn-success {
   background-color: var(--green) !important;
 } 
-
-.paginationBttns {
-  width: 80%;
+ 
+.paginationBttnsLight {  
+  width: fit-content;
   height: 40px;
   list-style: none;
-  display: flex;
-  justify-content: center;
+  display: flex; 
+  margin-left: auto; 
 }
-
-.paginationBttns a {
-  padding: 10px;
-  margin: 8px;
-  border-radius: 10px;
-  border: 1px solid black;
-  color: black;
+.paginationBttnsLight a {  
+  border-radius: 5vh;
+  padding-left: 2vh;
+  padding-right: 2vh; 
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin: 3px;   
+  color: #000000 !important;
   cursor: pointer;
+  background-color: var(--secondary);  
   text-decoration: none;
 }
-
-.paginationBttns a:hover {
-  color: white;
-  background-color: #067d1f;
+.previousBttnLight,.nextBttnLight {
+  border-radius: 5vh;
+  padding-left: 2vh;
+  padding-right: 2vh; 
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  margin: 8px; 
+  border: 3px solid var(--green);  
+  color: #000000 !important;
+  cursor: pointer;
+  background-color: var(--secondary);  
+  text-decoration: none;
 }
-
-.paginationActive a {
-  color: white;
-  background-color: var(--green);
+.paginationBttnsLight a:hover {
+  color: var(--green);
+  opacity: 0.8;
 }
-
-.paginationDisabled a {
-  color: black;
-  background-color: #dddddd;
+.paginationDisabledLight {
+  opacity: 0.5;
 }
-
+.paginationDisabledLight :hover {
+  cursor: inherit;
+}
+.paginationActiveLight a{  
+  color: #FFFFFF !important;
+  cursor: pointer;
+  background-color: var(--green);  
+  text-decoration: none;
+} 
 
 .paginationBttns1 {  
   width: fit-content;

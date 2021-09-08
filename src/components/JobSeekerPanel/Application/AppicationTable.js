@@ -66,7 +66,7 @@ const ApplicationTable = () => {
                                           <button className="nav-link rounded-pill py-1" id="pills-on-hold-tab" data-bs-toggle="pill" data-bs-target="#pills-on-hold" type="button" role="tab" aria-controls="pills-on-hold" aria-selected="false">On-Hold</button>
                                     </li>
                                     <li className="nav-item" role="presentation">
-                                          <button className="nav-link rounded-pill py-1" id="pills-candidate-tab" data-bs-toggle="pill" data-bs-target="#pills-candidate" type="button" role="tab" aria-controls="pills-on-hold" aria-selected="false">On-Hold</button>
+                                          <button className="nav-link rounded-pill py-1" id="pills-candidate-tab" data-bs-toggle="pill" data-bs-target="#pills-candidate" type="button" role="tab" aria-controls="pills-on-hold" aria-selected="false">Candidate</button>
                                     </li>
                               </ul>
                         </div>
