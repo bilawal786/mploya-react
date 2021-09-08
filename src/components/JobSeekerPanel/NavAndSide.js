@@ -9,6 +9,7 @@ import NotificationGroup from "./NotificationGroup";
 import Application from "./Application/Application";
 import { isValidElement } from "react";
 import Compay from "./companies/Compay";
+import Statistic from "./statistics/Statistic";
 
 const NavAndSide = () => {
 	let history = useHistory();
@@ -316,6 +317,7 @@ const NavAndSide = () => {
 							<Route exact path="/jobseeker/companies" component={Compay} />
 							<Route exact path="/jobseeker/application" component={Application} />
 							<Route exact path="/jobseeker/profile" component={Aboutme} />
+							<Route exact path="/jobseeker/statistics" component={Statistic} />
 							<Route exact path="/jobseeker/calender" component={Calendar} />
 						</Switch>
 
