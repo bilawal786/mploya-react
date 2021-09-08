@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 const Nearby = () => {
     const [employee, setemployee] = useState([])
     const [pageNumber, setPageNumber] = useState(0);
-    const usersPerPage = 12;
+    const usersPerPage = 2;
     const pagesVisited = pageNumber * usersPerPage;
     const [singleemployee, setsingleemployee] = useState('');
     let token = localStorage.getItem('token');
@@ -88,15 +88,15 @@ const Nearby = () => {
                             {displayJobseekers}
                         </div>
                         <ReactPaginate
-                            previousLabel={"Previous"}
+                            previousLabel={"Prev"}
                             nextLabel={"Next"}
                             pageCount={pageCount}
                             onPageChange={changePage}
-                            containerClassName={"paginationBttns"}
-                            previousLinkClassName={"previousBttn"}
-                            nextLinkClassName={"nextBttn"}
-                            disabledClassName={"paginationDisabled"}
-                            activeClassName={"paginationActive"}
+                            containerClassName={"paginationBttnsLight"}
+                            previousLinkClassName={"previousBttnLight"}
+                            nextLinkClassName={"nextBttnLight"}
+                            disabledClassName={"paginationDisabledLight"}
+                            activeClassName={"paginationActiveLight"}
                         />
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3  my-3">
