@@ -8,11 +8,13 @@ const Testimonial = () => {
 
       return (
             <>
-                  <Navebar />
-                    <ClientSays />
-                    <Subscribe />
-                    <Contact />
-                  <Footer />
+                  <div className="container-fluid">
+                        <Navebar />
+                        <ClientSays />
+                        <Subscribe />
+                        <Contact />
+                        <Footer />
+                  </div>
             </>
       );
 }

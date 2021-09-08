@@ -4,17 +4,8 @@ import Footer from "../Footer";
 import "./aboute.css";
 import Contact from "../../components/Contact";
 
-// import MUIDataTable from "mui-datatables";
 const About = () => {
-      // const columns = ["Order ID", "Date Applied", "Company", "Type", "Position", "Contact", "Status"];
-      // const data = [
-      //       ["Joe James", "Test Corp", "Yonkers", "NY", "Test", "Test", "Test", "Test", "Test"],
 
-
-      // ];
-      // const options = {
-      //       filterType: 'checkbox',
-      // };
       return (
             <>
                   <div className="container-fluid">
@@ -22,7 +13,7 @@ const About = () => {
                         <div class="bg-white py-5 mt-5">
                               <div class="container py-5">
                                     <div class="row  align-items-center mb-5">
-                                          <div class="col-lg-6 shadow order-2 order-lg-1 p-5"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+                                          <div class="col-lg-6 shadow order-2 order-lg-1 p-5"><i class="fa fa-bar-chart fa-2x mb-3 text-success"></i>
                                                 <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
                                                 <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn 
                                            px-5 rounded-pill shadow" style={{ backgroundColor: "#067d1f", color: "white" }}>Learn More</a>
@@ -31,7 +22,7 @@ const About = () => {
                                     </div>
                                     <div class="row align-items-center">
                                           <div class="col-lg-5  px-5 mx-auto"><img src="https://res.cloudinary.com/mhmd/image/upload/v1556834136/img-2_vdgqgn.jpg" alt="" class="img-fluid mb-4 mb-lg-0" /></div>
-                                          <div class="col-lg-6 shadow p-5"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+                                          <div class="col-lg-6 shadow p-5"><i class="fa fa-leaf fa-2x mb-3 text-success"></i>
                                                 <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
                                                 <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn 
                                            px-5 rounded-pill shadow" style={{ backgroundColor: "#067d1f", color: "white" }}>Learn More</a>
@@ -112,14 +103,6 @@ const About = () => {
                         <Contact />
                         <Footer />
                   </div>
-                  {/* <MUIDataTable className="mt-5"
-                              title={"Employee List"}
-                              data={data}
-                              columns={columns}
-                              options={options}
-                        /> */}
-
-
 
             </>
       );

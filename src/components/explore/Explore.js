@@ -7,9 +7,15 @@ const Explore = () => {
 
       return (
             <>
-                  <Navebar />
-                  <h1 className="text-center mt-5">Explore Componenet</h1>
-                  <Footer />
+                  <div className="container-fluid">
+                        <Navebar />
+                        {/* dummy data */}
+                        <div style={{ height: "140px" }}>
+                              <h1 className="text-center" style={{ marginTop: "200px" }}>Explore Componenet</h1>
+                        </div>
+
+                        <Footer />
+                  </div>
             </>
       );
 }

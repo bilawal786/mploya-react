@@ -53,8 +53,9 @@ export default class PreviousNextMethods extends Component {
         };
         return (
             <>
+
                 <div className="container my-container">
-                
+
                     <div className='sub-section'>
                         <h4>What Our Client
                             <span style={{ color: "#067d1f" }}> Say's</span>
@@ -83,7 +84,7 @@ export default class PreviousNextMethods extends Component {
                     <br /><br />
                     {/* card-carousal */}
                     <div>
-                         
+
                         <Slider ref={c => (this.slider = c)} {...settings}>
                             <div>
                                 <h3>&nbsp;</h3>
@@ -92,8 +93,8 @@ export default class PreviousNextMethods extends Component {
                                         <img className="card-top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
                                         <br /><br />
                                         <p className="card-text text-muted">"1Every one working in the office is very
-                                        knowledgeable
-                                    about all types of dental work and options for your individual needs"</p>
+                                            knowledgeable
+                                            about all types of dental work and options for your individual needs"</p>
                                     </div>
                                     <div className="card-footer">
                                         <p className="card-text">Emilia Tadashi</p>
@@ -101,7 +102,7 @@ export default class PreviousNextMethods extends Component {
                                             className="d-flex flex-row justify-content-between align-items-center review-footer">
                                             <p className="card-text text-muted">Highschool Girl</p>
                                             <p className="text-muted">5.0&nbsp;
-                                        <i className="fa fa-star star-color-green"></i>
+                                                <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
@@ -118,8 +119,8 @@ export default class PreviousNextMethods extends Component {
                                         <img className="card-top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
                                         <br /><br />
                                         <p className="card-text text-muted">"2Every one working in the office is very
-                                        knowledgeable
-                                    about all types of dental work and options for your individual needs"</p>
+                                            knowledgeable
+                                            about all types of dental work and options for your individual needs"</p>
                                     </div>
                                     <div className="card-footer">
                                         <p className="card-text">Emilia Tadashi</p>
@@ -127,7 +128,7 @@ export default class PreviousNextMethods extends Component {
                                             className="d-flex flex-row justify-content-between align-items-center review-footer">
                                             <p className="card-text text-muted">Highschool Girl</p>
                                             <p className="text-muted">5.0&nbsp;
-                                        <i className="fa fa-star star-color-green"></i>
+                                                <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
@@ -144,8 +145,8 @@ export default class PreviousNextMethods extends Component {
                                         <img className="card-top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
                                         <br /><br />
                                         <p className="card-text text-muted">"3Every one working in the office is very
-                                        knowledgeable
-                                    about all types of dental work and options for your individual needs"</p>
+                                            knowledgeable
+                                            about all types of dental work and options for your individual needs"</p>
                                     </div>
                                     <div className="card-footer">
                                         <p className="card-text">Emilia Tadashi</p>
@@ -153,7 +154,7 @@ export default class PreviousNextMethods extends Component {
                                             className="d-flex flex-row justify-content-between align-items-center review-footer">
                                             <p className="card-text text-muted">Highschool Girl</p>
                                             <p className="text-muted">5.0&nbsp;
-                                        <i className="fa fa-star star-color-green"></i>
+                                                <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
@@ -170,8 +171,8 @@ export default class PreviousNextMethods extends Component {
                                         <img className="card-top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
                                         <br /><br />
                                         <p className="card-text text-muted">"4Every one working in the office is very
-                                        knowledgeable
-                                    about all types of dental work and options for your individual needs"</p>
+                                            knowledgeable
+                                            about all types of dental work and options for your individual needs"</p>
                                     </div>
                                     <div className="card-footer">
                                         <p className="card-text">Emilia Tadashi</p>
@@ -179,7 +180,7 @@ export default class PreviousNextMethods extends Component {
                                             className="d-flex flex-row justify-content-between align-items-center review-footer">
                                             <p className="card-text text-muted">Highschool Girl</p>
                                             <p className="text-muted">5.0&nbsp;
-                                        <i className="fa fa-star star-color-green"></i>
+                                                <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
@@ -196,8 +197,8 @@ export default class PreviousNextMethods extends Component {
                                         <img className="card-top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
                                         <br /><br />
                                         <p className="card-text text-muted">"5Every one working in the office is very
-                                        knowledgeable
-                                    about all types of dental work and options for your individual needs"</p>
+                                            knowledgeable
+                                            about all types of dental work and options for your individual needs"</p>
                                     </div>
                                     <div className="card-footer">
                                         <p className="card-text">Emilia Tadashi</p>
@@ -205,7 +206,7 @@ export default class PreviousNextMethods extends Component {
                                             className="d-flex flex-row justify-content-between align-items-center review-footer">
                                             <p className="card-text text-muted">Highschool Girl</p>
                                             <p className="text-muted">5.0&nbsp;
-                                        <i className="fa fa-star star-color-green"></i>
+                                                <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
@@ -222,8 +223,8 @@ export default class PreviousNextMethods extends Component {
                                         <img className="card-top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
                                         <br /><br />
                                         <p className="card-text text-muted">"6Every one working in the office is very
-                                        knowledgeable
-                                    about all types of dental work and options for your individual needs"</p>
+                                            knowledgeable
+                                            about all types of dental work and options for your individual needs"</p>
                                     </div>
                                     <div className="card-footer">
                                         <p className="card-text">Emilia Tadashi</p>
@@ -231,7 +232,7 @@ export default class PreviousNextMethods extends Component {
                                             className="d-flex flex-row justify-content-between align-items-center review-footer">
                                             <p className="card-text text-muted">Highschool Girl</p>
                                             <p className="text-muted">5.0&nbsp;
-                                        <i className="fa fa-star star-color-green"></i>
+                                                <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
                                                 <i className="fa fa-star star-color-green"></i>
@@ -241,8 +242,8 @@ export default class PreviousNextMethods extends Component {
                                     </div>
                                 </div>
                             </div>
-                             
-                             
+
+
                         </Slider>
 
                     </div>
