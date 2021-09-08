@@ -13,7 +13,7 @@ const Subscribe = () => {
                                     <p style={{ color: 'white' }}>Get notification about tips, new clothes and exclusive promo news just for you.</p>
 
                                     <div className="row justify-content-center">
-                                          <div className='col-sm-4 col-md-6 col-lg-4 mb-5' style={{ marginTop: '40px' }}>
+                                          <div className='col-sm-4 col-md-6 col-lg-4 mb-5' style={{ marginTop: '30px' }}>
 
 
 

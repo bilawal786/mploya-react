@@ -60,7 +60,7 @@ const Compay = () => {
             .slice(pagesVisited, pagesVisited + usersPerPage)
             .map((row) => {
                   return (
-                        <div className="col-sm-6 col-md-6 col-lg-3 my-3" onClick={() => { singleJob(row.id) }}>
+                        <div className="col-sm-6 col-md-6 col-lg-3 mb-3" onClick={() => { singleJob(row.id) }}>
                               <div className="card border-0 shadow-lg nearby-card-dark">
                                     <div className="card-body text-center">
                                           <img className="nearby-icon-img text-center mb-2" src={row.image ? "https://mploya.com/" + row.image : "https://i.imgur.com/IRsUTtE.jpg"} /><br />
@@ -103,7 +103,7 @@ const Compay = () => {
                                           activeClassName={"paginationActive1"}
                                     />
                               </div>
-                              <div className="col-sm-6 col-md-6 col-lg-3  my-3">
+                              <div className="col-sm-6 col-md-6 col-lg-3  mb-3">
 
                                     <div className="card shadow-lg nearby-card-bg bg-dark-mode">
                                           <div className="blue-area"></div>
