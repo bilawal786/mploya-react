@@ -5,7 +5,7 @@ const Header = () => {
             <>
 
                   <div className="row">
-                        <div className="col-sm-8">
+                        <div className="col-sm-12 col-md-12 col-lg-8">
                               
                               <div className='row rowbg'>
                                      
@@ -46,7 +46,7 @@ const Header = () => {
                               </div>
 
                         </div>
-                        <div className="col-sm-4 header-img-2">
+                        <div className="col-sm-12 col-md-12 col-lg-4 header-img-2">
 
                         </div>
                   </div>

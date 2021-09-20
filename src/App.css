@@ -58,7 +58,7 @@ input[type=number] {
 .header-img-2{
   background-image: url("./headerimg2.jpg");
   background-repeat: no-repeat;
-  background-position: right 82% bottom 50% ;
+  background-position: right 82% bottom 50% ; ;
   margin-top: -80px; 
 } 
 
@@ -386,6 +386,9 @@ a.section-link:hover {text-decoration:underline;}
   .review-footer{
     flex-direction: column !important;
     align-items: flex-start !important;
+  }
+  .header-img-2{
+    display: none;
   }
   
 } 

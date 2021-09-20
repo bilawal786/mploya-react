@@ -15,7 +15,7 @@ const Toolbar = props => (
                         </a>
                   </div>
                   <div className="spacer" />
-                  <div className="toolbar_navigation-items mt-4" style={{ marginRight: "330px" }}>
+                  <div className="toolbar_navigation-items mt-4" >
                         <ul>
                               <li className="nav-item">
                                     <NavLink to="/" exact className="nav-link  navbar__link" activeClassName="navbar__link--active">Home</NavLink>
@@ -36,7 +36,7 @@ const Toolbar = props => (
 
 
                   </div>
-
+                  <div className="spacer" />
                   <NavLink exact to="/signin" type="button" className='btn sbtn mt-4' style={{ backgroundColor: '#067d1f', color: 'white', marginRight: "0px" }} >Sign In</NavLink>
                   <NavLink exact to="/register" type="button" className='btn fbtn mt-4' style={{ marginLeft: '10px', backgroundColor: '#067d1f', color: 'white', marginRight: "150px" }}>Sign Up</NavLink>
 
