@@ -24,7 +24,7 @@ const Search = () => {
                                     </form> */}
                                     <form action="" className="bg-white rounded">
                                           <div className="top-response d-flex flex-row justify-content-between align-items-center">
-                                                
+
                                                 <div className="col-sm-3 p-2 sub-input-wrapper">
                                                       <input type="text" className="form-control border-0" placeholder="&#xf084; &nbsp; Keyword" />
                                                 </div>

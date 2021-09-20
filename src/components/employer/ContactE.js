@@ -10,11 +10,7 @@ const ContactE = () => {
       return (
             <>
                   <Navebar />
-                  <div className="row mt-4" >
-                        <div className="col-lg-12 col-md-12 col-sm-12 col-12 bg-light">
-                              <h4 className="text-center p-4"><b>Contact</b></h4>
-                        </div>
-                  </div>
+
                   <div className="container" style={{ marginTop: "100px" }}>
                         <div className="row justify-content-center">
                               <div className="col-lg-6 col-md-8 mt-2 d-flex align-items-center justify-content-center">

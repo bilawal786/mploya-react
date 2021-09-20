@@ -1,6 +1,11 @@
 import React from "react";
 import Footer from "../Footer";
 import Navebar from "../Navebar";
+import Subscribe from "../Subscribe";
+import Contact from "../Contact";
+import Map from "../jobpage/Map";
+import Job from "../jobpage/Jobsection";
+import Search from "../jobpage/Search";
 
 
 const Explore = () => {
@@ -9,11 +14,11 @@ const Explore = () => {
             <>
                   <div className="container-fluid">
                         <Navebar />
-                        {/* dummy data */}
-                        <div style={{ height: "140px" }}>
-                              <h1 className="text-center" style={{ marginTop: "200px" }}>Explore Componenet</h1>
-                        </div>
-
+                        <Map />
+                        <Search />
+                        <Job />
+                        <Subscribe />
+                        <Contact />
                         <Footer />
                   </div>
             </>
