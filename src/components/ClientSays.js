@@ -85,43 +85,64 @@ export default class ClientSays extends Component {
                     <br /><br />
                     {/* card-carousal */}
                     <div>
-
-                        <Slider ref={c => (this.slider = c)} {...settings}>
+                        <Slider ref={c => (this.slider = c)} {...settings}> 
                             <ClientSayCard
                                 imgSource='https://i.imgur.com/IRsUTtE.jpg'
                                 detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
                                 name='Emilia Tadashi'
                                 rank='Highschool Girl'
-                                rating='5'
+                                rating={4}
                             />
                             <ClientSayCard
                                 imgSource='https://i.imgur.com/IRsUTtE.jpg'
                                 detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
                                 name='Emilia Tadashi'
                                 rank='Highschool Girl'
-                                rating='5'
+                                rating={5}
                             />
                             <ClientSayCard
                                 imgSource='https://i.imgur.com/IRsUTtE.jpg'
                                 detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
                                 name='Emilia Tadashi'
                                 rank='Highschool Girl'
-                                rating='5'
+                                rating={2}
                             />
                             <ClientSayCard
                                 imgSource='https://i.imgur.com/IRsUTtE.jpg'
                                 detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
                                 name='Emilia Tadashi'
                                 rank='Highschool Girl'
-                                rating='5'
+                                rating={3}
                             />
                             <ClientSayCard
                                 imgSource='https://i.imgur.com/IRsUTtE.jpg'
                                 detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
                                 name='Emilia Tadashi'
                                 rank='Highschool Girl'
-                                rating='5'
+                                rating={2}
                             />
+                            <ClientSayCard
+                                imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                                detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
+                                name='Emilia Tadashi'
+                                rank='Highschool Girl'
+                                rating={3}
+                            />
+                            <ClientSayCard
+                                imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                                detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
+                                name='Emilia Tadashi'
+                                rank='Highschool Girl'
+                                rating={2}
+                            />
+                            <ClientSayCard
+                                imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                                detail='1Every one working in the office is very knowledgeable about all types of dental work and options for your individual needs'
+                                name='Emilia Tadashi'
+                                rank='Highschool Girl'
+                                rating={3}
+                            />
+                                                                                
                         </Slider>
 
                     </div>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React, { useState } from "react";
+import StarRatings from 'react-star-ratings';
 const ClientSayCard = (props) => {
     return (
         <div>
@@ -15,12 +15,15 @@ const ClientSayCard = (props) => {
                     <div
                         className="d-flex flex-row justify-content-between align-items-center review-footer">
                         <p className="card-text text-muted">{props.rank}</p>
-                        <p className="text-muted">{props.rating}&nbsp;
-                            <i className="fa fa-star star-color-green"></i>
-                            <i className="fa fa-star star-color-green"></i>
-                            <i className="fa fa-star star-color-green"></i>
-                            <i className="fa fa-star star-color-green"></i>
-                            <i className="fa fa-star star-color-green"></i>
+                        <p className="text-muted">
+                            <StarRatings
+                                rating={props.rating}
+                                starRatedColor="#067d1f"
+                                numberOfStars={5}
+                                starDimension="15px"
+                                starSpacing="1px"
+                                name='rating'
+                            />
                         </p>
                     </div>
                 </div>
