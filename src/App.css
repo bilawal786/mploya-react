@@ -283,7 +283,7 @@ a.section-link:hover {text-decoration:underline;}
 }
 .c-details span {
   font-weight: 300;
-  font-size: 13px
+  font-size: 13px; 
 }
 
 .icon-img {
@@ -625,3 +625,21 @@ a.section-link:hover {text-decoration:underline;}
   background-color: var(--green);  
   text-decoration: none;
 } 
+.bookmark-btn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  line-height: 40px;
+  box-shadow: 2px 2px 4px 2px rgb(187, 186, 186); 
+  text-align: center;  
+}  
+.bookmark-btn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.bookmark-btn i{
+  font-size: 14px;
+}
+.bookmark-btn-active{
+  color: var(--green);
+}

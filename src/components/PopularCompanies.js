@@ -1,6 +1,21 @@
 import React from 'react';
 const PopularCompanies = () => {
 
+    const PopularCompanyCard = (props) => {
+        return (
+            <div className="col-sm-4 col-md-4 col-lg-4 my-3">
+                <div className="card text-center shadow-lg pop-companies-card ">
+                    <div className="card-body">
+                        <img className="top-rounded-img" src={props.imgSource}></img>
+                        <h4 className="card-title">{props.title}</h4>
+                        <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;{props.location}</p>
+                        <a className="section-link" href="default.asp"><b>{props.openJobs}+ Jobs Open</b></a>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <>
             <div className='container my-container'>
@@ -21,65 +36,42 @@ const PopularCompanies = () => {
                 </div>
                 <br></br>
                 <div className='row'>
-
-                    <div className="col-sm-4 col-md-4 col-lg-4 my-3">
-                        <div className="card text-center shadow-lg pop-companies-card ">
-                            <div className="card-body">
-                                <img className="top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
-                                <h4 className="card-title">Google</h4>
-                                <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco</p>
-                                <a className="section-link" href="default.asp"><b>20+ Jobs Open</b></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-sm-4 col-md-4 col-lg-4 my-3">
-                        <div className="card text-center shadow-lg pop-companies-card ">
-                            <div className="card-body">
-                                <img className="top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
-                                <h4 className="card-title">Google</h4>
-                                <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco</p>
-                                <a className="section-link" href="default.asp"><b>20+ Jobs Open</b></a>
-                            </div>
-                        </div>
-                    </div><div className="col-sm-4 col-md-4 col-lg-4 my-3">
-                        <div className="card text-center shadow-lg pop-companies-card ">
-                            <div className="card-body">
-                                <img className="top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
-                                <h4 className="card-title">Google</h4>
-                                <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco</p>
-                                <a className="section-link" href="default.asp"><b>20+ Jobs Open</b></a>
-                            </div>
-                        </div>
-                    </div><div className="col-sm-4 col-md-4 col-lg-4 my-3">
-                        <div className="card text-center shadow-lg pop-companies-card ">
-                            <div className="card-body">
-                                <img className="top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
-                                <h4 className="card-title">Google</h4>
-                                <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco</p>
-                                <a className="section-link" href="default.asp"><b>20+ Jobs Open</b></a>
-                            </div>
-                        </div>
-                    </div><div className="col-sm-4 col-md-4 col-lg-4 my-3">
-                        <div className="card text-center shadow-lg pop-companies-card ">
-                            <div className="card-body">
-                                <img className="top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
-                                <h4 className="card-title">Google</h4>
-                                <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco</p>
-                                <a className="section-link" href="default.asp"><b>20+ Jobs Open</b></a>
-                            </div>
-                        </div>
-                    </div><div className="col-sm-4 col-md-4 col-lg-4 my-3">
-                        <div className="card text-center shadow-lg pop-companies-card ">
-                            <div className="card-body">
-                                <img className="top-rounded-img" src="https://i.imgur.com/IRsUTtE.jpg"></img>
-                                <h4 className="card-title">Google</h4>
-                                <p className="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> San Francisco</p>
-                                <a className="section-link" href="default.asp"><b>20+ Jobs Open</b></a>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    <PopularCompanyCard 
+                        imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                        title='Google'
+                        location='San Francisco'
+                        openJobs='20'
+                    />
+                    <PopularCompanyCard 
+                        imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                        title='Google'
+                        location='San Francisco'
+                        openJobs='20'
+                    />
+                    <PopularCompanyCard 
+                        imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                        title='Google'
+                        location='San Francisco'
+                        openJobs='20'
+                    />
+                    <PopularCompanyCard 
+                        imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                        title='Google'
+                        location='San Francisco'
+                        openJobs='20'
+                    />
+                    <PopularCompanyCard 
+                        imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                        title='Google'
+                        location='San Francisco'
+                        openJobs='20'
+                    />
+                    <PopularCompanyCard 
+                        imgSource='https://i.imgur.com/IRsUTtE.jpg'
+                        title='Google'
+                        location='San Francisco'
+                        openJobs='20'
+                    />
                 </div>
 
 
