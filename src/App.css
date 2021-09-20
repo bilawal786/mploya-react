@@ -274,6 +274,7 @@ a.section-link:hover {text-decoration:underline;}
   cursor: pointer;
   min-height: 200px;
 } 
+ 
 @media screen and (max-width: 500px) {
    .card-styled{
      margin: auto;
@@ -348,13 +349,7 @@ a.section-link:hover {text-decoration:underline;}
   top: -1px;
 } 
  
-
-.btn-circle-sm {
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  font-size: 0.9rem;
-}
+ 
 .pop-companies-card {
   border-radius: 10px !important;  
   min-height: 200px; 
@@ -413,6 +408,7 @@ a.section-link:hover {text-decoration:underline;}
   line-height: 1.42857;
   color: var(--green); 
   box-shadow: 0 0 3px 3px rgb(195, 219, 197);
+  flex-shrink: 0;
 }
 .button-contact-wrapper{
   float: right;
