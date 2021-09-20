@@ -629,8 +629,8 @@ a.section-link:hover {text-decoration:underline;}
   width: 40px;
   height: 40px;
   border-radius: 50%; 
-  line-height: 40px;
-  box-shadow: 2px 2px 4px 2px rgb(187, 186, 186); 
+  line-height: 38px;
+  box-shadow: 1px 2px 6px 4px rgb(189, 188, 188); 
   text-align: center;  
 }  
 .bookmark-btn:hover{
@@ -638,7 +638,7 @@ a.section-link:hover {text-decoration:underline;}
   transform: scale(1.05);
 }
 .bookmark-btn i{
-  font-size: 14px;
+  font-size: 12px;
 }
 .bookmark-btn-active{
   color: var(--green);
