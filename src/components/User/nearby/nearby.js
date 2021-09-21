@@ -5,6 +5,8 @@ import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPaginate from 'react-paginate';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -17,12 +19,14 @@ const useStyles = makeStyles((theme) => ({
 const Nearby = () => {
     const [employee, setemployee] = useState([])
     const [pageNumber, setPageNumber] = useState(0);
-    const usersPerPage = 2;
+    const usersPerPage = 12;
     const pagesVisited = pageNumber * usersPerPage;
     const [singleemployee, setsingleemployee] = useState('');
     let token = localStorage.getItem('token');
     const classes = useStyles();
     const [loading, setloading] = useState(false);
+    console.log(singleemployee);
+
     useEffect(async () => {
         setloading(true);
         try {
@@ -76,9 +80,45 @@ const Nearby = () => {
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
+
+    const handleBookmark = async (id) => {
+
+        console.log(id);
+        try {
+            const res = await Axios({
+                method: 'post',
+                url: 'https://mploya.com/api/jobseeker/bookmark',
+                data: { jobseeker_id: id },
+                headers: {
+                    authorization: 'Bearer ' + token,
+                    Accept: 'application/json',
+                },
+            });
+
+            console.log(res.data.message);
+            if (res.status === 200) {
+                const notify = () => {
+                    toast.success(res.data.message, {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
+                }
+                notify();
+            }
+
+
+
+        } catch (error) {
+
+            console.log(error.response.data);
+        }
+    }
+
+
+
     return (
         <>
             <div className='container-fluid'>
+                <ToastContainer />
                 {loading ? (<Backdrop className={classes.backdrop} open>
                     <CircularProgress color="inherit" />
                 </Backdrop>) : ''}
@@ -88,20 +128,20 @@ const Nearby = () => {
                             {displayJobseekers}
                         </div>
                         <div className="overflow-auto">
-                        <ReactPaginate
-                            previousLabel={"Prev"}
-                            nextLabel={"Next"}
-                            pageCount={pageCount}
-                            onPageChange={changePage}
-                            containerClassName={"paginationBttnsLight"}
-                            previousLinkClassName={"previousBttnLight"}
-                            nextLinkClassName={"nextBttnLight"}
-                            disabledClassName={"paginationDisabledLight"}
-                            activeClassName={"paginationActiveLight"}
-                        />
+                            <ReactPaginate
+                                previousLabel={"Prev"}
+                                nextLabel={"Next"}
+                                pageCount={pageCount}
+                                onPageChange={changePage}
+                                containerClassName={"paginationBttnsLight"}
+                                previousLinkClassName={"previousBttnLight"}
+                                nextLinkClassName={"nextBttnLight"}
+                                disabledClassName={"paginationDisabledLight"}
+                                activeClassName={"paginationActiveLight"}
+                            />
 
                         </div>
-                        
+
                     </div>
                     <div className="col-sm-6 col-md-6 col-lg-3  my-3">
 
@@ -110,8 +150,8 @@ const Nearby = () => {
                             <div className="card-body">
                                 <div className="text-center">
                                     <img className="nearby-icon-img-bg neg-margin-img text-center" src={singleemployee ? "https://mploya.com/" + singleemployee.image : "https://i.imgur.com/IRsUTtE.jpg"} />
-                                    <h4 className="mt-2 mb-0">{singleemployee ? singleemployee.occupation : 'UI Designer'}</h4>
-                                    <small className="primary-span">{singleemployee ? singleemployee.name : 'Bubbles Studio'}</small>
+                                    <h4 className="mt-2 mb-0">{singleemployee ? singleemployee.name : 'UI Designer'}</h4>
+                                    <small className="primary-span">{singleemployee ? singleemployee.occupation : 'Bubbles Studio'}</small>
 
                                 </div>
 
@@ -137,7 +177,7 @@ const Nearby = () => {
                                 </small>
                                 <div className="text-center">
                                     <button className="btn btn-success rounded-pill mb-2">Send Response</button>
-                                    <button type="button" class="btn btn-circle shadow-bg mx-2"><i class="fa fa-envelope"></i></button>
+                                    <button type="button" class="btn btn-circle shadow-bg mx-2" onClick={() => { handleBookmark(singleemployee.id) }}>{singleemployee.isLike ? <i class="fa fa-bookmark"></i> : <i class="fa fa-bookmark" style={{ color: "gray" }}></i>}</button>
                                 </div>
                             </div>
                         </div>

@@ -13,6 +13,7 @@
     "bootstrap-icons": "^1.5.0",
     "chart.js": "^3.5.1",
     "font-awesome": "^4.7.0",
+    "google-maps-react": "^2.0.6",
     "mui-datatables": "^3.7.8",
     "react": "^17.0.2",
     "react-browser-router": "^2.1.2",

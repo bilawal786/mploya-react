@@ -4,25 +4,26 @@ import '../Aboutme/Aboutme.css';
 import Axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const AboutmeEdit = () => {
+const AboutmeEdit = (props) => {
+    console.log(props.location.state.video);
     const authId = localStorage.getItem('id');
     let token = localStorage.getItem('token');
     const [data, setdata] = useState({
         id: authId,
-        name: "",
-        address: "",
-        profile_status: "",
-        facebook_link: "",
-        instagrame_link: "",
-        twitter_link: "",
-        linkedin_link: "",
+        name: props.location.state.name,
+        address: props.location.state.address,
+        profile_status: props.location.state.profile_status,
+        facebook_link: props.location.state.facebook_link,
+        instagrame_link: props.location.state.instagram_link,
+        twitter_link: props.location.state.twitter_link,
+        linkedin_link: props.location.state.linkedin_link,
         phone: "111-222-333-444",
-        description: "",
-        company_name: "",
+        description: props.location.state.about,
+        company_name: props.location.state.company_name,
         language: ['l1', 'l2'],
-        image: "",
+        image: props.location.state.image,
         company_logo: "https://i.imgur.com/IRsUTtE.jpg",
-        video: "",
+        video: props.location.state.video,
     });
 
     const inputEvent = (event) => {
@@ -39,7 +40,7 @@ const AboutmeEdit = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        console.log(data);
+        // console.log(data);
         try {
             const res = await Axios({
                 method: 'post',
@@ -69,8 +70,8 @@ const AboutmeEdit = () => {
     }
 
 
-    const [imgData, setImgData] = useState("https://i.imgur.com/IRsUTtE.jpg");
-    const [videoData, setVideoData] = useState("https://www.youtube.com/watch?v=7sDY4m8KNLc&ab_channel=Codevolution");
+    const [imgData, setImgData] = useState(props.location.state.image ? "https://mploya.com/" + props.location.state.image : "https://i.imgur.com/IRsUTtE.jpg");
+    const [videoData, setVideoData] = useState(props.location.state.video ? "https://mploya.com/" + props.location.state.video : "https://www.youtube.com/watch?v=7sDY4m8KNLc&ab_channel=Codevolution");
     const onChangePicture = e => {
 
 
@@ -157,11 +158,11 @@ const AboutmeEdit = () => {
                                 <strong>Profile Status</strong>
                                 <div className="d-flex flex-row mt-2">
                                     <div className="form-check form-switch">
-                                        <input className="form-check-input" value={data.profile_status} onChange={inputEvent} name="profile_status" value="visible" type="radio" id="flexSwitchCheckDefault" />
+                                        <input className="form-check-input" value={data.profile_status} onChange={inputEvent} name="profile_status" value="visible" type="radio" id="flexSwitchCheckDefault" checked={data.profile_status === 'visible' ? "checked" : ""} />
                                         <label className="form-check-label" for="flexSwitchCheckDefault">Visible</label>
                                     </div>
                                     <div className="form-check form-switch" style={{ marginLeft: '30px' }}>
-                                        <input className="form-check-input" value={data.profile_status} onChange={inputEvent} name="profile_status" value="Not Visisble" type="radio" id="flexSwitchCheckDefault" />
+                                        <input className="form-check-input" value={data.profile_status} onChange={inputEvent} name="profile_status" value="Not Visisble" type="radio" id="flexSwitchCheckDefault" checked={data.profile_status === 'Not Visisble' ? "checked" : ""} />
                                         <label className="form-check-label" for="flexSwitchCheckDefault">Not Visible</label>
                                     </div>
 
@@ -229,7 +230,7 @@ const AboutmeEdit = () => {
                                     defaultValue='Los Angels, CA'
                                     onChange={inputEvent}
                                     name="description"
-                                    value={data.name}
+                                    value={data.description}
                                 >
 
                                 </textarea>

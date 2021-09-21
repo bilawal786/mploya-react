@@ -24,6 +24,7 @@ const Signin = () => {
       // invalid login cre usestate
       const [invalid, setinvalid] = useState()
       const [loading, setloading] = useState(false);
+      const [showhidepwd, setshowhidepwd] = useState(false);
       // form data state
       const [data, setdata] = useState({
             email: "",
@@ -50,6 +51,10 @@ const Signin = () => {
             });
 
       };
+
+      const handlePasswordHideShow = () => {
+            setshowhidepwd(!showhidepwd);
+      }
       // submit function 
       const onSubmit = async (event) => {
             event.preventDefault();
@@ -200,10 +205,17 @@ const Signin = () => {
                                                       <input type="email" name="email" value={data.email} className="form-control" placeholder="Email" onChange={inputEvent} />
                                                       <span className="text-danger" style={{ fontSize: "12px" }}>{message.email}</span>
                                                 </div>
-                                                <div className="mb-3">
-                                                      <input type="password" name="password" value={data.password} className="form-control" placeholder="Password" onChange={inputEvent} />
+                                                <div className="mb-3 input-group">
+                                                      <input type={showhidepwd ? "text" : "password"} name="password" value={data.password} className="form-control" placeholder="Password" onChange={inputEvent} />
+                                                      <span class="input-group-btn" id="eyeShow">
+                                                            <button class="btn btn-default" style={{ height: "40px", border: "1px solid #d2d6d9" }} onClick={handlePasswordHideShow} type="button"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                                      </span>
+
                                                       <span className="text-danger" style={{ fontSize: "12px" }}>{message.password}</span>
+
+
                                                 </div>
+
                                                 <div className="d-flex flex-row">
                                                       <div className="form-check form-switch">
                                                             <input className="form-check-input" name="user_type" value="employer" type="radio" id="flexSwitchCheckDefault" onChange={inputEvent} />
@@ -268,7 +280,7 @@ const Signin = () => {
                                     </div>
                               </div>
                         </div>
-                  </div>
+                  </div >
             </>
       );
 }

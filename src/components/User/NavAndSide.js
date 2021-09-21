@@ -7,6 +7,7 @@ import AboutmeEdit from "../User/Aboutme/AboutmeEdit";
 import { NavLink, Switch, Route, useHistory } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
 import { isValidElement } from "react";
+import Job from "./jobs/Jobs";
 
 
 const NavAndSide = () => {
@@ -25,7 +26,7 @@ const NavAndSide = () => {
 		history.push('/profile');
 	}
 
-	 
+
 	useEffect(() => {
 		const sidePanelToggler = document.getElementById('sidepanel-toggler');
 		const sidePanel = document.getElementById('app-sidepanel');
@@ -76,7 +77,7 @@ const NavAndSide = () => {
 			e.preventDefault();
 			sidePanelToggler.click();
 		});
- 
+
 	})
 
 	return (
@@ -175,6 +176,9 @@ const NavAndSide = () => {
 									{/* //nav-link--> */}
 								</li>
 								{/* //nav-item--> */}
+
+								{/* //nav-item--> */}
+
 								<li className="nav-item">
 
 									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
@@ -188,7 +192,21 @@ const NavAndSide = () => {
 									</NavLink>
 									{/* //nav-link--> */}
 								</li>
-								{/* //nav-item--> */}
+								<li className="nav-item">
+
+									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
+									<NavLink exact className="nav-link" to="/my/jobs" activeClassName="active">
+										<span className="nav-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+												<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
+												<path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+											</svg>
+										</span>
+										<span className="nav-link-text">Jobs</span>
+									</NavLink>
+									{/* //nav-link--> */}
+								</li>
+
 								<li className="nav-item">
 
 									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
@@ -294,6 +312,7 @@ const NavAndSide = () => {
 
 						<Switch>
 							<Route exact path="/dashboard" component={Dashboard} />
+							<Route exact path="/my/jobs" component={Job} />
 							<Route exact path="/nearby" component={Nearby} />
 							<Route exact path="/profile" component={Aboutme} />
 							<Route exact path="/profile/edit" component={AboutmeEdit} />

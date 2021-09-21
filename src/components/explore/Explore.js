@@ -14,8 +14,6 @@ const Explore = () => {
             <>
                   <div className="container-fluid">
                         <Navebar />
-                        <Map />
-                        <Search />
                         <Job />
                         <Subscribe />
                         <Contact />

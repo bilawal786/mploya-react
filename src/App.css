@@ -62,10 +62,7 @@ input[type=number] {
   margin-top: -80px; 
 } 
 
-.maprow{
-    background-image: url("./map.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+.maprow{ 
     height: 520px;
 }
 

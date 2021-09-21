@@ -1,12 +1,41 @@
 import React from 'react';
-const Map = () => {
-
+import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+const MapContainer = (props) => {
+      const style = {
+            width: '100%',
+            height: '72%'
+      }
       return (
             <>
                   <div className='row maprow mt-5'>
+                        <Map google={props.google}
+                              style={style}
+                              zoom={5}
+                              initialCenter={{
+
+                                    lat: 28.7041,
+                                    lng: 77.10257,
+                              }}
+                              center={{
+                                    lat: 28.7041,
+                                    lng: 77.10257,
+                              }}
+
+                        >
+                              {props.jobs.map(marker => (
+
+                                    <Marker
+                                          position={{ lat: marker.latitude, lng: marker.longitude }}
+                                          key={marker.id}
+
+                                    />
+                              ))}
+                        </Map>
                   </div>
             </>
       );
 }
 
-export default Map;
+export default GoogleApiWrapper({
+      apiKey: ('AIzaSyA5yB_G3OoH48LfmNJpERp6Vsb3SwYffRk')
+})(MapContainer)

@@ -5,6 +5,8 @@ import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPaginate from 'react-paginate';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -56,6 +58,8 @@ const Nearby = () => {
 
 
     }
+
+    console.log(job);
     const displayJobseekers = jobs
         .slice(pagesVisited, pagesVisited + usersPerPage)
         .map((row) => {
@@ -68,7 +72,7 @@ const Nearby = () => {
                             <small className="primary-span">{row.company_name}</small>
                             <strong>
                                 <small className="small-txt text-muted"><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;{row.address}</small>
-                                <small className="small-txt text-muted">{row.currencySymbol}&nbsp;{row.min_salary} - {row.max_salary}</small>
+                                <small className="small-txt text-muted">{row.currencySymbol}&nbsp;{Math.round(row.min_salary)} - {Math.round(row.max_salary)}</small>
                             </strong>
                         </div>
                     </div>
@@ -80,9 +84,69 @@ const Nearby = () => {
     const changePage = ({ selected }) => {
         setPageNumber(selected);
     };
+
+
+    const handleBookmark = async (id) => {
+
+        console.log(id);
+        try {
+            const res = await Axios({
+                method: 'post',
+                url: 'https://mploya.com/api/job/bookmark',
+                data: { job_id: id },
+                headers: {
+                    authorization: 'Bearer ' + token,
+                    Accept: 'application/json',
+                },
+            });
+
+            console.log(res.data.message);
+            if (res.status === 200) {
+                const notify = () => {
+                    toast.success(res.data.message, {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
+                }
+                notify();
+            }
+        } catch (error) {
+
+            console.log(error.response.data);
+        }
+    };
+
+    const handleApplyJob = async (id) => {
+
+        console.log(id);
+        try {
+            const res = await Axios({
+                method: 'post',
+                url: 'https://mploya.com/api/apply/job',
+                data: { job_id: id },
+                headers: {
+                    authorization: 'Bearer ' + token,
+                    Accept: 'application/json',
+                },
+            });
+
+            console.log(res.data.message);
+            if (res.status === 200) {
+                const notify = () => {
+                    toast.success(res.data.message, {
+                        position: toast.POSITION.TOP_RIGHT
+                    });
+                }
+                notify();
+            }
+        } catch (error) {
+
+            console.log(error.response.data);
+        }
+    }
     return (
         <>
             <div className='container-fluid'>
+                <ToastContainer />
                 {loading ? (<Backdrop className={classes.backdrop} open>
                     <CircularProgress color="inherit" />
                 </Backdrop>) : ''}
@@ -113,9 +177,9 @@ const Nearby = () => {
                             <div className="blue-area"></div>
                             <div className="card-body">
                                 <div className="text-center">
-                                    <img className="nearby-icon-img-bg neg-margin-img text-center" src={job ? "https://mploya.com/" + job.image : "https://i.imgur.com/IRsUTtE.jpg"} />
-                                    <h4 className="mt-2 mb-0 text-white">{job ? job.occupation : 'UI Designer'}</h4>
-                                    <small className="primary-span">{job ? job.name : 'Bubbles Studio'}</small>
+                                    <img className="nearby-icon-img-bg neg-margin-img text-center" src={job ? "https://mploya.com/" + job.employer_image : "https://i.imgur.com/IRsUTtE.jpg"} />
+                                    <h4 className="mt-2 mb-0 text-white">{job ? job.job_title : 'UI Designer'}</h4>
+                                    <small className="primary-span">{job ? job.occupation : 'Bubbles Studio'}</small>
 
                                 </div>
 
@@ -137,8 +201,8 @@ const Nearby = () => {
                                     </p>
                                 </small>
                                 <div className="text-center">
-                                    <button className="btn btn-success btn-sm rounded-pill">Apply Job</button>
-                                    <button className="btn btn-secondary btn-sm rounded-pill px-3 mx-2"><i class="fa fa-envelope"></i></button>
+                                    <button className="btn btn-success btn-sm rounded-pill" onClick={() => { handleApplyJob(job.id) }}>Apply Job</button>
+                                    <button className="btn btn-secondary btn-sm rounded-pill px-3 mx-2" onClick={() => { handleBookmark(job.id) }}>{job.isLike ? <i class="fa fa-bookmark text-success"></i> : <i class="fa fa-bookmark" style={{ color: "white" }}></i>}</button>
                                 </div>
                             </div>
                         </div>

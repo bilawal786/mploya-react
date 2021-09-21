@@ -20,6 +20,7 @@ const Register = () => {
       // validayon ustate
       const [emailerror, setemailerror] = useState('');
       const [loading, setloading] = useState(false);
+      const [showhidepwd, setshowhidepwd] = useState(false);
       // form data state
       const [data, setdata] = useState({
             name: "",
@@ -36,6 +37,9 @@ const Register = () => {
             password_confirmation: '',
             user_type: "",
       });
+      const handlePasswordHideShow = () => {
+            setshowhidepwd(!showhidepwd);
+      }
 
       // get in put vale function 
       const inputEvent = (event) => {
@@ -216,8 +220,11 @@ const Register = () => {
                                                       <span className="text-danger" style={{ fontSize: "12px" }}>{emailerror}</span>
 
                                                 </div>
-                                                <div className="mb-3">
-                                                      <input type="password" name="password" className="form-control" placeholder="Password" onChange={inputEvent} autoComplete="off" />
+                                                <div className="mb-3 input-group">
+                                                      <input type={showhidepwd ? "text" : "password"} name="password" className="form-control" placeholder="Password" onChange={inputEvent} autoComplete="off" />
+                                                      <span class="input-group-btn" id="eyeShow">
+                                                            <button class="btn btn-default" style={{ height: "40px", border: "1px solid #d2d6d9" }} onClick={handlePasswordHideShow} type="button"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                                      </span>
                                                       <span className="text-danger" style={{ fontSize: "12px" }}>{message.password}</span>
                                                 </div>
                                                 <div className="mb-3">

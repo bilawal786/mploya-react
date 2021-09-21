@@ -8,7 +8,7 @@ const Aboutme = () => {
     let history = useHistory();
 
     const [employer, setEmployer] = useState('');
-    console.log(employer);
+    console.log(employer.video);
     const authId = localStorage.getItem('id');
     let token = localStorage.getItem('token');
 
@@ -44,6 +44,8 @@ const Aboutme = () => {
             linkedin_link: employer.linkedin_link,
             twitter_link: employer.twitter_link,
             image: employer.image,
+            video: employer.video,
+            profile_status: employer.profile_status,
         });
     }
 

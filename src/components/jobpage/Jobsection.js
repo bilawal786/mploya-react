@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import ReactPaginate from 'react-paginate';
+import Map from "./Map";
+import Search from "./Search";
 
 const Jobsection = () => {
       const [jobs, setJobs] = useState([])
@@ -16,7 +18,7 @@ const Jobsection = () => {
                         url: 'https://mploya.com/api/all/jobs/frontend',
                   });
                   setJobs(res.data);
-                  console.log(res.data)
+                  // console.log(res.data)
             } catch (error) {
 
                   console.log(error);
@@ -44,11 +46,11 @@ const Jobsection = () => {
                                     </div>
                                     <p className="text-danger"><i className="fa fa-square-o text-danger" aria-hidden="true"></i> {row.job_type}</p>
                                     <button className="btn btn-success px-4">Apply</button>
-                              </div> */} 
+                              </div> */}
                               <br />
 
                               <div className="col-lg-8 col-md-8 col-sm-6 top-response-mob-left">
-                                    <strong><p className="text-primary my-0">{row.job_title}</p></strong>
+                                    <strong><p className="text-success my-0">{row.job_title}</p></strong>
                                     <p className='my-0'>{row.occupation} &nbsp;&nbsp;&nbsp; <i class="fa fa-square-o" aria-hidden="true"></i>&nbsp;&nbsp; Experience: {row.min_experience}year to {row.max_experience}year &nbsp;&nbsp;&nbsp; <i class="fa fa-square-o" aria-hidden="true"></i>&nbsp;&nbsp;Salary: ${Math.round(row.min_salary)} To ${Math.round(row.max_salary)} </p>
                               </div>
                               <div className="col-lg-2 col-md-2 col-sm-3 ">
@@ -76,7 +78,8 @@ const Jobsection = () => {
       };
       return (
             <>
-
+                  <Map jobs={jobs} />
+                  <Search />
                   <div className="container">
                         <div className='row  justify-content-center mt-5'>
                               <div className="col-lg-10 col-md-10 col-sm-10">
@@ -85,20 +88,20 @@ const Jobsection = () => {
                                     </div>
 
                                     <div className="overflow-auto">
-                                    <ReactPaginate
-                                          previousLabel={"Prev"}
-                                          nextLabel={"Next"}
-                                          pageCount={pageCount}
-                                          onPageChange={changePage}
-                                          containerClassName={"paginationBttnsLight"}
-                                          previousLinkClassName={"previousBttnLight"}
-                                          nextLinkClassName={"nextBttnLight"}
-                                          disabledClassName={"paginationDisabledLight"}
-                                          activeClassName={"paginationActiveLight"}
-                                    />
+                                          <ReactPaginate
+                                                previousLabel={"Prev"}
+                                                nextLabel={"Next"}
+                                                pageCount={pageCount}
+                                                onPageChange={changePage}
+                                                containerClassName={"paginationBttnsLight"}
+                                                previousLinkClassName={"previousBttnLight"}
+                                                nextLinkClassName={"nextBttnLight"}
+                                                disabledClassName={"paginationDisabledLight"}
+                                                activeClassName={"paginationActiveLight"}
+                                          />
 
                                     </div>
-                                    
+
                               </div>
                         </div>
 
