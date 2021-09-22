@@ -11,6 +11,8 @@ import { isValidElement } from "react";
 import Compay from "./companies/Compay";
 import Statistic from "./statistics/Statistic";
 import Message from "./message/Message";
+import BookmarkJob from "./bookmarkjobs/BookmarkJob";
+import AppliedJob from "./appliedjobs/AppliedJob";
 
 const NavAndSide = () => {
 	let history = useHistory();
@@ -187,6 +189,35 @@ const NavAndSide = () => {
 									</NavLink>
 									{/* //nav-link--> */}
 								</li>
+
+								<li className="nav-item bg-transparent">
+
+									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
+									<NavLink exact className="nav-link-dark" to="/bookmark/jobs" activeClassName="active">
+										<span className="nav-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+												<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+											</svg>
+										</span>
+										<strong>Bookmark Jobs</strong>
+									</NavLink>
+									{/* //nav-link--> */}
+								</li>
+
+								<li className="nav-item bg-transparent">
+
+									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
+									<NavLink exact className="nav-link-dark" to="/applied/jobs" activeClassName="active">
+										<span className="nav-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+												<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
+											</svg>
+										</span>
+										<strong>Applied Jobs</strong>
+									</NavLink>
+									{/* //nav-link--> */}
+								</li>
 								{/* //nav-item--> */}
 
 								<li className="nav-item bg-transparent">
@@ -315,6 +346,8 @@ const NavAndSide = () => {
 						<Switch>
 							<Route exact path="/jobseeker/dashboard" component={Dashboard} />
 							<Route exact path="/jobseeker/nearby" component={Nearby} />
+							<Route exact path="/bookmark/jobs" component={BookmarkJob} />
+							<Route exact path="/applied/jobs" component={AppliedJob} />
 							<Route exact path="/jobseeker/companies" component={Compay} />
 							<Route exact path="/jobseeker/application" component={Application} />
 							<Route exact path="/jobseeker/profile" component={Aboutme} />

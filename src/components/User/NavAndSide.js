@@ -8,6 +8,8 @@ import { NavLink, Switch, Route, useHistory } from "react-router-dom";
 import NotificationGroup from "./NotificationGroup";
 import { isValidElement } from "react";
 import Job from "./jobs/Jobs";
+import BookmarkEmployee from "./bookmarkemployee/BookmarkEmployee";
+import AppliedEmployee from "./appliedemp[loyee/AppliedEmployee";
 
 
 const NavAndSide = () => {
@@ -195,11 +197,39 @@ const NavAndSide = () => {
 								<li className="nav-item">
 
 									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
+									<NavLink exact className="nav-link" to="/bookmark/employee" activeClassName="active">
+										<span className="nav-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+												<path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+												<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
+											</svg>
+										</span>
+										<span className="nav-link-text">Bookmark Employee</span>
+									</NavLink>
+									{/* //nav-link--> */}
+								</li>
+
+								<li className="nav-item">
+
+									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
+									<NavLink exact className="nav-link" to="/applied/employee" activeClassName="active">
+										<span className="nav-icon">
+											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-check" viewBox="0 0 16 16">
+												<path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+												<path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z" />
+											</svg>
+										</span>
+										<span className="nav-link-text">Applied Employee</span>
+									</NavLink>
+									{/* //nav-link--> */}
+								</li>
+								<li className="nav-item">
+
+									{/* //Bootstrap Icons: https://icons.getbootstrap.com/ --> */}
 									<NavLink exact className="nav-link" to="/my/jobs" activeClassName="active">
 										<span className="nav-icon">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
-												<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" />
-												<path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" />
+												<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z" />
 											</svg>
 										</span>
 										<span className="nav-link-text">Jobs</span>
@@ -314,6 +344,8 @@ const NavAndSide = () => {
 							<Route exact path="/dashboard" component={Dashboard} />
 							<Route exact path="/my/jobs" component={Job} />
 							<Route exact path="/nearby" component={Nearby} />
+							<Route exact path="/bookmark/employee" component={BookmarkEmployee} />
+							<Route exact path="/applied/employee" component={AppliedEmployee} />
 							<Route exact path="/profile" component={Aboutme} />
 							<Route exact path="/profile/edit" component={AboutmeEdit} />
 							<Route exact path="/statistics" />
