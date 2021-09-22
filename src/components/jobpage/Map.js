@@ -1,12 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
+import Axios from "axios";
+import { colors } from '@material-ui/core';
 const MapContainer = (props) => {
-      console.log(props.lat);
-      console.log(props.lng);
+
       const style = {
             width: '100%',
             height: '72%'
       }
+
+      const [coordinate, setcoordinate] = useState([]);
+      useEffect(async () => {
+
+            try {
+                  const res = await Axios({
+                        method: 'GET',
+                        url: 'https://mploya.com/api/get/coordinates',
+                  });
+                  setcoordinate(res.data);
+            } catch (error) {
+
+                  console.log(error);
+            }
+
+      }, [])
+
+
+
       return (
             <>
                   <div className='row maprow mt-5'>
@@ -15,12 +35,12 @@ const MapContainer = (props) => {
                               zoom={5}
                               initialCenter={{
 
-                                    lat: props.lat,
-                                    lng: props.lng,
+                                    lat: coordinate.latitude,
+                                    lng: coordinate.longitude,
                               }}
                               center={{
-                                    lat: props.lat,
-                                    lng: props.lng,
+                                    lat: coordinate.latitude,
+                                    lng: coordinate.longitude,
                               }}
 
                         >
