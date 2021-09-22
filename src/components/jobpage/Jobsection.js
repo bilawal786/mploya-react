@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate';
 import Map from "./Map";
 import Search from "./Search";
 
-const Jobsection = () => {
+const Jobsection = (props) => {
       const [jobs, setJobs] = useState([])
       const [pageNumber, setPageNumber] = useState(0);
       const jobsPerPage = 8;
@@ -78,7 +78,7 @@ const Jobsection = () => {
       };
       return (
             <>
-                  <Map jobs={jobs} />
+                  <Map jobs={jobs} lat={props.latitude} lng={props.longitude} />
                   <Search />
                   <div className="container">
                         <div className='row  justify-content-center mt-5'>

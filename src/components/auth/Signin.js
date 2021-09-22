@@ -101,6 +101,7 @@ const Signin = () => {
                               url: 'https://mploya.com/api/user/login',
                               data: data,
                         });
+                        console.log(res.data);
 
                         localStorage.setItem("isAuthenticated", "true");
                         localStorage.setItem('id', res.data.id);
@@ -109,6 +110,8 @@ const Signin = () => {
                         localStorage.setItem('email', data.email);
                         localStorage.setItem('name', res.data.name);
                         localStorage.setItem('user_type', data.user_type);
+                        localStorage.setItem('latitude', data.latitude);
+                        localStorage.setItem('longitude', data.longitude);
                         if (data.user_type == 'employer') {
                               history.push({
                                     pathname: '/dashboard',
