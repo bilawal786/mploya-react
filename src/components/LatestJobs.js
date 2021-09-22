@@ -24,8 +24,7 @@ const LatestJobs = () => {
                         <span><i className="fa fa-map" aria-hidden="true"></i>&nbsp;{props.type}</span>
                         <span className='mx-2'><i className="fa fa-map" aria-hidden="true"></i>&nbsp;{props.location}</span>
                     </div>
-                    <div className="c-details my-2">
-                        {/* <span className='badge-type mx-2'>{props.skills}</span> */}
+                    <div className="c-details my-2"> 
                         {
                             props.skills.map((skill) => {
                                 return(
