@@ -21,7 +21,8 @@ const Nearby = () => {
     const [pageNumber, setPageNumber] = useState(0);
     const usersPerPage = 12;
     const pagesVisited = pageNumber * usersPerPage;
-    const [singleemployee, setsingleemployee] = useState('');
+    const [singleemployee, setsingleemployee] = useState(''); 
+    const [isLike, setIsLike] = useState(0);
     let token = localStorage.getItem('token');
     const classes = useStyles();
     const [loading, setloading] = useState(false);
@@ -56,8 +57,8 @@ const Nearby = () => {
 
         //update the value of that index element
         const seeker = Object.assign({}, employee[index]);
-        setsingleemployee(seeker);
-
+        setsingleemployee(seeker); 
+        setIsLike(seeker.isLike);
 
     }
     const displayJobseekers = employee
@@ -101,6 +102,12 @@ const Nearby = () => {
                     toast.success(res.data.message, {
                         position: toast.POSITION.TOP_RIGHT
                     });
+                } 
+                if(isLike==0){
+                    setIsLike(1);
+                }
+                else if(isLike==1){
+                    setIsLike(0);
                 }
                 notify();
             }
@@ -143,8 +150,7 @@ const Nearby = () => {
                         </div>
 
                     </div>
-                    <div className="col-sm-6 col-md-6 col-lg-3  my-3">
-
+                    <div className="col-sm-6 col-md-6 col-lg-3 my-3">
                         <div className="card shadow-lg nearby-card-bg">
                             <div className="blue-area"></div>
                             <div className="card-body">
@@ -170,14 +176,12 @@ const Nearby = () => {
                                         Lorem ipsum.</p>
                                     <p className="mt-2 mb-2"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
                                         {singleemployee ? singleemployee.address : 'Machester England'}
-                                    </p>
-                                    {/* <p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp;
-                                        Machester England
-                                    </p> */}
+                                    </p> 
                                 </small>
                                 <div className="text-center">
                                     <button className="btn btn-success rounded-pill mb-2">Send Response</button>
-                                    <button type="button" class="btn btn-circle shadow-bg mx-2" onClick={() => { handleBookmark(singleemployee.id) }}>{singleemployee.isLike ? <i class="fa fa-bookmark"></i> : <i class="fa fa-bookmark" style={{ color: "gray" }}></i>}</button>
+                                    {/* <button type="button" class="btn btn-circle shadow-bg mx-2" onClick={() => { handleBookmark(singleemployee.id) }}>{singleemployee.isLike ? <i class="fa fa-bookmark"></i> : <i class="fa fa-bookmark" style={{ color: "gray" }}></i>}</button> */}
+                                    <button type="button" class="btn btn-circle shadow-bg mx-2" onClick={() => { handleBookmark(singleemployee.id) }}>{isLike==1 ? <i class="fa fa-bookmark"></i> : <i class="fa fa-bookmark" style={{ color: "gray" }}></i>}</button>
                                 </div>
                             </div>
                         </div>

@@ -16,7 +16,9 @@ const ClientSayCard = (props) => {
                         className="d-flex flex-row justify-content-between align-items-center review-footer">
                         <p className="card-text text-muted">{props.rank}</p>
                         <p className="text-muted">
-                            <StarRatings
+                            
+                        </p>
+                        <StarRatings
                                 rating={props.rating}
                                 starRatedColor="#067d1f"
                                 numberOfStars={5}
@@ -24,7 +26,6 @@ const ClientSayCard = (props) => {
                                 starSpacing="1px"
                                 name='rating'
                             />
-                        </p>
                     </div>
                 </div>
             </div>
