@@ -1,6 +1,8 @@
 import React from 'react';
 import { GoogleApiWrapper, Map, Marker } from 'google-maps-react';
 const MapContainer = (props) => {
+      console.log(props.lat);
+      console.log(props.lng);
       const style = {
             width: '100%',
             height: '72%'
@@ -13,12 +15,12 @@ const MapContainer = (props) => {
                               zoom={5}
                               initialCenter={{
 
-                                    lat: 28.7041,
-                                    lng: 77.10257,
+                                    lat: props.lat,
+                                    lng: props.lng,
                               }}
                               center={{
-                                    lat: 28.7041,
-                                    lng: 77.10257,
+                                    lat: props.lat,
+                                    lng: props.lng,
                               }}
 
                         >

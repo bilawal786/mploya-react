@@ -3,24 +3,37 @@ import Footer from "../Footer";
 import Navebar from "../Navebar";
 import Subscribe from "../Subscribe";
 import Contact from "../Contact";
-import Map from "../jobpage/Map";
 import Job from "../jobpage/Jobsection";
-import Search from "../jobpage/Search";
+import { geolocated } from "react-geolocated";
+
+class Demo extends React.Component {
+      render() {
+            return !this.props.isGeolocationAvailable ? (
+                  <div>Your browser does not support Geolocation</div>
+            ) : !this.props.isGeolocationEnabled ? (
+                  <div>Geolocation is not enabled</div>
+            ) : this.props.coords ? (
+                  <>
+                        <div className="container-fluid">
+                              <Navebar />
+                              <Job latitude={this.props.coords.latitude} longitude={this.props.coords.longitude} />
+                              <Subscribe />
+                              <Contact />
+                              <Footer />
+                        </div>
+                  </>
 
 
-const Explore = () => {
-
-      return (
-            <>
-                  <div className="container-fluid">
-                        <Navebar />
-                        <Job />
-                        <Subscribe />
-                        <Contact />
-                        <Footer />
-                  </div>
-            </>
-      );
+            ) : (
+                  // <div>Getting the location data&hellip; </div>
+                  <div></div>
+            );
+      }
 }
 
-export default Explore;
+export default geolocated({
+      positionOptions: {
+            enableHighAccuracy: false,
+      },
+      userDecisionTimeout: 5000,
+})(Demo);
