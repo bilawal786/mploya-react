@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import '../nearby/nearby.css';
 import { Backdrop } from '@material-ui/core';
+import Modal from '@material-ui/core/Modal';
+import Fade from '@material-ui/core/Fade';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPaginate from 'react-paginate';
@@ -12,6 +14,20 @@ const useStyles = makeStyles((theme) => ({
       backdrop: {
             zIndex: theme.zIndex.drawer + 1,
             color: '#fff',
+      },
+      modal: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            // padding: theme.spacing(0, 1, 0, 1),
+      },
+      paper: {
+            // backgroundColor: theme.palette.background.paper,
+            // border: '1px solid #000',
+            // boxShadow: theme.shadows[5],
+            padding: theme.spacing(1, 1, 1, 1),
+            width: "400px",
+            height: '380px'
       },
 }));
 
@@ -25,8 +41,23 @@ const AppliedEmployee = () => {
       const [isLike, setIsLike] = useState(0);
       let token = localStorage.getItem('token');
       const classes = useStyles();
+      const [open, setOpen] = React.useState(false);
       const [loading, setloading] = useState(false);
       console.log(singleemployee);
+      // form data state
+      console.log(singleemployee.id);
+      const [data, setdata] = useState({
+            time: '',
+            date: '',
+            jobseeker_id: '',
+
+      });
+      // message state
+      const [message, setMessage] = useState({
+            time: '',
+            date: '',
+
+      });
 
       useEffect(async () => {
             setloading(true);
@@ -49,6 +80,14 @@ const AppliedEmployee = () => {
             }
 
       }, [])
+
+      const handleOpen = () => {
+            setOpen(true);
+      };
+
+      const handleClose = () => {
+            setOpen(false);
+      };
 
       const singleEmployee = (id) => {
             const index = employee.findIndex(seeker => {
@@ -120,12 +159,95 @@ const AppliedEmployee = () => {
             }
       }
 
+      const inputEvent = (event) => {
+
+            const { name, value } = event.target;
+            setdata((preValue) => {
+                  return {
+                        ...preValue,
+                        [name]: value,
+                        jobseeker_id: singleemployee.id,
+                  }
+
+            });
+
+      };
+      // submit function 
+      const onSubmit = async (event) => {
+            event.preventDefault();
+            // return error message
+            if (data.time == '') {
+                  setMessage((preValue) => {
+                        return {
+                              ...preValue,
+                              time: "Time is Required",
+                        }
+
+                  });
+            }
+            else if (data.date == '') {
+                  setMessage((preValue) => {
+                        return {
+                              ...preValue,
+                              date: "Date is Required",
+                        }
+
+                  });
+            }
+            else {
+
+                  setloading(true);
+                  try {
+                        const res = await Axios({
+                              method: 'post',
+                              url: 'https://mploya.com/api/interview',
+                              data: data,
+                              headers: {
+                                    authorization: 'Bearer ' + token,
+                                    Accept: 'application/json',
+                              }
+                        });
+
+                        if (res.status === 200) {
+                              setloading(false);
+                              handleClose();
+                              const notify = () => {
+                                    toast.success(res.data.message, {
+                                          position: toast.POSITION.TOP_RIGHT
+                                    });
+                              }
+
+                              notify();
+                        }
+
+
+
+
+
+                  } catch (error) {
+                        setloading(false);
+                        handleClose();
+                        const notify = () => {
+                              toast.error(error.response.data.error, {
+                                    position: toast.POSITION.TOP_RIGHT
+                              });
+                        }
+
+                        notify();
+                        console.log(error.response.data);
+
+                  }
+            }
+
+      };
+
+
 
 
       return (
             <>
                   <div className='container-fluid'>
-                        <ToastContainer />
+                        <ToastContainer autoClose={4000} />
                         {loading ? (<Backdrop className={classes.backdrop} open>
                               <CircularProgress color="inherit" />
                         </Backdrop>) : ''}
@@ -179,7 +301,50 @@ const AppliedEmployee = () => {
                                                       </p>
                                                 </small>
                                                 <div className="text-center">
-                                                      <button className="btn btn-success rounded-pill mb-2">Send Response</button>
+                                                      <button className="btn btn-success rounded-pill mb-2" onClick={handleOpen}>Request Interview</button>
+                                                      <Modal
+                                                            aria-labelledby="transition-modal-title"
+                                                            aria-describedby="transition-modal-description"
+                                                            className={classes.modal}
+                                                            open={open}
+                                                            onClose={handleClose}
+                                                            closeAfterTransition
+                                                            BackdropComponent={Backdrop}
+                                                            BackdropProps={{
+                                                                  timeout: 500,
+                                                            }}
+                                                      >
+                                                            <Fade in={open}>
+                                                                  <div className={classes.paper}>
+                                                                        <div className="col-md-8 bg-light w-100 shadow-lg p-3 mx-auto   bg-white rounded smain">
+                                                                              {loading ? (<Backdrop className={classes.backdrop} open>
+                                                                                    <CircularProgress color="inherit" />
+                                                                              </Backdrop>) : ''}
+                                                                              <h5 className="text-center p-3"><b>Send Request For Interview</b></h5>
+
+                                                                              <form className="signin-form" onSubmit={onSubmit}  >
+                                                                                    <input type="hidden" name="jobseeker_id" value={data.jobseeker_id} />
+                                                                                    <div className="mb-3">
+                                                                                          <label htmlFor="">Select Time</label>
+                                                                                          <input type="time" name="time" value={data.time} className="form-control" onChange={inputEvent} />
+                                                                                          <span className="text-danger" style={{ fontSize: "12px" }}>{message.time}</span>
+                                                                                    </div>
+                                                                                    <div className="mb-3">
+                                                                                          <label htmlFor="">Select Date</label>
+                                                                                          <input type="date" name="date" value={data.date} className="form-control" onChange={inputEvent} />
+                                                                                          <span className="text-danger" style={{ fontSize: "12px" }}>{message.date}</span>
+                                                                                    </div>
+
+                                                                                    <div className="text-center">
+                                                                                          <button type="submit" className="btn p-2 my-2" style={{ backgroundColor: "#067d1f", color: "white", width: '100%', }}><b>Send Request</b></button>
+                                                                                    </div>
+                                                                              </form>
+
+                                                                        </div>
+                                                                  </div>
+                                                            </Fade>
+
+                                                      </Modal>
                                                       {/* <button type="button" class="btn btn-circle shadow-bg mx-2" onClick={() => { handleBookmark(singleemployee.id) }}>{singleemployee.isLike ? <i class="fa fa-bookmark"></i> : <i class="fa fa-bookmark" style={{ color: "gray" }}></i>}</button> */}
                                                       <button type="button" class="btn btn-circle shadow-bg mx-2" onClick={() => { handleBookmark(singleemployee.id) }}>{isLike == 1 ? <i class="fa fa-bookmark"></i> : <i class="fa fa-bookmark" style={{ color: "gray" }}></i>}</button>
                                                 </div>
@@ -192,6 +357,8 @@ const AppliedEmployee = () => {
             </>
       );
 }
+
+
 
 
 
