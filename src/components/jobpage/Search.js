@@ -7,7 +7,7 @@ const Search = () => {
 
                         <div className="row justify-content-center">
 
-                              <div className='col-sm-10 mb-5 rounded p-4' style={{ backgroundColor: '#067d1f', marginTop: '40px' }}> 
+                              <div className='col-sm-10 mb-5 rounded p-4' style={{ backgroundColor: '#067d1f', marginTop: '40px' ,zIndex: 1}}> 
                                     <form action="" className="bg-white rounded">
                                           <div className="top-response d-flex flex-row justify-content-between align-items-center">
 

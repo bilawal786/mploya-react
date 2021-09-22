@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
 
 const LatestJobs = () => {
 
     const LatestJobs = (props) => {
         const [bookMarked, setBookMarked] = useState(false);
+        const [skills, setSkills] = useState(props.skills); 
         return (
             <div className="col-sm-6 col-md-6 col-lg-4 my-3">
                 <div className="card p-3 shadow-lg card-post">
@@ -23,8 +24,14 @@ const LatestJobs = () => {
                         <span><i className="fa fa-map" aria-hidden="true"></i>&nbsp;{props.type}</span>
                         <span className='mx-2'><i className="fa fa-map" aria-hidden="true"></i>&nbsp;{props.location}</span>
                     </div>
-                    <div className="c-details my-2">
-                        <span className='badge-type mx-2'>{props.skills}</span>
+                    <div className="c-details my-2"> 
+                        {
+                            props.skills.map((skill) => {
+                                return(
+                                    <span className='badge-type'>{skill}</span>
+                                )
+                            })
+                        }
                         <a className="section-link" href="" style={{ float: 'right' }}><b>Apply</b></a>
                     </div>
                 </div>
@@ -57,8 +64,7 @@ const LatestJobs = () => {
                         title='Data Entry Staff'
                         type='Full Time'
                         location='California'
-                        skills='UX/UI'
-
+                        skills={['UX/UI','Developer']}
                     />
                     <LatestJobs
                         name='Mailchimp'
@@ -67,8 +73,7 @@ const LatestJobs = () => {
                         title='Data Entry Staff'
                         type='Full Time'
                         location='California'
-                        skills='UX/UI'
-
+                        skills={['UX/UI','Developer']}
                     />
                     <LatestJobs
                         name='Mailchimp'
@@ -77,10 +82,8 @@ const LatestJobs = () => {
                         title='Data Entry Staff'
                         type='Full Time'
                         location='California'
-                        skills='UX/UI'
-
-                    />
-                    
+                        skills={['UX/UI','Developer']}
+                    />                                        
                 </div>
 
 

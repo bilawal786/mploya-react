@@ -68,3 +68,12 @@
     max-width:150px;
     word-wrap:break-word;
 }   
+.btn-outline-success{
+    color: var(--green);
+    border-color: var(--green);
+}
+.btn-outline-success:hover{
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: var(--green);
+}

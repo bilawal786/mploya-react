@@ -327,6 +327,9 @@ a.section-link:hover {text-decoration:underline;}
   background-color:rgb(223, 223, 223);
   border-radius: 10px;
   padding: 4px;
+  margin-right: 4px;  
+  margin-bottom: 4px;
+  display: inline-block;
 }
 .card-post{
   border-radius: 10px !important; 
