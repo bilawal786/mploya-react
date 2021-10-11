@@ -10,6 +10,8 @@ import { isValidElement } from "react";
 import Job from "./jobs/Jobs";
 import BookmarkEmployee from "./bookmarkemployee/BookmarkEmployee";
 import AppliedEmployee from "./appliedemp[loyee/AppliedEmployee";
+import PostJob from "./jobs/PostJob";
+import EditJob from "./jobs/EditJob";
 
 
 const NavAndSide = () => {
@@ -350,6 +352,8 @@ const NavAndSide = () => {
 							<Route exact path="/profile/edit" component={AboutmeEdit} />
 							<Route exact path="/statistics" />
 							<Route exact path="/calender" component={Calendar} />
+							<Route exact path="/post-job" component={PostJob} />
+							<Route exact path="/edit-job" component={EditJob} />
 						</Switch>
 
 						{/* <h1 className="text-center">Dashboard</h1>

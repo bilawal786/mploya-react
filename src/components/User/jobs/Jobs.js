@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
+import { useHistory } from "react-router-dom";
 import '../nearby/nearby.css';
 import { Backdrop } from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPaginate from 'react-paginate';
-
+import { Markup } from 'interweave';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const useStyles = makeStyles((theme) => ({
       backdrop: {
             zIndex: theme.zIndex.drawer + 1,
@@ -15,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Job = () => {
+      let history = useHistory();
       const [jobs, seteJobs] = useState([])
       const [pageNumber, setPageNumber] = useState(0);
       const usersPerPage = 12;
@@ -43,6 +47,7 @@ const Job = () => {
                   console.log(error);
             }
 
+
       }, [])
 
       const singleJob = (id) => {
@@ -57,7 +62,86 @@ const Job = () => {
 
       }
 
-      console.log(job);
+      const editJob = () => {
+
+            history.push('/edit-job', {
+                  'job': job,
+            })
+
+      }
+
+      // change status
+
+      const changeStatus = async () => {
+            setloading(true);
+            try {
+                  const res = await Axios({
+                        method: 'get',
+                        url: 'https://mploya.com/api/job/' + 100,
+                        headers: {
+                              authorization: 'Bearer ' + token,
+                              Accept: 'application/json',
+                        },
+                  });
+                  setloading(false);
+                  console.log(res.data);
+                  const notify = () => {
+                        toast.success(res.data.message, {
+                              position: toast.POSITION.TOP_RIGHT
+                        });
+                  }
+                  notify();
+
+
+            } catch (error) {
+                  setloading(false);
+                  console.log(error.response.data.error);
+                  const notify = () => {
+                        toast.error(error.response.data.error, {
+                              position: toast.POSITION.TOP_RIGHT
+                        });
+                  }
+                  notify();
+            }
+      }
+
+      // delete job
+
+      const deleteJob = async () => {
+            setloading(true);
+            try {
+                  const res = await Axios({
+                        method: 'delete',
+                        url: 'https://mploya.com/api/delete/job/' + job.id,
+                        headers: {
+                              authorization: 'Bearer ' + token,
+                              Accept: 'application/json',
+                        },
+                  });
+                  setloading(false);
+                  console.log(res.data.message);
+                  const notify = () => {
+                        toast.success(res.data.message, {
+                              position: toast.POSITION.TOP_RIGHT
+                        });
+                  }
+                  notify();
+
+
+            } catch (error) {
+                  setloading(false);
+                  console.log(error.response);
+                  const notify = () => {
+                        toast.error(error.response.data.error, {
+                              position: toast.POSITION.TOP_RIGHT
+                        });
+                  }
+                  notify();
+            }
+
+      }
+
+
       const displayJobseekers = jobs
             .slice(pagesVisited, pagesVisited + usersPerPage)
             .map((row) => {
@@ -85,6 +169,7 @@ const Job = () => {
       return (
             <>
                   <div className='container-fluid'>
+                        <ToastContainer />
                         {loading ? (<Backdrop className={classes.backdrop} open>
                               <CircularProgress color="inherit" />
                         </Backdrop>) : ''}
@@ -122,7 +207,7 @@ const Job = () => {
                                                 </div>
 
                                                 <small>
-                                                      <p align="justify" className="text-muted">{job ? job.requirements : 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'}</p>
+                                                      <p align="justify" className="text-muted">{job ? <Markup content={job.requirements} /> : 'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs.'}</p>
                                                 </small>
 
                                                 <small>
@@ -138,10 +223,13 @@ const Job = () => {
                                                             {job ? job.address : 'Machester England'}
                                                       </p>
                                                 </small>
-                                                {/* <div className="text-center" >
-                                                      <button className="btn btn-success btn-sm rounded-pill">Apply Job</button>
-                                                      <button className="btn btn-secondary btn-sm rounded-pill px-3 mx-2"><i class="fa fa-envelope"></i></button>
-                                                </div> */}
+                                                <div className="text-center" >
+
+                                                      <button className="btn btn-success btn-sm rounded-pill px-3 mx-2" data-toggle="tooltip" data-placement="right" title="Edit Job" onClick={editJob}><i className="fa fa-pencil"></i></button>
+                                                      <button className="btn btn-danger btn-sm rounded-pill px-3 mx-2" data-toggle="tooltip" data-placement="right" title="Delete Job" onClick={deleteJob}><i class="fa fa-trash"></i></button>
+                                                      <button className="btn btn-info btn-sm rounded-pill px-3 mx-2 mt-2" data-toggle="tooltip" data-placement="right" title="Change Status" onClick={changeStatus}>Change Status</button>
+
+                                                </div>
                                           </div>
                                     </div>
                               </div>

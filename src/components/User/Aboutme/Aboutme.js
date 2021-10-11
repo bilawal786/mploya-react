@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from "axios";
 import '../Aboutme/Aboutme.css';
-import { useHistory } from "react-router-dom";
+import { useHistory, NavLink } from "react-router-dom";
 import ReactPlayer from 'react-player'
 
 const Aboutme = () => {
@@ -68,7 +68,7 @@ const Aboutme = () => {
 
                             </div>
                             <div>
-                                <button className="btn btn-secondary btn-sm rounded-pill px-4">Post Job</button>
+                                <NavLink exact to="/post-job" type="button" className="btn btn-secondary btn-sm rounded-pill px-4">Post Job</NavLink>
                                 <button onClick={profileEdit} className="btn btn-success btn-sm rounded-pill mx-2">Update Profile</button>
                             </div>
 
