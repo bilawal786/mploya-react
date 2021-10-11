@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ReactPaginate from 'react-paginate';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Nearby = () => {
+    let history = useHistory();
     const [employee, setemployee] = useState([])
     const [pageNumber, setPageNumber] = useState(0);
     const usersPerPage = 12;
@@ -241,6 +243,14 @@ const Nearby = () => {
 
     };
 
+
+    const viewProfile = () => {
+        history.push('/employee/profile', {
+            id: singleemployee.id,
+
+        });
+    }
+
     return (
         <>
 
@@ -300,6 +310,7 @@ const Nearby = () => {
                                 </small>
                                 <div className="text-center">
                                     <button className="btn btn-success w-100 rounded-pill mb-2" onClick={handleOpen}>Request Interview</button>
+                                    <button className="btn btn-success w-100 rounded-pill mb-2" onClick={viewProfile}>View Profile</button>
                                     <Modal
                                         aria-labelledby="transition-modal-title"
                                         aria-describedby="transition-modal-description"

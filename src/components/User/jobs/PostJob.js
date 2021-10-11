@@ -5,9 +5,21 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import validator from 'validator'
+import { Backdrop } from '@material-ui/core';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
+      backdrop: {
+            zIndex: theme.zIndex.drawer + 1,
+            color: '#fff',
+      },
+}));
 const PostJob = () => {
 
       let token = localStorage.getItem('token');
+      const classes = useStyles();
+      const [loading, setloading] = useState(false);
+      const [skills, setSkills] = useState(['']);
       const [category, setcategory] = useState([])
       const [subCategory, setSubCategory] = useState([])
       const [data, setdata] = useState({
@@ -26,7 +38,7 @@ const PostJob = () => {
             'link': '',
             'vacancies': '',
             'job_type': '',
-            'skills': ['Good speeking', 'Good looking'],
+            'skills': skills,
       })
       // message state
       const [message, setMessage] = useState({
@@ -45,7 +57,7 @@ const PostJob = () => {
             'link': '',
             'vacancies': '',
             'job_type': '',
-            'skills': [],
+            'skills': skills,
       });
       const InputEvent = async (event) => {
 
@@ -253,7 +265,7 @@ const PostJob = () => {
 
                   });
             } else {
-
+                  setloading(true);
                   try {
                         const res = await Axios({
                               method: 'post',
@@ -265,7 +277,7 @@ const PostJob = () => {
                               },
                         });
 
-
+                        setloading(false);
                         const notify = () => {
                               toast.success(res.data.message, {
                                     position: toast.POSITION.TOP_RIGHT
@@ -274,7 +286,7 @@ const PostJob = () => {
                         notify();
 
                   } catch (error) {
-
+                        setloading(false);
                         console.log(error.response.data.error);
                         const notify = () => {
                               toast.error(error.response.data.error, {
@@ -288,10 +300,44 @@ const PostJob = () => {
 
       }
 
+
+      function addSkillsHandler() {
+            setSkills(previous => [...previous, ""])
+      }
+      function changeSkillsHandler(e, index) {
+            let value = e.target.value;
+            const temp = Object.assign([], skills);
+            temp[index] = value;
+            setSkills(temp);
+            setdata((preValue) => {
+                  return {
+                        ...preValue,
+                        'skills': temp,
+                  }
+            })
+      }
+      function removeSkillsHandler(index, skills) {
+            setSkills(oldArray => {
+                  return oldArray.filter(item => item !== skills);
+            });
+            let skillsArray = data.skills;
+            let filteredArray = skillsArray.filter(item => item !== skills);
+            setdata((preValue) => {
+                  return {
+                        ...preValue,
+                        'skills': filteredArray,
+                  }
+            })
+      }
+
       return (
             <>
                   <div className="container"  >
                         <ToastContainer />
+
+                        {loading ? (<Backdrop className={classes.backdrop} open>
+                              <CircularProgress color="inherit" />
+                        </Backdrop>) : ''}
                         <div className="app-content pt-3 p-md-3 p-lg-4"  >
                               <div className="container-xl">
 
@@ -456,15 +502,39 @@ const PostJob = () => {
 
                                     <div className="row">
                                           <div class="form-group col-md-6 mb-3">
-                                                <label className="mb-1 text-dark" for="inputState">Vacancies</label>
+                                                <label className="text-dark" style={{ marginBottom: "21px" }} for="inputState">Vacancies</label>
                                                 <input name="vacancies" value={data.vacancies} min='1' type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="type" onChange={InputEvent} />
                                                 <span className="text-danger" style={{ fontSize: "12px" }}>{message.vacancies}</span>
                                           </div>
                                           <div class="form-group col-md-6 mb-3">
-                                                <label className="mb-1 text-dark" for="inputState">Skills</label>
-                                                <input name="skills" value={data.skills} type="emtextil" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="type" onChange={InputEvent} />
+                                                <label className="mb-3 text-dark" for="inputState">Skills</label>
+                                                <a
+                                                      type="button"
+                                                      className="btn btn-success btn-sm rounded-circle float-end" onClick={() => addSkillsHandler()}>
+                                                      <i class="fa fa-plus" aria-hidden="true"></i>
+
+                                                </a>
+
+
+
+                                                {
+                                                      skills.map((skills, index) => {
+                                                            return (
+                                                                  <div key={index} className="d-flex flex-row">
+                                                                        <input className='form-control mt-1 px-3 py-1' name="skills" placeholder="Type" value={skills} onChange={(e) => changeSkillsHandler(e, index)}
+                                                                              required
+                                                                        />
+                                                                        <span className='mx-2 mt-2' type='button' onClick={() => removeSkillsHandler(index, skills)}>
+                                                                              <i className="fa fa-remove" aria-hidden="true"></i>
+                                                                        </span>
+                                                                  </div>
+                                                            )
+                                                      }
+                                                      )}
+
                                                 <span className="text-danger" style={{ fontSize: "12px" }}>{message.skills}</span>
                                           </div>
+
                                     </div>
 
 

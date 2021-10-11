@@ -12,6 +12,7 @@ import BookmarkEmployee from "./bookmarkemployee/BookmarkEmployee";
 import AppliedEmployee from "./appliedemp[loyee/AppliedEmployee";
 import PostJob from "./jobs/PostJob";
 import EditJob from "./jobs/EditJob";
+import EmployeeProfile from "./nearby/EmployeeProfile";
 
 
 const NavAndSide = () => {
@@ -346,6 +347,7 @@ const NavAndSide = () => {
 							<Route exact path="/dashboard" component={Dashboard} />
 							<Route exact path="/my/jobs" component={Job} />
 							<Route exact path="/nearby" component={Nearby} />
+							<Route exact path="/employee/profile" component={EmployeeProfile} />
 							<Route exact path="/bookmark/employee" component={BookmarkEmployee} />
 							<Route exact path="/applied/employee" component={AppliedEmployee} />
 							<Route exact path="/profile" component={Aboutme} />

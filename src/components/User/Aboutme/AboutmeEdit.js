@@ -303,7 +303,7 @@ const AboutmeEdit = (props) => {
 
                     </div>
                 </form>
-            </div >
+            </div>
 
         </>
     );

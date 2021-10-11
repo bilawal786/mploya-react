@@ -77,7 +77,7 @@ const Job = () => {
             try {
                   const res = await Axios({
                         method: 'get',
-                        url: 'https://mploya.com/api/job/' + 100,
+                        url: 'https://mploya.com/api/job/' + job.id,
                         headers: {
                               authorization: 'Bearer ' + token,
                               Accept: 'application/json',
@@ -137,6 +137,23 @@ const Job = () => {
                         });
                   }
                   notify();
+            }
+            try {
+                  const res = await Axios({
+                        method: 'GET',
+                        url: 'https://mploya.com/api/employer/jobs',
+                        headers: {
+                              authorization: 'Bearer ' + token,
+                              Accept: 'application/json',
+                        },
+                  });
+                  setloading(false);
+                  seteJobs(res.data);
+                  setSingleJob(res.data[0]);
+
+            } catch (error) {
+                  setloading(false);
+                  console.log(error);
             }
 
       }
