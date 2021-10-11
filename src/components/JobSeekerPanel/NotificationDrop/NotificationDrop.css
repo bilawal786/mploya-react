@@ -38,7 +38,7 @@
     position: absolute;  
     top: 45px;
     width: 320px;
-    transform: translateX(-45%);
+    transform: translateX(-90%);
     background-color: #000000;
     border: 1px solid #5c5d5e;
     border-radius: 5px; 
