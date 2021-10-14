@@ -7,8 +7,7 @@ import ReactPlayer from 'react-player'
 const Aboutme = () => {
     let history = useHistory();
 
-    const [employer, setEmployer] = useState('');
-    console.log(employer.video);
+    const [employer, setEmployer] = useState(''); 
     const authId = localStorage.getItem('id');
     let token = localStorage.getItem('token');
 

@@ -7,7 +7,7 @@ body {
 }
 html, body {
   height: 100%;
-}
+} 
 :root {
   --green: #067d1f !important; 
   --secondary: #c8eddc;
@@ -23,6 +23,9 @@ ul.no-bullets {
 }
 .color-green{
   color: var(--green);
+}
+.bg-green{
+  background-color: var(--green);
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

@@ -1,24 +1,64 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import '../Aboutme/Aboutme.css';
-import AboutmeEdit from './AboutmeEdit';
 
 const Aboutme = () => {
+    const [jobSeeker, setJobSeeker] = useState('');
+    const authId = localStorage.getItem('id');
+    let token = localStorage.getItem('token');  
+
+    useEffect(async () => {
+
+        axios.get('https://mploya.com/api/single/jobseeker/' + authId, {
+            headers: {
+                authorization: 'Bearer ' + token,
+                Accept: 'application/json',
+            },
+        }).then(response => {
+            setJobSeeker(response.data);
+            console.log(response.data);
+
+        }).catch(error => {
+            console.log(error);
+        })
+    }, [])
+
+    const RenderSkills = (props) => {
+        return (
+            <div className="col-sm-4 col-md-4 col-lg-3 mx-auto mb-3">
+                <div className="card rounded-10 bg-dark-mode p-4">
+                    <strong className="text-white">Skills</strong>
+                    <div className="mt-1 d-flex flex-wrap">
+                        {jobSeeker.skill_name
+                            ? jobSeeker.skill_name.map((skill) => {
+                                return (
+                                    <span className='rounded shadow-lg mt-2 px-2 bg-green text-white' style={{ marginRight: '5px' }}>{skill}</span>
+                                )
+                            }) 
+                            : <small className='mt-2 text-white'>No Skill</small>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <>
-            <div className="container-fluid">
+            <div className="container">
 
                 <div className="collect">
                     <div className="cal-top-section px-4 pb-0">
                         <div className="card bg-transparent border-0">
                             <div className="top-response d-flex justify-content-between align-items-center">
                                 <div className="d-flex flex-row">
-                                    <img className="calendar-top-img text-center" src="https://i.imgur.com/IRsUTtE.jpg" />
+                                    <img className="calendar-top-img text-center" src={"https://mploya.com/" + jobSeeker.image} />
                                     <div className="px-3 d-flex flex-column">
-                                        <h4 className="mb-0 text-white">Airbnb</h4>
-                                        <h6 className="my-1 text-white">Homing</h6>
-                                        <p className="text-white">
-                                            <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;Los Angels, CA</small>
+                                        <h4 className="mb-0 text-white text-capitalize">{jobSeeker.name}</h4>
+                                        <h6 className="my-1 text-white text-capitalize">{jobSeeker.occupation ? jobSeeker.occupation : 'No Occupation'}</h6>
+                                        <p className="text-white mt-0">
+                                            <small><i class="fa fa-map-marker fa-sm" aria-hidden="true"></i>&nbsp;{jobSeeker.address ? jobSeeker.address : 'No Address'}</small>
                                         </p>
 
                                     </div>
@@ -40,14 +80,7 @@ const Aboutme = () => {
                     <div className="spacer">&nbsp;</div>
                 </div>
                 <div className="row">
-                    <div className="col-sm-4 col-md-4 col-lg-3 mx-auto mb-3">
-                        <div className="card rounded-10 bg-dark-mode p-4">
-                            <strong className="text-white">Skills</strong>
-                            <div className="my-3">
-                                <small className="text-white">chart</small>
-                            </div>
-                        </div>
-                    </div>
+                    <RenderSkills />
                     <div className="col-sm-8 col-md-8 col-lg-6 mb-3">
                         <div className="card rounded-10 bg-dark-mode p-4">
                             <strong className='text-white'>About Me</strong>
@@ -117,7 +150,7 @@ const Aboutme = () => {
                 </div>
                 <br />
                 {/* <AboutmeEdit /> */}
-            </div> 
+            </div>
         </>
     );
 }
