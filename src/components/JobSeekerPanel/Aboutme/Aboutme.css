@@ -57,4 +57,34 @@
   background-color: rgb(247, 247, 181);
   text-align: left;
 }
+.btnSelectedStyle{
+  background-color: var(--green);
+  border: none;
+  border-radius: 20px;
+  color: #FFFFFF;
+  padding: 4px 10px;
+  display: inline-block;
 
+}
+.btnStyle{
+  border: none;
+  background-color: transparent;
+  color: #000000;
+  padding: 4px 10px;
+  display: inline-block;
+}
+.tab-btn-wrapper{ 
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+} 
+.tab-btn-wrapper::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+.rounded-10 {
+  border-radius: 10px;
+}
